@@ -36,11 +36,11 @@ Alex is a full-stack financial portfolio assistant I built on AWS. Users sign in
 |-------|------|
 | **Financial Planner** | Orchestrates the analysis workflow via SQS |
 | **Instrument Tagger** | Classifies holdings with structured LLM output |
-| **Portfolio Analyst** | Narrative report; pulls market context from vector search when available |
-| **Chart Specialist** | JSON chart payloads for the UI |
+| **Portfolio Analyst (Reporter)** | Writes the narrative portfolio report; enriches it with SEC 10-K context (`backend/sec_rag`) and web research from S3 Vectors |
+| **Chart Specialist (Charter)** | JSON chart payloads for the UI |
 | **Risk Manager** | Concentration and diversification assessment |
 | **Retirement Planner** | Monte Carlo style readiness projections |
-| **Researcher** | Browses financial sites and stores research in S3 Vectors (separate from the main analysis flow) |
+| **Researcher** | Optional — browses financial sites and stores research in S3 Vectors (separate from the main analysis flow) |
 
 ## Architecture
 
@@ -54,7 +54,7 @@ FastAPI API ──► Aurora Serverless (users, accounts, positions, jobs)
 SQS ──► Planner Lambda ──► Tagger / Reporter / Charter / Retirement / Risk
 
 Researcher ──► Ingest API ──► SageMaker embeddings ──► S3 Vectors
-Reporter (optional) ──► semantic search over S3 Vectors
+Reporter ──► SEC RAG (10-K filings) + S3 Vectors (web research)
 ```
 
 **AWS services used:** Lambda, SQS, Aurora Serverless v2 (Data API), API Gateway, S3 / S3 Vectors, SageMaker Serverless, Bedrock, Secrets Manager, CloudFront (production frontend).
