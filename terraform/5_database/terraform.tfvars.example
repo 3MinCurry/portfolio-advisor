@@ -1,0 +1,5 @@
+# Aurora database — copy to terraform.tfvars
+
+aws_region = "us-east-1"
+min_capacity = 0.5
+max_capacity = 1.0

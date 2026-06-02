@@ -1,0 +1,257 @@
+[
+  {
+    "question": "According to the 2025 10-K filing, what sector does General Electric (GE) operate in?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2025 10-K filing, General Electric (GE) operates in the industrials sector, as indicated in the introductory section of the report.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "industrials",
+      "sector"
+    ]
+  },
+  {
+    "question": "In the 2025 10-K, what recent major corporate separations did General Electric complete, and what risks do they mention as associated with these spin-offs?",
+    "category": "direct_fact",
+    "reference_answer": "In the 2025 10-K, General Electric (GE) completed the separations of GE HealthCare and GE Vernova. The company mentions several risks associated with these spin-offs, including the risk that the separations could be determined to be taxable transactions resulting in significant tax liability, the possibility that anticipated benefits of the separations may not be achieved, potential liabilities under agreements related to the transactions, credit support provided to GE Vernova, and restructuring-related risks impacting the organizational structure and leadership. These risks are detailed in the 'Recent spin-offs' subsection of the Risk Factors section.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "GE HealthCare",
+      "GE Vernova",
+      "spin-offs",
+      "risks"
+    ]
+  },
+  {
+    "question": "Describe two geopolitical or global macro risks mentioned in GE's 2025 10-K filing that could negatively impact its business.",
+    "category": "direct_fact",
+    "reference_answer": "The 2025 10-K filing lists several geopolitical and global macro risks that could negatively impact GE's business. Two examples are (1) ongoing geopolitical tensions and outbreaks of armed conflict, such as Russia's invasion of Ukraine and the risk of wider conflict in the Middle East, both of which disrupt global markets and supply chains; and (2) economic policies such as tariffs, export controls, and trade barriers that interfere with GE's global operating model and can increase production costs or hinder customer relationships. These are outlined in the 'Global macro-environment' part of the 'Strategic Risks' subsection of Risk Factors.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "geopolitical",
+      "global macro",
+      "Russia",
+      "Ukraine",
+      "Middle East",
+      "trade barriers"
+    ]
+  },
+  {
+    "question": "According to the 2025 10-K filing, what are two technological advances or trends that GE highlights as risk factors in its business environment?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2025 10-K filing, GE highlights (1) growth in industrial automation and increased digitization, and (2) the adoption of emerging technologies such as artificial intelligence and machine learning as technological advances posing risks. The company discusses the business, reputational, legal and compliance risks associated with AI and machine learning integration, as well as the general pressure to remain competitive by adopting new technologies. These risk factors are discussed in the 'Competitive environment' subsection of Risk Factors.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "artificial intelligence",
+      "machine learning",
+      "industrial automation"
+    ]
+  },
+  {
+    "question": "What climate change related risks does GE identify in its 2025 10-K filing that could affect its financial performance? Provide at least two specific examples.",
+    "category": "direct_fact",
+    "reference_answer": "In its 2025 10-K filing, GE identifies several climate change related risks that could affect financial performance. Two specific examples are (1) the potential for increased operational and compliance expenditures due to new regulations on greenhouse gas emissions, carbon pricing, and disclosure obligations, and (2) risks from increasing frequency and severity of acute extreme weather events that could damage GE's and its suppliers' facilities, disrupt operations and supply chains, and require additional expenditures to improve climate resiliency. These are outlined in the 'Climate change' subsection of the Risk Factors section.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "climate change",
+      "emissions regulations",
+      "extreme weather"
+    ]
+  },
+  {
+    "question": "How many Home Depot stores did Home Depot Inc. operate at the end of fiscal 2025 and in which geographical regions?",
+    "category": "direct_fact",
+    "reference_answer": "At the end of fiscal 2025, Home Depot Inc. operated 2,359 stores located throughout the U.S. (including the Commonwealth of Puerto Rico and the territories of the U.S. Virgin Islands and Guam), Canada, and Mexico. (Source: Home Depot Inc. 2026 10-K, Item 1. Business section)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "2,359 stores",
+      "fiscal 2025",
+      "U.S.",
+      "Canada",
+      "Mexico"
+    ]
+  },
+  {
+    "question": "What was the total capital expenditure by Home Depot Inc. in fiscal 2025 and what strategic areas did these investments support?",
+    "category": "direct_fact",
+    "reference_answer": "Home Depot Inc. invested $3.7 billion in capital expenditures during fiscal 2025. These investments supported initiatives such as building new stores and maintaining existing stores, delivering a frictionless, interconnected experience, and winning with Pros. (Source: 2026 10-K, Item 1. Business)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "$3.7 billion",
+      "capital expenditures",
+      "fiscal 2025"
+    ]
+  },
+  {
+    "question": "Which two major acquisitions by SRS are mentioned in the 2026 Home Depot 10-K, and what business areas do they expand for Home Depot?",
+    "category": "direct_fact",
+    "reference_answer": "The two major acquisitions mentioned are: (1) Home Depot Inc.'s acquisition of SRS in fiscal 2024, a leading residential specialty trade distribution company; and (2) SRS's acquisition of GMS in fiscal 2025, a leading distributor of specialty building products. These acquisitions expand Home Depot's business into specialty building products, including roofing, landscape, and pool supply, and into interior building products like drywall, ceilings, and steel framing. (Source: 2026 10-K, Item 1. Business)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "SRS acquisition",
+      "GMS acquisition",
+      "specialty building products"
+    ]
+  },
+  {
+    "question": "How did Home Depot Inc. return value to shareholders in fiscal 2025, and what change was made to the quarterly cash dividend?",
+    "category": "direct_fact",
+    "reference_answer": "In fiscal 2025, Home Depot Inc. returned $9.2 billion to shareholders in the form of cash dividends and increased its quarterly cash dividend by 2.2%, from $2.25 per share to $2.30 per share. (Source: 2026 10-K, Item 1. Business)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "shareholder return",
+      "$9.2 billion",
+      "dividend increase",
+      "fiscal 2025"
+    ]
+  },
+  {
+    "question": "What AI-powered digital tools did Home Depot implement to enhance the shopping experience as described in the 2026 10-K filing?",
+    "category": "direct_fact",
+    "reference_answer": "Home Depot implemented several AI-powered digital tools including Magic Apron\u2122, which supports customers and associates with online product and project inquiries, and the AI-powered Blueprint Takeoffs Tool and Material List Builder, which generate project-specific materials lists and quotes. (Source: 2026 10-K, Interconnected Shopping Experience section)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "AI-powered",
+      "Magic Apron",
+      "Blueprint Takeoffs Tool",
+      "digital tools"
+    ]
+  },
+  {
+    "question": "According to Alphabet Inc.'s 2026 10-K, who is the CEO of both Alphabet and Google as of the report's filing?",
+    "category": "direct_fact",
+    "reference_answer": "As stated in the 2026 10-K, Sundar Pichai is the CEO of both Alphabet and Google. (See Item 1. Business: 'We continue this work under the leadership of Alphabet and Google CEO, Sundar Pichai.')",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "Sundar Pichai",
+      "CEO"
+    ]
+  },
+  {
+    "question": "What is the name of Alphabet Inc.'s seventh-generation custom-built Tensor Processing Unit (TPU) mentioned in the 2026 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "Alphabet Inc.'s seventh-generation custom-built TPU is called Ironwood, as referenced in the 2026 10-K under 'Making AI Helpful for Everyone.'",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "Ironwood",
+      "TPU"
+    ]
+  },
+  {
+    "question": "As of December 31, 2025, how many employees did Alphabet Inc. report having, according to the 2026 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "Alphabet Inc. reported having 190,820 employees as of December 31, 2025. (See 'Culture and Workforce' section in Item 1. Business.)",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "employees",
+      "December 31, 2025"
+    ]
+  },
+  {
+    "question": "What is the name of Alphabet Inc.'s most intelligent AI model as described in the 2026 10-K, and what key capability does it provide?",
+    "category": "direct_fact",
+    "reference_answer": "Alphabet Inc.'s most intelligent AI model described in the 2026 10-K is Gemini 3. It delivers advanced multimodal understanding and enhanced reasoning capabilities, supporting visualizations and interactive user experiences across products like Search and the Gemini app.",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "Gemini 3",
+      "AI model"
+    ]
+  },
+  {
+    "question": "In 2025, what percentage of Alphabet Inc.'s total revenues came from online advertising, according to Risk Factors in the 2026 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "More than 70% of Alphabet Inc.'s total revenues in 2025 came from online advertising, as stated in Item 1A Risk Factors of the 2026 10-K.",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "online advertising",
+      "70%",
+      "revenues",
+      "2025"
+    ]
+  },
+  {
+    "question": "How many total employees did Sherwin-Williams have worldwide as of December 31, 2021, according to the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "According to the Sherwin-Williams 2022 10-K (Item 1, Business, Human Capital Resources), the company employed 61,626 people worldwide as of December 31, 2021.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "61,626",
+      "employees",
+      "2022"
+    ]
+  },
+  {
+    "question": "What are the three reportable operating segments of Sherwin-Williams as stated in the 2022 10-K filing?",
+    "category": "direct_fact",
+    "reference_answer": "As detailed in the 2022 Sherwin-Williams 10-K (Item 1, Business, Basis of Reportable Segments), the company's three reportable operating segments are: The Americas Group, Consumer Brands Group, and Performance Coatings Group.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "operating segments",
+      "Americas Group",
+      "Consumer Brands Group",
+      "Performance Coatings Group",
+      "2022"
+    ]
+  },
+  {
+    "question": "Which segment of Sherwin-Williams incurred the majority of capital expenditures for ongoing environmental compliance measures in 2021, as discussed in the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "As stated in the 2022 Sherwin-Williams 10-K (Item 1, Business, Consumer Brands Group section), the Consumer Brands Group incurred most of the Company's capital expenditures related to ongoing environmental compliance measures at sites currently in operation in 2021.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "Consumer Brands Group",
+      "capital expenditures",
+      "environmental compliance",
+      "2022"
+    ]
+  },
+  {
+    "question": "List three major trademarks or trade names used by the Performance Coatings Group segment of Sherwin-Williams, as identified in the 2022 10-K.",
+    "category": "direct_fact",
+    "reference_answer": "According to the Sherwin-Williams 2022 10-K (Item 1, Business, Trademarks and Trade Names), three major trademarks or trade names used by the Performance Coatings Group are Sherwin-Williams, Valspar, and Sayerlack.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "Performance Coatings Group",
+      "trademarks",
+      "Valspar",
+      "Sayerlack",
+      "2022"
+    ]
+  },
+  {
+    "question": "In the 2022 10-K, how did Sherwin-Williams describe the seasonality of its Reportable Segments' sales, and how does this affect inventory management?",
+    "category": "direct_fact",
+    "reference_answer": "In the 2022 Sherwin-Williams 10-K (Item 1, Business, Seasonality and Working Capital), it is stated that the majority of sales for the Reportable Segments traditionally occur during the second and third quarters. To meet increased demand during these quarters, the company typically builds its inventories during the first quarter.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "seasonality",
+      "sales",
+      "inventory management",
+      "2022"
+    ]
+  }
+]

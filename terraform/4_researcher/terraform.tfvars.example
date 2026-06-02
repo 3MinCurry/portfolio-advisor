@@ -1,0 +1,9 @@
+# Researcher — copy to terraform.tfvars
+
+aws_region = "us-east-1"
+openai_api_key = "sk-..."
+
+alex_api_endpoint = "https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/prod/ingest"
+alex_api_key = "your-api-key-here"
+
+scheduler_enabled = false

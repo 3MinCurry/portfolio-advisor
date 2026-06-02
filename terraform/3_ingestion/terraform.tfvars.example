@@ -1,0 +1,4 @@
+# Ingestion pipeline — copy to terraform.tfvars
+
+aws_region = "us-east-1"
+sagemaker_endpoint_name = "alex-embedding-endpoint"

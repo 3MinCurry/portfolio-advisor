@@ -1,0 +1,1951 @@
+[
+  {
+    "question": "According to the 2025 10-K filing, what sector does General Electric (GE) operate in?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2025 10-K filing, General Electric (GE) operates in the industrials sector, as indicated in the introductory section of the report.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "industrials",
+      "sector"
+    ]
+  },
+  {
+    "question": "In the 2025 10-K, what recent major corporate separations did General Electric complete, and what risks do they mention as associated with these spin-offs?",
+    "category": "direct_fact",
+    "reference_answer": "In the 2025 10-K, General Electric (GE) completed the separations of GE HealthCare and GE Vernova. The company mentions several risks associated with these spin-offs, including the risk that the separations could be determined to be taxable transactions resulting in significant tax liability, the possibility that anticipated benefits of the separations may not be achieved, potential liabilities under agreements related to the transactions, credit support provided to GE Vernova, and restructuring-related risks impacting the organizational structure and leadership. These risks are detailed in the 'Recent spin-offs' subsection of the Risk Factors section.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "GE HealthCare",
+      "GE Vernova",
+      "spin-offs",
+      "risks"
+    ]
+  },
+  {
+    "question": "Describe two geopolitical or global macro risks mentioned in GE's 2025 10-K filing that could negatively impact its business.",
+    "category": "direct_fact",
+    "reference_answer": "The 2025 10-K filing lists several geopolitical and global macro risks that could negatively impact GE's business. Two examples are (1) ongoing geopolitical tensions and outbreaks of armed conflict, such as Russia's invasion of Ukraine and the risk of wider conflict in the Middle East, both of which disrupt global markets and supply chains; and (2) economic policies such as tariffs, export controls, and trade barriers that interfere with GE's global operating model and can increase production costs or hinder customer relationships. These are outlined in the 'Global macro-environment' part of the 'Strategic Risks' subsection of Risk Factors.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "geopolitical",
+      "global macro",
+      "Russia",
+      "Ukraine",
+      "Middle East",
+      "trade barriers"
+    ]
+  },
+  {
+    "question": "According to the 2025 10-K filing, what are two technological advances or trends that GE highlights as risk factors in its business environment?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2025 10-K filing, GE highlights (1) growth in industrial automation and increased digitization, and (2) the adoption of emerging technologies such as artificial intelligence and machine learning as technological advances posing risks. The company discusses the business, reputational, legal and compliance risks associated with AI and machine learning integration, as well as the general pressure to remain competitive by adopting new technologies. These risk factors are discussed in the 'Competitive environment' subsection of Risk Factors.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "artificial intelligence",
+      "machine learning",
+      "industrial automation"
+    ]
+  },
+  {
+    "question": "What climate change related risks does GE identify in its 2025 10-K filing that could affect its financial performance? Provide at least two specific examples.",
+    "category": "direct_fact",
+    "reference_answer": "In its 2025 10-K filing, GE identifies several climate change related risks that could affect financial performance. Two specific examples are (1) the potential for increased operational and compliance expenditures due to new regulations on greenhouse gas emissions, carbon pricing, and disclosure obligations, and (2) risks from increasing frequency and severity of acute extreme weather events that could damage GE's and its suppliers' facilities, disrupt operations and supply chains, and require additional expenditures to improve climate resiliency. These are outlined in the 'Climate change' subsection of the Risk Factors section.",
+    "keywords": [
+      "GE",
+      "General Electric",
+      "2025",
+      "climate change",
+      "emissions regulations",
+      "extreme weather"
+    ]
+  },
+  {
+    "question": "How many Home Depot stores did Home Depot Inc. operate at the end of fiscal 2025 and in which geographical regions?",
+    "category": "direct_fact",
+    "reference_answer": "At the end of fiscal 2025, Home Depot Inc. operated 2,359 stores located throughout the U.S. (including the Commonwealth of Puerto Rico and the territories of the U.S. Virgin Islands and Guam), Canada, and Mexico. (Source: Home Depot Inc. 2026 10-K, Item 1. Business section)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "2,359 stores",
+      "fiscal 2025",
+      "U.S.",
+      "Canada",
+      "Mexico"
+    ]
+  },
+  {
+    "question": "What was the total capital expenditure by Home Depot Inc. in fiscal 2025 and what strategic areas did these investments support?",
+    "category": "direct_fact",
+    "reference_answer": "Home Depot Inc. invested $3.7 billion in capital expenditures during fiscal 2025. These investments supported initiatives such as building new stores and maintaining existing stores, delivering a frictionless, interconnected experience, and winning with Pros. (Source: 2026 10-K, Item 1. Business)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "$3.7 billion",
+      "capital expenditures",
+      "fiscal 2025"
+    ]
+  },
+  {
+    "question": "Which two major acquisitions by SRS are mentioned in the 2026 Home Depot 10-K, and what business areas do they expand for Home Depot?",
+    "category": "direct_fact",
+    "reference_answer": "The two major acquisitions mentioned are: (1) Home Depot Inc.'s acquisition of SRS in fiscal 2024, a leading residential specialty trade distribution company; and (2) SRS's acquisition of GMS in fiscal 2025, a leading distributor of specialty building products. These acquisitions expand Home Depot's business into specialty building products, including roofing, landscape, and pool supply, and into interior building products like drywall, ceilings, and steel framing. (Source: 2026 10-K, Item 1. Business)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "SRS acquisition",
+      "GMS acquisition",
+      "specialty building products"
+    ]
+  },
+  {
+    "question": "How did Home Depot Inc. return value to shareholders in fiscal 2025, and what change was made to the quarterly cash dividend?",
+    "category": "direct_fact",
+    "reference_answer": "In fiscal 2025, Home Depot Inc. returned $9.2 billion to shareholders in the form of cash dividends and increased its quarterly cash dividend by 2.2%, from $2.25 per share to $2.30 per share. (Source: 2026 10-K, Item 1. Business)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "shareholder return",
+      "$9.2 billion",
+      "dividend increase",
+      "fiscal 2025"
+    ]
+  },
+  {
+    "question": "What AI-powered digital tools did Home Depot implement to enhance the shopping experience as described in the 2026 10-K filing?",
+    "category": "direct_fact",
+    "reference_answer": "Home Depot implemented several AI-powered digital tools including Magic Apron\u2122, which supports customers and associates with online product and project inquiries, and the AI-powered Blueprint Takeoffs Tool and Material List Builder, which generate project-specific materials lists and quotes. (Source: 2026 10-K, Interconnected Shopping Experience section)",
+    "keywords": [
+      "HD",
+      "Home Depot Inc.",
+      "AI-powered",
+      "Magic Apron",
+      "Blueprint Takeoffs Tool",
+      "digital tools"
+    ]
+  },
+  {
+    "question": "According to Alphabet Inc.'s 2026 10-K, who is the CEO of both Alphabet and Google as of the report's filing?",
+    "category": "direct_fact",
+    "reference_answer": "As stated in the 2026 10-K, Sundar Pichai is the CEO of both Alphabet and Google. (See Item 1. Business: 'We continue this work under the leadership of Alphabet and Google CEO, Sundar Pichai.')",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "Sundar Pichai",
+      "CEO"
+    ]
+  },
+  {
+    "question": "What is the name of Alphabet Inc.'s seventh-generation custom-built Tensor Processing Unit (TPU) mentioned in the 2026 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "Alphabet Inc.'s seventh-generation custom-built TPU is called Ironwood, as referenced in the 2026 10-K under 'Making AI Helpful for Everyone.'",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "Ironwood",
+      "TPU"
+    ]
+  },
+  {
+    "question": "As of December 31, 2025, how many employees did Alphabet Inc. report having, according to the 2026 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "Alphabet Inc. reported having 190,820 employees as of December 31, 2025. (See 'Culture and Workforce' section in Item 1. Business.)",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "employees",
+      "December 31, 2025"
+    ]
+  },
+  {
+    "question": "What is the name of Alphabet Inc.'s most intelligent AI model as described in the 2026 10-K, and what key capability does it provide?",
+    "category": "direct_fact",
+    "reference_answer": "Alphabet Inc.'s most intelligent AI model described in the 2026 10-K is Gemini 3. It delivers advanced multimodal understanding and enhanced reasoning capabilities, supporting visualizations and interactive user experiences across products like Search and the Gemini app.",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "Gemini 3",
+      "AI model"
+    ]
+  },
+  {
+    "question": "In 2025, what percentage of Alphabet Inc.'s total revenues came from online advertising, according to Risk Factors in the 2026 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "More than 70% of Alphabet Inc.'s total revenues in 2025 came from online advertising, as stated in Item 1A Risk Factors of the 2026 10-K.",
+    "keywords": [
+      "GOOGL",
+      "Alphabet Inc.",
+      "online advertising",
+      "70%",
+      "revenues",
+      "2025"
+    ]
+  },
+  {
+    "question": "How many total employees did Sherwin-Williams have worldwide as of December 31, 2021, according to the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "According to the Sherwin-Williams 2022 10-K (Item 1, Business, Human Capital Resources), the company employed 61,626 people worldwide as of December 31, 2021.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "61,626",
+      "employees",
+      "2022"
+    ]
+  },
+  {
+    "question": "What are the three reportable operating segments of Sherwin-Williams as stated in the 2022 10-K filing?",
+    "category": "direct_fact",
+    "reference_answer": "As detailed in the 2022 Sherwin-Williams 10-K (Item 1, Business, Basis of Reportable Segments), the company's three reportable operating segments are: The Americas Group, Consumer Brands Group, and Performance Coatings Group.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "operating segments",
+      "Americas Group",
+      "Consumer Brands Group",
+      "Performance Coatings Group",
+      "2022"
+    ]
+  },
+  {
+    "question": "Which segment of Sherwin-Williams incurred the majority of capital expenditures for ongoing environmental compliance measures in 2021, as discussed in the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "As stated in the 2022 Sherwin-Williams 10-K (Item 1, Business, Consumer Brands Group section), the Consumer Brands Group incurred most of the Company's capital expenditures related to ongoing environmental compliance measures at sites currently in operation in 2021.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "Consumer Brands Group",
+      "capital expenditures",
+      "environmental compliance",
+      "2022"
+    ]
+  },
+  {
+    "question": "List three major trademarks or trade names used by the Performance Coatings Group segment of Sherwin-Williams, as identified in the 2022 10-K.",
+    "category": "direct_fact",
+    "reference_answer": "According to the Sherwin-Williams 2022 10-K (Item 1, Business, Trademarks and Trade Names), three major trademarks or trade names used by the Performance Coatings Group are Sherwin-Williams, Valspar, and Sayerlack.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "Performance Coatings Group",
+      "trademarks",
+      "Valspar",
+      "Sayerlack",
+      "2022"
+    ]
+  },
+  {
+    "question": "In the 2022 10-K, how did Sherwin-Williams describe the seasonality of its Reportable Segments' sales, and how does this affect inventory management?",
+    "category": "direct_fact",
+    "reference_answer": "In the 2022 Sherwin-Williams 10-K (Item 1, Business, Seasonality and Working Capital), it is stated that the majority of sales for the Reportable Segments traditionally occur during the second and third quarters. To meet increased demand during these quarters, the company typically builds its inventories during the first quarter.",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "seasonality",
+      "sales",
+      "inventory management",
+      "2022"
+    ]
+  },
+  {
+    "question": "What was the total number of employees at Chevron Corporation as of December 31, 2022, and what percentage of these employees were female?",
+    "category": "direct_fact",
+    "reference_answer": "As of December 31, 2022, Chevron Corporation had a total of 43,846 employees, of which 12,492 were female, representing 28 percent of the total workforce. This information is provided in the Human Capital Management section of the 2023 10-K.",
+    "keywords": [
+      "CVX",
+      "Chevron Corporation",
+      "employees",
+      "2022",
+      "female percentage"
+    ]
+  },
+  {
+    "question": "According to the 2023 10-K, what percentage of Chevron\u2019s net proved oil-equivalent reserves at December 31, 2022, were located in the United States, Australia, and Kazakhstan, respectively?",
+    "category": "direct_fact",
+    "reference_answer": "At December 31, 2022, 36 percent of Chevron\u2019s net proved oil-equivalent reserves were located in the United States, 16 percent in Australia, and 14 percent in Kazakhstan, as reported in the Reserves section of the 2023 10-K.",
+    "keywords": [
+      "CVX",
+      "Chevron Corporation",
+      "proved reserves",
+      "2022",
+      "United States",
+      "Australia",
+      "Kazakhstan"
+    ]
+  },
+  {
+    "question": "What was Chevron Corporation\u2019s voluntary attrition rate for its professional population in 2022, and how does it compare to the previous five-year period?",
+    "category": "direct_fact",
+    "reference_answer": "Chevron Corporation\u2019s annual voluntary attrition rate for its professional population was 4.5 percent in 2022, which is in line with rates over a five-year comparison period, as discussed in the Human Capital Management section of the 2023 10-K.",
+    "keywords": [
+      "CVX",
+      "Chevron Corporation",
+      "attrition",
+      "professional population",
+      "2022"
+    ]
+  },
+  {
+    "question": "How many net productive oil wells did Chevron and its affiliates have worldwide as of December 31, 2022?",
+    "category": "direct_fact",
+    "reference_answer": "As of December 31, 2022, Chevron and its affiliates had a total of 30,399 net productive oil wells worldwide, per the Gross and Net Productive Wells table in the 2023 10-K.",
+    "keywords": [
+      "CVX",
+      "Chevron Corporation",
+      "net productive oil wells",
+      "2022"
+    ]
+  },
+  {
+    "question": "For 2022, what was Chevron\u2019s net daily unconventional production in the Permian Basin for crude oil, natural gas liquids (NGLs), and natural gas?",
+    "category": "direct_fact",
+    "reference_answer": "In 2022, Chevron\u2019s net daily unconventional production in the Permian Basin averaged 327,000 barrels of crude oil, 184,000 barrels of natural gas liquids (NGLs), and 1.2 billion cubic feet of natural gas. This is detailed in the Review of Ongoing Exploration and Production Activities in Key Areas section of the 2023 10-K.",
+    "keywords": [
+      "CVX",
+      "Chevron Corporation",
+      "Permian Basin",
+      "2022",
+      "unconventional production",
+      "crude oil",
+      "NGLs",
+      "natural gas"
+    ]
+  },
+  {
+    "question": "What was the total shipment volume, including cigarettes and heated tobacco units, reported by Philip Morris International in their 2023 10-K for the year 2022?",
+    "category": "direct_fact",
+    "reference_answer": "According to Philip Morris International's 2023 10-K (Item 1. Business), the total shipment volume, including cigarettes and heated tobacco units, for the year 2022 was 731.1 billion units.",
+    "keywords": [
+      "PM",
+      "Philip Morris International",
+      "2022",
+      "total shipment volume",
+      "cigarettes",
+      "heated tobacco units"
+    ]
+  },
+  {
+    "question": "Which acquisition allowed Philip Morris International to add the ZYN brand to its portfolio, as described in the 2023 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "Philip Morris International acquired Swedish Match AB in November 2022, as reported in the 2023 10-K. This acquisition brought the ZYN oral nicotine pouch brand into PMI's product portfolio.",
+    "keywords": [
+      "PM",
+      "Philip Morris International",
+      "Swedish Match",
+      "ZYN",
+      "acquisition"
+    ]
+  },
+  {
+    "question": "What was the percentage of female representation in management positions at Philip Morris International as of 2022, according to their 2023 10-K filing?",
+    "category": "direct_fact",
+    "reference_answer": "Philip Morris International achieved the global target of 40% female representation in management positions in 2022, as stated in their 2023 10-K under 'Inclusion & Diversity'.",
+    "keywords": [
+      "PM",
+      "Philip Morris International",
+      "female representation",
+      "management",
+      "2022"
+    ]
+  },
+  {
+    "question": "In Philip Morris International\u2019s 2023 10-K, which regions did the new geographic segments consolidated in January 2023 combine, and where is the headquarters for the South and Southeast Asia, Commonwealth of Independent States, Middle East and Africa Region located?",
+    "category": "direct_fact",
+    "reference_answer": "As referenced in the 2023 10-K, in January 2023, PMI combined South and Southeast Asia with the Commonwealth of Independent States, Middle East and Africa Region. The headquarters for this combined region is in Dubai, United Arab Emirates.",
+    "keywords": [
+      "PM",
+      "Philip Morris International",
+      "geographic segments",
+      "Dubai",
+      "South and Southeast Asia",
+      "Middle East and Africa"
+    ]
+  },
+  {
+    "question": "According to the 2023 10-K, what was the global EQUAL-SALARY certification status of Philip Morris International in 2022, and what does it signify?",
+    "category": "direct_fact",
+    "reference_answer": "In 2022, Philip Morris International was re-certified as a global EQUAL-SALARY organization for the second time, as reported in their 2023 10-K. This certification verifies that PMI pays female and male employees equally for equal work everywhere they operate.",
+    "keywords": [
+      "PM",
+      "Philip Morris International",
+      "EQUAL-SALARY certification",
+      "2022",
+      "equal pay"
+    ]
+  },
+  {
+    "question": "Which company retained a 39% noncontrolling interest in a newly formed joint venture operating across North America and Europe after selling Tropicana, Naked, and other select juice brands in the first quarter of 2022?",
+    "category": "direct_fact",
+    "reference_answer": "PepsiCo Inc. (PEP) retained a 39% noncontrolling interest in a newly formed joint venture after selling Tropicana, Naked, and other select juice brands to PAI Partners during the first quarter of 2022. This information is detailed in the 2022 10-K filing, Item 1. Business section.",
+    "keywords": [
+      "PEP",
+      "PepsiCo Inc.",
+      "Tropicana",
+      "Naked",
+      "joint venture",
+      "2022"
+    ]
+  },
+  {
+    "question": "What percentage of PepsiCo Inc.'s consolidated net revenue in 2021 was generated by sales to Walmart Inc. and its affiliates, according to the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "According to PepsiCo Inc.'s 2022 10-K, sales to Walmart Inc. and its affiliates, including Sam\u2019s Club, represented approximately 13% of the company's consolidated net revenue in 2021. This is found in the 'Our Customers' section of Item 1. Business.",
+    "keywords": [
+      "PEP",
+      "PepsiCo Inc.",
+      "Walmart",
+      "net revenue",
+      "2021",
+      "2022"
+    ]
+  },
+  {
+    "question": "Name three principal ingredients PepsiCo Inc. (PEP) identifies as used in its beverage and convenient food products in the 2022 10-K filing.",
+    "category": "direct_fact",
+    "reference_answer": "Three principal ingredients used by PepsiCo Inc. (PEP) in its beverage and convenient food products, as identified in the 2022 10-K filing, are corn, oats, and potatoes. This information is listed under the 'Ingredients and Other Supplies' section of Item 1. Business.",
+    "keywords": [
+      "PEP",
+      "PepsiCo Inc.",
+      "ingredients",
+      "corn",
+      "oats",
+      "potatoes",
+      "2022"
+    ]
+  },
+  {
+    "question": "According to the 2022 10-K, which reportable segment of PepsiCo Inc. distributes Sabra refrigerated dips and spreads through a joint venture with Strauss Group?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2022 10-K filing, the Frito-Lay North America (FLNA) segment of PepsiCo Inc. distributes Sabra refrigerated dips and spreads through a joint venture with Strauss Group, as described in the 'Frito-Lay North America' section of Item 1. Business.",
+    "keywords": [
+      "PEP",
+      "PepsiCo Inc.",
+      "Frito-Lay North America",
+      "FLNA",
+      "Sabra",
+      "Strauss Group",
+      "2022"
+    ]
+  },
+  {
+    "question": "In fiscal 2022, which brand did PepsiCo Inc. announce it would begin distributing as an alcoholic beverage manufactured by the Boston Beer Company?",
+    "category": "direct_fact",
+    "reference_answer": "In fiscal 2022, PepsiCo Inc. announced it would begin distributing Hard MTN Dew, an alcoholic beverage manufactured and owned by the Boston Beer Company. PepsiCo licensed the use of the Hard MTN Dew trademark to Boston Beer and will serve as their distributor for this product, as detailed in the 'Our Brands and Intellectual Property Rights' section of the 2022 10-K.",
+    "keywords": [
+      "PEP",
+      "PepsiCo Inc.",
+      "Hard MTN Dew",
+      "Boston Beer Company",
+      "alcoholic beverage",
+      "2022"
+    ]
+  },
+  {
+    "question": "What percentage of Nike Inc.'s total revenues in fiscal 2024 were generated from sales in the United States?",
+    "category": "direct_fact",
+    "reference_answer": "According to Nike Inc.'s 2024 10-K (Item 1. Business - United States Market), U.S. sales accounted for approximately 42% of Nike's total revenues in fiscal 2024.",
+    "keywords": [
+      "NKE",
+      "Nike Inc.",
+      "2024",
+      "United States",
+      "total revenues",
+      "percentage"
+    ]
+  },
+  {
+    "question": "How many U.S. retail stores did Nike operate under the NIKE Brand and Converse in fiscal 2024, and how are these distributed by store type?",
+    "category": "direct_fact",
+    "reference_answer": "Per the 2024 10-K (Item 1. Business \u2013 United States Market), as of fiscal 2024, Nike operated a total of 377 retail stores in the U.S.: 211 NIKE Brand factory stores, 85 NIKE Brand in-line stores (including employee-only stores), and 81 Converse stores (including factory stores).",
+    "keywords": [
+      "NKE",
+      "Nike Inc.",
+      "2024",
+      "U.S. retail stores",
+      "NIKE Brand",
+      "Converse"
+    ]
+  },
+  {
+    "question": "For fiscal 2024, what was the approximate percentage of NIKE Brand footwear manufactured in Vietnam, Indonesia, and China?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2024 10-K (Item 1. Business \u2013 Manufacturing), for fiscal 2024, factories in Vietnam, Indonesia, and China produced approximately 50%, 27%, and 18% of total NIKE Brand footwear, respectively.",
+    "keywords": [
+      "NKE",
+      "Nike Inc.",
+      "2024",
+      "footwear manufacturing",
+      "Vietnam",
+      "Indonesia",
+      "China"
+    ]
+  },
+  {
+    "question": "How many employees did Nike Inc. have worldwide as of May 31, 2024?",
+    "category": "direct_fact",
+    "reference_answer": "Nike Inc.'s 2024 10-K (Item 1. Business \u2013 Human Capital Resources) states that as of May 31, 2024, Nike had approximately 79,400 employees worldwide, including retail and part-time employees.",
+    "keywords": [
+      "NKE",
+      "Nike Inc.",
+      "2024",
+      "employees",
+      "May 31, 2024"
+    ]
+  },
+  {
+    "question": "Identify the subsidiaries of Nike Inc. mentioned in the 2024 10-K excerpt and briefly describe their business focus.",
+    "category": "direct_fact",
+    "reference_answer": "The 2024 10-K (Item 1. Business) mentions NIKE IHM, Inc. (doing business as Air Manufacturing Innovation), which sells various plastic products and supplies Air-Sole and other cushioning components; Jordan Brand, focused on basketball performance and culture products; and Converse, which designs and sells casual sneakers, apparel, and accessories under several trademarks. Operating results for Jordan Brand are within NIKE Brand segments, while Converse is a separate operating segment.",
+    "keywords": [
+      "NKE",
+      "Nike Inc.",
+      "2024",
+      "subsidiaries",
+      "NIKE IHM",
+      "Jordan Brand",
+      "Converse"
+    ]
+  },
+  {
+    "question": "What were Linde plc's total sales in fiscal year 2024, as reported in the 2025 10-K filing?",
+    "category": "direct_fact",
+    "reference_answer": "Linde plc's total sales for fiscal year 2024 were $33,005 million, as reported in the 2025 10-K filing, Section 1_Business.",
+    "keywords": [
+      "LIN",
+      "Linde plc",
+      "total sales",
+      "2024"
+    ]
+  },
+  {
+    "question": "As of December 31, 2024, how many employees did Linde plc have worldwide, and what was the percentage split between women and men?",
+    "category": "direct_fact",
+    "reference_answer": "As of December 31, 2024, Linde plc had 65,289 employees worldwide, with approximately 28 percent women and 72 percent men, according to the 2025 10-K, Section 1_Business.",
+    "keywords": [
+      "LIN",
+      "Linde plc",
+      "employees",
+      "December 31 2024"
+    ]
+  },
+  {
+    "question": "Who was serving as Chief Executive Officer (CEO) of Linde plc as of the 2025 10-K filing, and in what year was he appointed to that role?",
+    "category": "direct_fact",
+    "reference_answer": "Sanjiv Lamba was the Chief Executive Officer of Linde plc as of the 2025 10-K. He was appointed CEO effective March 1, 2022, as stated in Section 1_Business, Executive Officers.",
+    "keywords": [
+      "LIN",
+      "Linde plc",
+      "Chief Executive Officer",
+      "Sanjiv Lamba"
+    ]
+  },
+  {
+    "question": "Which segment of Linde plc\u2019s business utilizes air separation plants, hydrogen, and synthesis gas technologies, and is also involved in helping customers avoid, capture, and utilize carbon dioxide emissions?",
+    "category": "direct_fact",
+    "reference_answer": "Linde\u2019s Engineering business segment focuses on air separation, hydrogen, synthesis, olefin, and natural gas plants, and is also involved in helping customers avoid, capture, and utilize carbon dioxide emissions, according to Section 1_Business, Engineering.",
+    "keywords": [
+      "LIN",
+      "Linde plc",
+      "Engineering",
+      "carbon dioxide emissions"
+    ]
+  },
+  {
+    "question": "What is the net carrying value of goodwill and other indefinite-lived intangible assets reported by Linde plc as of December 31, 2024, and to which event is this value primarily attributed?",
+    "category": "direct_fact",
+    "reference_answer": "As of December 31, 2024, Linde plc reported a net carrying value of approximately $26 billion for goodwill and $2 billion for other indefinite-lived intangible assets, primarily as a result of the business combination and related acquisition method of accounting from the 2018 merger between Linde plc's predecessor companies, as described in Section 1A_RiskFactors.",
+    "keywords": [
+      "LIN",
+      "Linde plc",
+      "goodwill",
+      "indefinite-lived intangible assets",
+      "2024"
+    ]
+  },
+  {
+    "question": "What was General Motors' (GM) total number of employees worldwide as of December 31, 2025?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2026 10-K filing, General Motors (GM) employed approximately 155,000 people worldwide as of December 31, 2025. (Section: Human Capital; Table: Worldwide employment)",
+    "keywords": [
+      "GM",
+      "General Motors",
+      "155,000 employees",
+      "2025",
+      "headcount"
+    ]
+  },
+  {
+    "question": "How much did General Motors invest in capital expenditures to onshore production at plants in Tennessee, Kansas, and Michigan, as announced in 2025?",
+    "category": "direct_fact",
+    "reference_answer": "In 2025, General Motors announced a plan to spend approximately $4.0 billion in capital investments to onshore production at plants in Tennessee, Kansas, and Michigan over the next two years. (Section: 1_Business; Paragraph describing U.S. assembly and propulsion plants investments)",
+    "keywords": [
+      "GM",
+      "General Motors",
+      "$4.0 billion",
+      "capital investments",
+      "Tennessee",
+      "Kansas",
+      "Michigan",
+      "2025"
+    ]
+  },
+  {
+    "question": "What percentage of General Motors' wholesale vehicle sales in 2025 were generated outside the U.S.?",
+    "category": "direct_fact",
+    "reference_answer": "In the year ended December 31, 2025, 27.5% of General Motors' wholesale vehicle sales volume was generated outside the U.S. (Section: 1_Business; Wholesale vehicle sales data)",
+    "keywords": [
+      "GM",
+      "General Motors",
+      "wholesale vehicle sales",
+      "27.5%",
+      "outside U.S.",
+      "2025"
+    ]
+  },
+  {
+    "question": "Who was the Chair and Chief Executive Officer (CEO) of General Motors as of January 27, 2026?",
+    "category": "direct_fact",
+    "reference_answer": "As of January 27, 2026, Mary T. Barra was the Chair and Chief Executive Officer of General Motors (GM). (Section: Information About our Executive Officers)",
+    "keywords": [
+      "GM",
+      "General Motors",
+      "Mary Barra",
+      "CEO",
+      "2026"
+    ]
+  },
+  {
+    "question": "What were General Motors' research and development expenses in 2025, 2024, and 2023?",
+    "category": "direct_fact",
+    "reference_answer": "General Motors' research and development expenses were $8.5 billion in 2025, $9.2 billion in 2024, and $9.9 billion in 2023. (Section: Research, Product Development, and Intellectual Property)",
+    "keywords": [
+      "GM",
+      "General Motors",
+      "research and development expenses",
+      "R&D",
+      "2025",
+      "2024",
+      "2023"
+    ]
+  },
+  {
+    "question": "What was the total backlog (remaining performance obligations) reported by RTX Corporation as of December 31, 2023?",
+    "category": "direct_fact",
+    "reference_answer": "As of December 31, 2023, RTX Corporation reported a total backlog (remaining performance obligations) of $196 billion, as stated in the Business section of the 2024 10-K filing.",
+    "keywords": [
+      "RTX",
+      "RTX Corporation",
+      "2024",
+      "backlog",
+      "remaining performance obligations"
+    ]
+  },
+  {
+    "question": "What percentage of RTX Corporation's total net sales in 2023 were to the U.S. government, excluding foreign military sales through the U.S. government?",
+    "category": "direct_fact",
+    "reference_answer": "In 2023, sales to the U.S. government represented 46% of RTX Corporation's total net sales, as detailed in the 'Sales and Customers' section of the 2024 10-K.",
+    "keywords": [
+      "RTX",
+      "RTX Corporation",
+      "2023",
+      "U.S. government sales",
+      "percentage"
+    ]
+  },
+  {
+    "question": "Which major contract award did Collins Aerospace, a segment of RTX Corporation, announce with Boeing in 2023, and what was its purpose?",
+    "category": "direct_fact",
+    "reference_answer": "In 2023, Collins Aerospace was selected by Boeing for key positions on the X-66A sustainable flight demonstrator aircraft, as described in the Business section of RTX Corporation's 2024 10-K filing.",
+    "keywords": [
+      "RTX",
+      "RTX Corporation",
+      "Collins Aerospace",
+      "Boeing",
+      "X-66A"
+    ]
+  },
+  {
+    "question": "According to the 2024 10-K, how many global employees did RTX Corporation have as of December 31, 2023, and what proportion were engineering professionals?",
+    "category": "direct_fact",
+    "reference_answer": "As of December 31, 2023, RTX Corporation had approximately 185,000 global employees, of which about 57,000 were engineering professionals, per the 'People' subsection in Item 1 Business of the 2024 10-K.",
+    "keywords": [
+      "RTX",
+      "RTX Corporation",
+      "2023",
+      "employees",
+      "engineering professionals"
+    ]
+  },
+  {
+    "question": "What rare materials is RTX Corporation largely dependent upon foreign sources for, as discussed in the 2024 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "RTX Corporation is largely dependent upon foreign sources for certain raw materials such as cobalt, tantalum, chromium, rhenium, nickel, and titanium, as described in the 'Suppliers and Raw Materials' section of the 2024 10-K.",
+    "keywords": [
+      "RTX",
+      "RTX Corporation",
+      "raw materials",
+      "cobalt",
+      "nickel",
+      "titanium"
+    ]
+  },
+  {
+    "question": "How many company-operated specialty paint stores did The Americas Group segment of Sherwin-Williams operate as of December 31, 2021, according to the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2022 10-K, The Americas Group segment of Sherwin-Williams operated 4,859 company-operated specialty paint stores as of December 31, 2021. (See ITEM 1. BUSINESS, The Americas Group section.)",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "Americas Group",
+      "specialty paint stores",
+      "4,859"
+    ]
+  },
+  {
+    "question": "What percentage of the Consumer Brands Group's total sales in 2021 were intersegment transfers of products primarily sold through The Americas Group, as reported in Sherwin-Williams' 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "Sherwin-Williams reported in the 2022 10-K that approximately 62% of the Consumer Brands Group's total sales in 2021 were intersegment transfers of products primarily sold through The Americas Group. (See ITEM 1. BUSINESS, Consumer Brands Group section.)",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "Consumer Brands Group",
+      "intersegment transfers",
+      "62%"
+    ]
+  },
+  {
+    "question": "How many employees did Sherwin-Williams have worldwide at the end of 2021, and what percentage were employed in the United States, according to the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "As of December 31, 2021, Sherwin-Williams employed 61,626 people worldwide, with 78% in the United States and 22% in other global regions. (See ITEM 1. BUSINESS, Human Capital Resources section.)",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "employees",
+      "61,626",
+      "78% United States"
+    ]
+  },
+  {
+    "question": "Which major trademarks and trade names are used by the Sherwin-Williams Consumer Brands Group, as detailed in the company's 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "According to the 2022 10-K, the major trademarks and trade names used by the Sherwin-Williams Consumer Brands Group include Cabot\u00ae, Dupli-Color\u00ae, Dutch Boy\u00ae, Geocel\u00ae, HGTV HOME\u00ae by Sherwin-Williams, Huarun\u00ae, Krylon\u00ae, Minwax\u00ae, Purdy\u00ae, Ronseal\u00ae, Thompson\u2019s\u00ae WaterSeal\u00ae, Valspar\u00ae, and White Lightning\u00ae. (See ITEM 1. BUSINESS, Trademarks and Trade Names section.)",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "Consumer Brands Group",
+      "trademarks",
+      "Valspar",
+      "Cabot",
+      "Krylon"
+    ]
+  },
+  {
+    "question": "How did Sherwin-Williams adapt its store operations and employee policies in response to the COVID-19 pandemic, as described in the 2022 10-K?",
+    "category": "direct_fact",
+    "reference_answer": "In response to the COVID-19 pandemic, Sherwin-Williams temporarily reduced store hours, closed sales floors to the general public in company-operated paint stores, required customers to order online or via phone with curbside pickup or delivery, and allowed remote, alternate, and flexible work arrangements where possible. Additionally, the company enhanced cleaning and sanitation procedures, restricted travel, implemented return-to-work and visitor screening protocols, postponed or canceled large events, and enhanced certain employee benefits such as telehealth, paid sick leave, family leave, and voluntary leave of absence policies and programs. (See ITEM 1A. RISK FACTORS and Human Capital Resources sections.)",
+    "keywords": [
+      "SHW",
+      "Sherwin-Williams",
+      "COVID-19",
+      "store operations",
+      "employee policies"
+    ]
+  },
+  {
+    "question": "How did Intuit Inc.'s segment revenue composition change from fiscal 2023 to fiscal 2025 across Global Business Solutions, Consumer, Credit Karma, and ProTax?",
+    "category": "temporal",
+    "reference_answer": "According to the table in the PRODUCTS AND SERVICES section of the 2025 10-K filing, Intuit Inc.'s Global Business Solutions segment increased its share of total revenue from 56% in fiscal 2023 to 59% in both fiscal 2024 and 2025. The Consumer segment decreased from 29% in 2023 to 27% in 2024 and 26% in 2025. Credit Karma contributed 11% in 2023, 10% in 2024, and 12% in 2025. The ProTax segment held steady at 4% in 2023 and 2024, then decreased to 3% in 2025. This indicates a relative shift of revenue contribution toward Global Business Solutions and Credit Karma over these years, while Consumer and ProTax's shares declined.",
+    "keywords": [
+      "INTU",
+      "Intuit Inc.",
+      "segment revenue",
+      "Global Business Solutions",
+      "Consumer",
+      "Credit Karma",
+      "ProTax"
+    ]
+  },
+  {
+    "question": "What trend is evident in the international net revenue as a percentage of total net revenue for Intuit Inc. over the past three fiscal years?",
+    "category": "temporal",
+    "reference_answer": "As stated in the PRODUCTS AND SERVICES section, Intuit Inc.'s international net revenue was approximately 8% of consolidated total net revenue in each of the twelve months ended July 31 for fiscal years 2023, 2024, and 2025, showing no change over the period.",
+    "keywords": [
+      "INTU",
+      "Intuit Inc.",
+      "international net revenue",
+      "percent",
+      "2023",
+      "2024",
+      "2025"
+    ]
+  },
+  {
+    "question": "How has the segment previously known as 'Small Business & Self-Employed' changed in name and focus over time at Intuit Inc.?",
+    "category": "temporal",
+    "reference_answer": "On August 1, 2024, Intuit Inc. renamed its 'Small Business & Self-Employed' segment to 'Global Business Solutions.' The new segment emphasizes serving small and mid-market businesses globally and incorporates a broader suite of AI-driven financial, compliance, and marketing solutions, reflecting an expanded focus beyond small business and self-employed individuals to more complex business needs.",
+    "keywords": [
+      "INTU",
+      "Intuit Inc.",
+      "Small Business & Self-Employed",
+      "Global Business Solutions",
+      "segment rename"
+    ]
+  },
+  {
+    "question": "How has Intuit Inc.'s AI-driven platform strategy evolved since its initial declaration in 2019 up to fiscal 2025?",
+    "category": "temporal",
+    "reference_answer": "Intuit Inc. declared its AI-driven expert platform strategy in 2019 and has since transformed from a tax and accounting platform to an AI-driven expert platform. By fiscal 2025, the company launched a transformative set of AI agents that provide customers with a virtual team to complete jobs, automating workflows, and delivering real-time insights, particularly in its Global Business Solutions and Intuit Enterprise Suite. Investments in its proprietary Generative AI Operating System (GenOS) have further accelerated this innovation, allowing the rapid delivery of new autonomous financial solutions up to 2025.",
+    "keywords": [
+      "INTU",
+      "Intuit Inc.",
+      "AI-driven expert platform",
+      "GenOS",
+      "2019",
+      "2025"
+    ]
+  },
+  {
+    "question": "What changes occurred in the revenue share of the Consumer segment at Intuit Inc. from 2023 to 2025, and what might this indicate about the company\u2019s business evolution?",
+    "category": "temporal",
+    "reference_answer": "The Consumer segment's revenue share at Intuit Inc. declined from 29% in fiscal 2023 to 27% in 2024, and further to 26% in 2025, as detailed in the PRODUCTS AND SERVICES section. This decline suggests that while the Consumer segment remains significant, other segments like Global Business Solutions and Credit Karma are increasing as a proportion of total revenue, indicating a strategic shift toward serving business customers and diversified financial services.",
+    "keywords": [
+      "INTU",
+      "Intuit Inc.",
+      "Consumer segment",
+      "revenue share",
+      "2023",
+      "2024",
+      "2025"
+    ]
+  },
+  {
+    "question": "How did Pfizer Inc.'s number of countries generating over $500 million in revenues outside the U.S. change between 2019 and 2021?",
+    "category": "temporal",
+    "reference_answer": "According to the Pfizer Inc. 2022 10-K (Section: International Operations), the number of countries outside the U.S. where revenues exceeded $500 million increased from 10 in 2019, to 8 in 2020, and then rose sharply to 21 in 2021, with the increase in 2021 primarily driven by Comirnaty/BNT162b2.",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "countries over $500 million",
+      "international revenues",
+      "Comirnaty"
+    ]
+  },
+  {
+    "question": "How has Pfizer\u2019s management of commercial operations changed from 2019 through the end of 2021?",
+    "category": "temporal",
+    "reference_answer": "From 2019 through 2021, Pfizer Inc. underwent several commercial operation changes. In 2019, the company formed the Consumer Healthcare JV with GSK. In 2020, Pfizer spun off and combined its Upjohn business with Mylan, creating Viatris, and began operating as a single operating segment. At the beginning of fiscal Q4 2021, Pfizer reorganized commercial operations into two operating segments: Biopharma and PC1. (Section: Commercial Operations)",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "commercial operations",
+      "Biopharma",
+      "PC1",
+      "Upjohn",
+      "Consumer Healthcare JV"
+    ]
+  },
+  {
+    "question": "Which major new product collaborations or acquisitions did Pfizer announce in 2021, and how does that compare to 2020 based on the excerpt?",
+    "category": "temporal",
+    "reference_answer": "In 2021, Pfizer announced several major business development activities including collaboration with Arvinas (July 2021) for ARV-471, with Biohaven (November 2021) for rimegepant and zavegepant, the acquisition of Trillium (November 2021), and a research collaboration with Beam (December 2021). Additionally, an agreement to acquire Arena was reached in December 2021. The excerpt does not detail specific 2020 business development transactions, focusing on 2021 activities. (Section: Business Development)",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "2021 collaborations",
+      "Trillium",
+      "Arvinas",
+      "Biohaven",
+      "Arena",
+      "business development"
+    ]
+  },
+  {
+    "question": "How did Pfizer's reporting segments change at the beginning of the fourth quarter of 2021, and what prompted this change?",
+    "category": "temporal",
+    "reference_answer": "At the beginning of fiscal Q4 2021, Pfizer reorganized its commercial operations into two segments: Biopharma (innovative science-based biopharmaceutical business) and PC1 (global contract development/manufacturing and specialty active pharmaceutical ingredients). Previously, since late 2020, Pfizer had operated as a single operating segment after spinning off Upjohn and forming the Consumer Healthcare JV with GSK. The change was part of continued transformation and focus on innovative medicines and vaccines. (Section: Commercial Operations)",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "reporting segments",
+      "Biopharma",
+      "PC1",
+      "Q4 2021"
+    ]
+  },
+  {
+    "question": "How did the impact of COVID-19 on Pfizer\u2019s business evolve during 2020 and 2021, and what key advances did Pfizer make in response?",
+    "category": "temporal",
+    "reference_answer": "Pfizer Inc.'s business, operations, and financial results were affected by the COVID-19 pandemic in both 2020 and 2021. In response, Pfizer made key advances, notably the development of the Comirnaty/BNT162b2 COVID-19 vaccine and the oral COVID-19 treatment Paxlovid. (Section: Business \u2013 COVID-19 Pandemic)",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "COVID-19",
+      "Comirnaty",
+      "Paxlovid",
+      "pandemic impact"
+    ]
+  },
+  {
+    "question": "How did Ford Motor Company's total global wholesales change from 2020 to 2022?",
+    "category": "temporal",
+    "reference_answer": "According to the 2023 10-K, Ford Motor Company's total global wholesales increased from 4,187,000 units in 2020, to 3,942,000 units in 2021, and then to 4,231,000 units in 2022. This information is found in Item 1. Business, under the 'Wholesales' section.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "global wholesales",
+      "2020",
+      "2022"
+    ]
+  },
+  {
+    "question": "What was the trend in Ford's U.S. retail sales by vehicle type (trucks, SUVs, cars) between 2021 and 2022?",
+    "category": "temporal",
+    "reference_answer": "Between 2021 and 2022, Ford's U.S. retail sales for trucks decreased from 1,011,198 units to 955,543 units, SUVs increased from 827,278 to 861,256 units, and cars decreased from 67,479 to 47,665 units. This data is in the U.S. Sales by Type table in Item 1. Business, 2023 10-K.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "U.S. retail sales",
+      "2021",
+      "2022",
+      "trucks",
+      "SUVs",
+      "cars"
+    ]
+  },
+  {
+    "question": "How did Ford's market share in Europe (EU20) change across 2020, 2021, and 2022?",
+    "category": "temporal",
+    "reference_answer": "Ford's market share in the EU20 markets decreased from 7.1% in 2020, to 6.4% in 2021, and remained at 6.4% in 2022. This information is from Item 1. Business, under 'Retail Sales, Industry Volume, and Market Share' in the table showing Market Share by region and year.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "Europe",
+      "EU20",
+      "market share",
+      "2020",
+      "2022"
+    ]
+  },
+  {
+    "question": "Compare Ford Motor Company's wholesale unit volumes in North America from 2020 to 2022. How did these change year over year?",
+    "category": "temporal",
+    "reference_answer": "Ford's North America wholesale unit volumes were 2,081,000 in 2020, decreased to 2,006,000 in 2021, and then increased to 2,335,000 in 2022. These figures can be found in the Wholesales table in Item 1. Business of the 2023 10-K.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "North America",
+      "wholesale unit volumes",
+      "2020",
+      "2022"
+    ]
+  },
+  {
+    "question": "What was the trend in Ford Motor Company's global market share from 2020 to 2022?",
+    "category": "temporal",
+    "reference_answer": "Ford Motor Company's global market share declined over the period: 5.8% in 2020, 5.1% in 2021, and 5.0% in 2022, as shown in the 'Retail Sales, Industry Volume, and Market Share' table in Item 1. Business.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "global market share",
+      "2020",
+      "2022"
+    ]
+  },
+  {
+    "question": "How did Boeing Company's total workforce and union membership change as of December 31, 2024, compared to the period during the IAM 751 strike in late 2024?",
+    "category": "temporal",
+    "reference_answer": "As of December 31, 2024, Boeing Company's total workforce was approximately 172,000, with approximately 58,000 union members. During late 2024, specifically around the IAM 751 strike (September 12 to November 4, 2024), the company implemented hiring freezes and announced plans to reduce its overall workforce. These actions were triggered by the strike but the specific workforce numbers as of December 31, 2024, reflect the aftermath of those events (Section: 1_Business, \"Human Capital\").",
+    "keywords": [
+      "BA",
+      "Boeing Company",
+      "workforce",
+      "union members",
+      "IAM 751",
+      "2024"
+    ]
+  },
+  {
+    "question": "What operational measures did Boeing take following the FAA's investigation of the 737 quality control system after the Alaska Airlines 737-9 accident in January 2024, and how did these affect Boeing's financials during 2024?",
+    "category": "temporal",
+    "reference_answer": "Following the FAA's investigation into the 737 quality control system in January 2024, Boeing slowed 737 production rates and delayed planned production rate increases to reduce traveled work in its factory and at suppliers. These actions 'significantly impacted [Boeing's] financial position, results of operations and cash flows during the year ended December 31, 2024' and are expected to continue impacting future periods (Section: 1A_RiskFactors).",
+    "keywords": [
+      "BA",
+      "Boeing Company",
+      "FAA investigation",
+      "737 production",
+      "2024"
+    ]
+  },
+  {
+    "question": "How did union contract negotiations and labor actions affect Boeing's commercial aircraft production during 2024?",
+    "category": "temporal",
+    "reference_answer": "In 2024, the contract with IAM District 751 (IAM 751) expired on September 12, 2024, leading to a strike initiated by a 96% member vote. The strike lasted until November 4, 2024. During this period, Boeing paused production of its commercial aircraft (except for 787 production in Charleston) and certain BDS products, resulting in adverse business and financial impacts. These labor actions also led to hiring freezes and plans to reduce the overall workforce (Section: 1_Business, \"Human Capital\").",
+    "keywords": [
+      "BA",
+      "Boeing Company",
+      "IAM 751",
+      "strike",
+      "2024"
+    ]
+  },
+  {
+    "question": "How did the gender and racial/ethnic minority composition of Boeing's workforce change as of December 31, 2024?",
+    "category": "temporal",
+    "reference_answer": "As of December 31, 2024, Boeing's global workforce was approximately 24% women, and the U.S. workforce was comprised of 39% racial and ethnic minorities and 14% U.S. veterans. There are no direct comparisons to previous years provided in the excerpt, but these are the latest reported figures (Section: 1_Business, \"Human Capital\").",
+    "keywords": [
+      "BA",
+      "Boeing Company",
+      "workforce demographics",
+      "women",
+      "racial and ethnic minorities",
+      "2024"
+    ]
+  },
+  {
+    "question": "How did regulatory oversight and production restrictions imposed by the FAA evolve during 2024 after the Alaska Airlines 737-9 accident?",
+    "category": "temporal",
+    "reference_answer": "After the Alaska Airlines 737-9 accident in January 2024, the FAA conducted an investigation into Boeing's 737 quality control system. As a result, the FAA increased its oversight of Boeing\u2019s production and quality management systems and communicated that it would not approve production rate increases beyond 38 per month or additional production lines until Boeing complied with required quality and safety standards. These regulatory measures were implemented during 2024 and had a significant impact on Boeing\u2019s operations (Section: 1_Business, \"Regulatory Matters\" and 1A_RiskFactors).",
+    "keywords": [
+      "BA",
+      "Boeing Company",
+      "FAA oversight",
+      "production restrictions",
+      "737",
+      "2024"
+    ]
+  },
+  {
+    "question": "What were the key initiatives and acquisitions by Visa Inc. in fiscal year 2022 to expand its capabilities in cross-border payments and open banking, and how do these support the company\u2019s network of networks strategy?",
+    "category": "spanning",
+    "reference_answer": "In fiscal year 2022, Visa Inc. made key acquisitions to expand its cross-border payments and open banking capabilities. The company acquired The Currency Cloud Group Limited (Currencycloud), a global platform that enables financial institutions and fintechs to provide cross-border foreign exchange solutions, and Tink AB (Tink), an open banking platform that facilitates building financial products and services and supports account verification, balance check, personal finance management, and payment initiation capabilities. These acquisitions align with Visa\u2019s network of networks strategy, as they help build infrastructure for cross-border products and services as well as enable money movement through multiple networks and form factors for clients globally (see \"Business\" section).",
+    "keywords": [
+      "V",
+      "Visa Inc.",
+      "Currencycloud",
+      "Tink",
+      "cross-border payments",
+      "open banking",
+      "network of networks"
+    ]
+  },
+  {
+    "question": "How did Visa Inc. describe the growth and adoption of contactless payments globally and in the U.S. during fiscal year 2022, and what technology solutions did it deploy to support digital commerce security?",
+    "category": "spanning",
+    "reference_answer": "Visa Inc. reported that globally, more than 30 countries and territories had over 90% contactless penetration in fiscal year 2022, and more than 70% of face-to-face transactions outside of the U.S. were contactless. In the U.S., contactless penetration was 28%, with 495 million tap-to-pay-enabled Visa cards. Visa activated over 600 contactless public transport projects worldwide and surpassed one billion contactless transactions on transit systems, a 70% increase year over year. To support digital commerce security, Visa leveraged technology solutions such as Visa Token Service (VTS), which provisions tokens to replace card numbers and enhance security. By the end of 2022, Visa had provisioned over 4 billion network tokens, exceeding the number of physical cards in circulation (see \"Business\" section, subsections on Tap to Pay and Tokenization).",
+    "keywords": [
+      "V",
+      "Visa Inc.",
+      "contactless payments",
+      "Visa Token Service",
+      "digital commerce security"
+    ]
+  },
+  {
+    "question": "What roles do Visa Inc.\u2019s value added services play in its business model, and what are some specific solutions offered under issuing, acceptance, and risk and identity services as referenced in the 2022 10-K?",
+    "category": "spanning",
+    "reference_answer": "Visa Inc. positions value added services as a diversification opportunity that differentiates its network, deepens client relationships, and provides innovative solutions. Under issuing solutions, Visa offers fraud mitigation, dispute management, analytics, campaign management, BNPL (Buy Now Pay Later), and digital issuance. Acceptance solutions include Cybersource for payment management, dispute management via Verifi, account updating, and global urban mobility for transit operators. Risk and identity solutions involve fraud prevention tools such as Visa Advanced Authorization, Visa Secure, and payment decisioning solutions from CardinalCommerce. These services enhance payment ecosystem trust, security, and convenience (see \"Business\" section, value added services subsections).",
+    "keywords": [
+      "V",
+      "Visa Inc.",
+      "value added services",
+      "issuing solutions",
+      "acceptance solutions",
+      "risk and identity solutions"
+    ]
+  },
+  {
+    "question": "Summarize Visa Inc.\u2019s strategies and priorities for accelerating revenue growth across consumer payments, new flows, and value added services in fiscal year 2022, including references to core product types and technological enablers.",
+    "category": "spanning",
+    "reference_answer": "Visa Inc.\u2019s strategies for accelerating revenue growth in fiscal year 2022 focus on three areas: consumer payments, new flows, and value added services. For consumer payments, Visa aims to shift spending from cash and checks to card and digital transactions using its core products \u2014 credit, debit, and prepaid \u2014 which offer various features for consumers and businesses. New flows involve expanding into P2P, B2C, B2B, B2b, and G2C payments, facilitated by Visa Direct and Visa Business Solutions, which enable real-time global payments and multilateral B2B cross-border payments. Value added services aim to diversify revenue via fraud mitigation, analytics, acceptance solutions, and advisory services. Technological enablers such as Tap to Pay, Visa Token Service, and Click to Pay support secure, frictionless, and scalable payments across channels (see \"Business\" section and strategic priorities).",
+    "keywords": [
+      "V",
+      "Visa Inc.",
+      "revenue growth",
+      "consumer payments",
+      "new flows",
+      "value added services",
+      "core products",
+      "technological enablers"
+    ]
+  },
+  {
+    "question": "Describe Visa Inc.\u2019s approach to talent management and diversity in its global workforce, providing workforce statistics and initiatives mentioned for fiscal year 2022.",
+    "category": "spanning",
+    "reference_answer": "Visa Inc.\u2019s approach to talent management stresses attracting, developing, and advancing talent globally. In fiscal year 2022, Visa\u2019s workforce grew by 23% year over year to approximately 26,500 employees across more than 80 countries. The workforce was 58% men and 42% women globally, with women representing 36% of leadership (VP level and above). U.S. workforce ethnicity was 41% Asian, 8% Black, 12% Hispanic, 3% Other, and 36% White, while U.S. leadership was 18% Asian, 7% Black, 13% Hispanic, 2% Other, and 60% White. Initiatives include new career growth tools, the Stand Together initiative for social justice, partnerships with HBCUs and the Thurgood Marshall College Fund (Visa Black Scholars and Jobs Program), and commitments to pay equity (see \"Business\" section, talent subsection).",
+    "keywords": [
+      "V",
+      "Visa Inc.",
+      "talent management",
+      "diversity",
+      "workforce statistics",
+      "2022"
+    ]
+  },
+  {
+    "question": "Based on Meta Platforms Inc.'s 2025 10-K filing, what are the main product categories offered by both the Family of Apps and Reality Labs segments, and how do their respective business models and sources of revenue differ?",
+    "category": "spanning",
+    "reference_answer": "According to Meta Platforms Inc.'s 2025 10-K, the company operates in two main segments: Family of Apps (FoA) and Reality Labs (RL). The Family of Apps products include Facebook, Instagram, Messenger, Threads, and WhatsApp, through which Meta enables connections, sharing, messaging, and content discovery. The primary source of FoA revenue is from selling advertising placements to marketers on its self-service ad platform, with ads shown across the apps (Facebook, Instagram, Messenger, etc.). Reality Labs focuses on consumer hardware, software, and content for VR, MR, and AR, such as Meta Quest devices and Ray-Ban Meta AI glasses, as well as longer-term R&D on neural interfaces and AR glasses. RL generates revenue from hardware and digital content sales rather than advertising. In 2024, 79% of Meta's costs and expenses were recognized in FoA and 21% in RL, highlighting the difference in scale and business models between the two segments (Section: Business, Family of Apps Products, Reality Labs Products).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "Family of Apps",
+      "Reality Labs",
+      "advertising revenue",
+      "hardware sales"
+    ]
+  },
+  {
+    "question": "How is Meta Platforms Inc. balancing its investments between short-term and long-term initiatives within its Reality Labs segment in 2025, and what guidance does the company provide on expected future profitability for this segment?",
+    "category": "spanning",
+    "reference_answer": "In Meta Platforms Inc.'s 2025 10-K, the company states that it is investing in both short-term and long-term initiatives within its Reality Labs (RL) segment. In 2025, about 50% of RL operating expenses are expected to be allocated to wearables initiatives (primarily long-term R&D, such as AR glasses and neural interfaces) and the other 50% to metaverse initiatives, which include shorter-term projects like developing and marketing VR and MR products (e.g., Meta Quest devices and related software). Meta emphasizes that RL is investing in fundamentally new technologies to evolve the next computing platform, and notes that many products may only be fully realized in the next decade. The filing explicitly states Meta expects its RL segment to continue to operate at a loss for the foreseeable future, with its ability to fund RL dependent on generating sufficient profits from its other business areas (Section: Business, Reality Labs Products).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "Reality Labs",
+      "wearables",
+      "metaverse",
+      "operating loss"
+    ]
+  },
+  {
+    "question": "What are the key regulatory and compliance risks highlighted in Meta Platforms Inc.'s 2025 10-K relating to data privacy and advertising, especially with regard to developments in the European Union and the United States?",
+    "category": "spanning",
+    "reference_answer": "Meta Platforms Inc.'s 2025 10-K outlines several key regulatory and compliance risks in relation to data privacy and advertising. In the EU, the company faces evolving requirements under the GDPR, Digital Markets Act (DMA), and Digital Services Act (DSA), as well as national implementations of the ePrivacy Directive. Specific risks include significant fines (such as a \u20ac1.2 billion fine by the Irish Data Protection Commission in May 2023 for non-compliant data transfers), ongoing legal and regulatory uncertainty regarding data transfers between the EU and US (e.g., challenges to the EU-U.S. Data Privacy Framework), and changing legal bases for behavioral advertising (from \"legitimate interests\" to \"consent\"). Meta is also offering new ad models (e.g., subscriptions for no ads, less personalized ads) in Europe in response. In the U.S., Meta is subject to new and evolving state privacy laws (California, Utah, Texas, etc.), as well as federal debates over Section 230 protections, all of which could impact its data handling, content moderation, and advertising practices. These evolving laws, potential fines, and the complexity of multinational compliance are cited by Meta as presenting material risks to revenue, user growth, and operations (Section: Government Regulation, Data Privacy, Advertising).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "GDPR",
+      "DMA",
+      "data privacy",
+      "advertising regulation"
+    ]
+  },
+  {
+    "question": "How does Meta Platforms Inc. describe the role and impact of artificial intelligence (AI) across its product and operational strategies in the 2025 10-K, and give at least two concrete examples of AI integration?",
+    "category": "spanning",
+    "reference_answer": "Meta Platforms Inc.'s 2025 10-K states that AI is a core part of its innovation agenda across products and operations. AI technologies power systems that rank content in its apps, drive its discovery engine to recommend relevant content, enhance tools advertisers use for targeting and measurement, support new generative AI experiences, and improve internal product development efficiency. Two concrete examples include: (1) 'Meta AI'\u2014an assistant available in Meta apps, Ray-Ban Meta AI glasses, and on the web, which helps people learn, create, and connect; and (2) open-sourcing its Llama foundation models for use by researchers and developers, to accelerate innovation both internally and in the external ecosystem. Additional AI application areas mentioned are improving ad delivery and developing new product features (Section: Business, Technology, AI innovation).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "artificial intelligence",
+      "Meta AI",
+      "Llama models"
+    ]
+  },
+  {
+    "question": "According to Meta Platforms Inc.'s 2025 10-K, what various competitive threats does the company identify across its key business areas, and how do these threats relate to both existing and emerging technologies?",
+    "category": "spanning",
+    "reference_answer": "Meta Platforms Inc.'s 2025 10-K identifies a broad set of competitive threats in all areas of its business. The company competes with other firms providing online connection, sharing, discovery, and communication (e.g., social platforms), companies selling digital ads to businesses, and those developing consumer hardware and immersive experiences such as augmented, mixed, and virtual reality (AR, MR, VR). Meta highlights that it faces competition for users\u2019 attention, for attracting businesses using its advertising services, and for developers building integrations with its products. The 10-K specifically notes that it expects increased competition as both Meta and others launch new products, as its products evolve, and as technology advances\u2014especially around AI and the development of the metaverse. This includes both current rivals in social networking and digital advertising, and emergent contenders in AI, AR/VR hardware, and platform innovation. (Section: Business, Competition).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "competition",
+      "AI",
+      "metaverse",
+      "advertising"
+    ]
+  },
+  {
+    "question": "How does Meta Platforms Inc. (META) describe the relationship between its investments in artificial intelligence (AI) and its main products and advertising services in the 2024 10-K?",
+    "category": "spanning",
+    "reference_answer": "In its 2024 10-K, Meta Platforms Inc. (META) explains that its AI investments support initiatives across its products and services. Specifically, AI powers systems that rank content in Meta's apps, drives its discovery engine for recommending relevant content, enhances advertising tools for marketers, and improves product development efficiency. These AI initiatives are integrated throughout Meta's main products, including Facebook, Instagram, Messenger, Threads, and WhatsApp, as well as its monetization strategies via advertising that appears across these apps (see 'Business' section and investments focus).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "artificial intelligence",
+      "AI investments",
+      "advertising services",
+      "main products"
+    ]
+  },
+  {
+    "question": "Summarize Meta Platforms Inc.'s (META) segment structure and explain how the company invests across the Family of Apps (FoA) and Reality Labs (RL) in 2023, including key investment figures.",
+    "category": "spanning",
+    "reference_answer": "According to the 2024 10-K, Meta Platforms Inc. (META) reports financial results for two segments: Family of Apps (FoA) and Reality Labs (RL). FoA includes core applications like Facebook, Instagram, Messenger, Threads, and WhatsApp and generates substantially all revenue from advertising. RL is focused on consumer hardware, software, and content related to the metaverse, including VR and AR devices like Meta Quest and Ray-Ban Meta smart glasses. In 2023, 80% of Meta's total costs and expenses were attributed to FoA, totaling $70.13 billion, while RL comprised 20% or $18.02 billion. These investments included headcount, data centers, technical infrastructure, and technology development across both segments (see 'Business' segment and investment breakdowns).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "Family of Apps",
+      "Reality Labs",
+      "segment structure",
+      "investment figures",
+      "2023"
+    ]
+  },
+  {
+    "question": "What are the main regulatory risks Meta Platforms Inc. (META) faced in 2023 regarding data privacy in the European Union, and how could these risks materially affect its business according to the 2024 10-K?",
+    "category": "spanning",
+    "reference_answer": "The 2024 10-K for Meta Platforms Inc. (META) details significant regulatory risks related to data privacy in the European Union. In 2023, the Irish Data Protection Committee (IDPC) fined Meta Platforms Ireland EUR \u20ac1.2 billion and ordered it to suspend certain EEA data transfers, citing non-compliance with the General Data Protection Regulation (GDPR) regarding the use of Standard Contractual Clauses for moving data to the United States. Meta is appealing this decision. Further, the invalidation or restriction of mechanisms such as the EU-U.S. Data Privacy Framework (EU-U.S. DPF) could force Meta to cease offering key services (like Facebook and Instagram) in Europe, materially and adversely affecting its business, financial condition, and results. These uncertain and evolving regulatory interpretations and enforcement actions expose Meta to substantial fines and operational restrictions (see 'Government Regulation' section).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "data privacy",
+      "European Union",
+      "GDPR",
+      "regulatory risks",
+      "IDPC",
+      "2023"
+    ]
+  },
+  {
+    "question": "Describe how Meta Platforms Inc. (META) allocates Reality Labs (RL) expenses across augmented reality (AR), virtual reality (VR), and social platforms in 2024, and discuss the strategic reasoning for this allocation from the 10-K.",
+    "category": "spanning",
+    "reference_answer": "According to Meta's 2024 10-K, approximately 50% of Reality Labs (RL) operating expenses in 2024 are expected to be allocated to AR initiatives, 40% to VR (including MR) initiatives, and 10% to social platforms and other initiatives. The primary strategic reason for this allocation is that AR efforts are focused on longer-term research and development, whereas VR and social platforms include more near-term product initiatives. Meta emphasizes continued substantial investment in AR due to the transformative, foundational nature of the technology, believing it will evolve the metaverse ecosystem and provide future monetization opportunities, even though the segment is expected to operate at a loss in the foreseeable future (see 'Reality Labs Products' expenditure breakdown).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "Reality Labs",
+      "AR",
+      "VR",
+      "expense allocation",
+      "2024"
+    ]
+  },
+  {
+    "question": "Based on the 2024 10-K excerpts, explain how Meta Platforms Inc. (META) views the impact of government regulation\u2014including GDPR, DMA, and DSA\u2014on its advertising business and operational practices in Europe.",
+    "category": "spanning",
+    "reference_answer": "In the 2024 10-K, Meta Platforms Inc. (META) outlines that regulations such as the General Data Protection Regulation (GDPR), Digital Markets Act (DMA), and Digital Services Act (DSA) in Europe have required significant changes and controls to Meta's products and business practices. GDPR mandates include breach notification, penalties for non-compliance, and evolving interpretations that create operational uncertainty. DMA imposes restrictions, such as on combining data across services and product design, and enforcement began in March 2024. The DSA imposes additional restrictions and requirements starting from August 2023. Together, these regulations result in higher compliance costs, may require limiting certain marketing strategies (e.g., behavioral advertising consent, ad-free subscriptions), and increase risk of fines. Meta acknowledges these developments may negatively impact user growth, engagement, revenue, and the overall effectiveness of its advertising business in Europe (see 'Government Regulation' section).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "GDPR",
+      "DMA",
+      "DSA",
+      "government regulation",
+      "advertising business",
+      "Europe"
+    ]
+  },
+  {
+    "question": "Describe Ford Motor Company's main business segments as of 2026 and explain how each segment contributes to the company's overall automotive and service offerings.",
+    "category": "spanning",
+    "reference_answer": "According to the Ford Motor Company 2026 10-K (\"Item 1. Business\"), Ford's primary business segments as of December 31, 2025, are Ford Blue, Ford Model e, Ford Pro, and Ford Credit. Ford Blue focuses on internal combustion engine (ICE) and hybrid vehicles (excluding EREVs), selling Ford and Lincoln vehicles, service parts, accessories, and digital services to retail customers, and, in certain cases, manufacturing vehicles for Ford Pro and Model e. Ford Model e is responsible for electric vehicles (EVs), including EREVs, and related service parts, accessories, and digital/connected services for retail customers, and provides embedded software to the enterprise. Ford Pro focuses on commercial, government, and rental customers, selling ICE, hybrid, and EVs, as well as services to optimize and maintain fleets, including telematics and EV charging solutions. Ford Credit provides vehicle-related financing and leasing activities to individual and business customers and supports dealerships' financing needs. Each of these segments targets distinct customer bases (retail, commercial, government, and dealers) and together they deliver Ford's full suite of vehicle and financial service offerings globally.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "business segments",
+      "Ford Blue",
+      "Ford Model e",
+      "Ford Pro",
+      "Ford Credit"
+    ]
+  },
+  {
+    "question": "How did Ford Motor Company's U.S. vehicle sales split across electric, hybrid, and internal combustion engine vehicles in 2025, and what implications might this have for the company's compliance with U.S. vehicle emissions and ZEV requirements?",
+    "category": "spanning",
+    "reference_answer": "Based on Ford's 2026 10-K (Item 1. Business), in 2025, U.S. sales by type were 84,113 electric vehicles, 228,072 hybrid vehicles, and 1,891,939 internal combustion vehicles (total 2,204,124 vehicles). Emissions and ZEV requirements (see the Governmental Standards section) mandate increasing percentages of zero emission vehicles (ZEVs) and stricter emissions standards. Ford's relatively low EV sales (about 3.8% of U.S. sales) compared to ICE and hybrid volumes suggest increasing regulatory pressure to boost ZEV sales in anticipation of stricter EPA and CARB standards and California ZEV mandates. Failure to meet these requirements may necessitate purchasing credits or subject Ford to regulatory penalties.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "U.S. sales",
+      "electric vehicles",
+      "hybrid vehicles",
+      "emissions standards",
+      "ZEV requirements"
+    ]
+  },
+  {
+    "question": "Summarize Ford Motor Company's strategy for managing production and inventory given the seasonality and competitiveness of the global automotive market, as described in their 2026 10-K filing.",
+    "category": "spanning",
+    "reference_answer": "As outlined in Ford Motor Company's 2026 10-K, Ford manages vehicle production schedules based on multiple factors, including retail sales and dealer stock levels. Historically, production is higher in the first half of the year to meet demand peaks in spring and summer, but this can vary depending on the timing of vehicle launches. Production levels are also influenced by wholesale unit volumes, market share considerations, and the need to maintain adequate dealer inventories in the face of supplier and production disruptions. Because the automotive industry is highly competitive and characterized by seasonality\u2014where excess industry capacity often drives price competition\u2014Ford closely monitors inventory, sales momentum, and external factors like new model rollouts and customer demand to optimize profitability and avoid overproduction that could erode margins.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "production strategy",
+      "inventory",
+      "seasonality",
+      "competition"
+    ]
+  },
+  {
+    "question": "Explain how Ford Motor Company's Ford Credit segment supports both dealership operations and end customers, and discuss any agreements in place to ensure Ford Credit's financial stability as of the 2026 10-K.",
+    "category": "spanning",
+    "reference_answer": "According to Ford's 2026 10-K (Item 1. Business), the Ford Credit segment provides a range of automotive financing products to individual and business customers, supporting the acquisition of Ford vehicles via retail installment and lease contracts. It also offers wholesale loans and other financing to dealerships for vehicle inventory (floorplan), working capital, dealership improvements, and real estate. Notably, a Third Amended and Restated Relationship Agreement is in place: if Ford Credit's leverage exceeds 12.5:1, Ford must make a capital contribution to bring it within the limit (none have been made to date). Ford Credit has further agreed to maintain the net worth of its UK-based FCE Bank plc subsidiary above $500 million (no payments made to date). These support agreements are designed to maintain Ford Credit's financial health and protect its ability to finance both dealerships and customers.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "Ford Credit",
+      "dealership financing",
+      "customer financing",
+      "capital support agreements"
+    ]
+  },
+  {
+    "question": "Assess the impact of supply chain and raw material risks on Ford Motor Company's profitability, highlighting which sections of the filing discuss these risks and how the company addresses them.",
+    "category": "spanning",
+    "reference_answer": "Ford Motor Company's 2026 10-K discusses supply chain and raw material risks primarily in Item 1. Business under 'Raw Materials' and references to 'Risk Factors,' as well as in Item 7 and Item 7A. Ford sources a wide range of raw materials, including metals, energy, plastics, battery materials, and rare earth minerals from many suppliers worldwide. Risks such as shortages, supplier disruptions, and price volatility can impact availability and cost-effectiveness, thereby affecting vehicle production and profitability. The company acknowledges its vulnerability to commodity and energy cost changes, inflationary pressures, and supplier disruptions, which can significantly influence production costs and margins. These supply risks are further detailed in Item 1A. Risk Factors and financial exposure management is covered in Item 7A. Quantitative and Qualitative Disclosures about Market Risk. Ford endeavors to mitigate these risks through diversified sourcing and ongoing monitoring of raw material markets.",
+    "keywords": [
+      "F",
+      "Ford Motor Company",
+      "raw materials",
+      "supply chain",
+      "profitability",
+      "risk factors"
+    ]
+  },
+  {
+    "question": "Compare how Altria Group (MO) and Procter & Gamble (PG) describe the importance of trademarks and patents to their respective businesses in their 2023 and 2021 10-K filings.",
+    "category": "comparative",
+    "reference_answer": "Procter & Gamble (PG) in their 2021 10-K filing describes trademarks and patents as being important to the overall marketing and branding of their products, with all major trademarks in each business registered and the existence and protection of these intellectual properties being a part of their success (see 'Trademarks and Patents' section). Conversely, Altria Group (MO) in its 2023 10-K/A filing does not mention the significance of trademarks or patents in the provided excerpt.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "PG",
+      "Procter & Gamble",
+      "trademarks",
+      "patents"
+    ]
+  },
+  {
+    "question": "How do Altria Group (MO) and Procter & Gamble (PG) report the number of outstanding common shares as of their latest 10-K filings?",
+    "category": "comparative",
+    "reference_answer": "Altria Group (MO) reports that as of February 15, 2024, it has 1,763,461,775 shares of common stock outstanding (see 'Outstanding at February 15, 2024'). Procter & Gamble (PG)'s provided excerpt from the 2021 10-K does not specify the number of outstanding common shares.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "PG",
+      "Procter & Gamble",
+      "outstanding shares",
+      "common stock"
+    ]
+  },
+  {
+    "question": "Contrast the geographic scope of business operations for Altria Group (MO) and Procter & Gamble (PG) based on the details from their filings.",
+    "category": "comparative",
+    "reference_answer": "Procter & Gamble (PG)'s 2021 10-K states that its products are sold in more than 180 countries and territories, with operations in about 70 countries, indicating a significant global presence. Altria Group (MO)'s 2023 10-K/A makes no mention of international sales or operations for Altria itself in the excerpt, only referencing the incorporation of Anheuser-Busch InBev (ABI)'s financial statements, a foreign investee.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "PG",
+      "Procter & Gamble",
+      "international operations",
+      "geographic scope"
+    ]
+  },
+  {
+    "question": "How do Altria Group (MO) and Procter & Gamble (PG) address government regulations and compliance in their most recent 10-K excerpts?",
+    "category": "comparative",
+    "reference_answer": "Procter & Gamble (PG) 2021 10-K discusses its exposure to a wide variety of laws and regulations both in the United States (FDA, EPA, OSHA, FTC, CPSC) and abroad, mentioning specific compliance programs and expenditures for compliance. Altria Group (MO)'s 2023 10-K/A excerpt does not contain information about government regulation or compliance activities for Altria itself.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "PG",
+      "Procter & Gamble",
+      "government regulation",
+      "compliance"
+    ]
+  },
+  {
+    "question": "Which company, between Altria Group (MO) and Procter & Gamble (PG), provides more detailed disclosure on its human capital and diversity as per their respective 10-K filings?",
+    "category": "comparative",
+    "reference_answer": "Procter & Gamble (PG) provides detailed disclosure on human capital and diversity in its 2021 10-K, including workforce size (about 101,000 employees as of June 30, 2021), gender and multicultural representation, compensation philosophy, and specific diversity and inclusion goals. The Altria Group (MO) 2023 10-K/A excerpt does not provide any information on human capital or workforce diversity.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "PG",
+      "Procter & Gamble",
+      "human capital",
+      "diversity"
+    ]
+  },
+  {
+    "question": "How do the patent strategies and dependencies on individual patents differ between Gilead Sciences (GILD) in 2025 and Caterpillar Inc. (CAT) in 2026, according to their 10-K filings?",
+    "category": "comparative",
+    "reference_answer": "According to the 2025 10-K filing for Gilead Sciences (GILD), patents and other proprietary rights are described as 'very important to our business,' with the company actively seeking patent protection in the US and internationally, filing additional applications as needed. Gilead often obtains patents many years before marketing approval to extend exclusivity and applies for patent term extensions where possible. They also mention dependencies on patents held by third parties for some active pharmaceutical ingredients, but they acquire exclusive rights through agreements. In contrast, Caterpillar Inc.'s (CAT) 2026 10-K states that they own a number of patents and trademarks, but they 'do not regard our business as being dependent upon any single patent or group of patents.' Their patents and trademarks are considered generally beneficial but not critical to the operation of their business. This demonstrates that Gilead is highly dependent on strong patent protection for competitive advantage, whereas Caterpillar views its patent portfolio as supportive but non-essential to its ongoing business.",
+    "keywords": [
+      "GILD",
+      "Gilead Sciences",
+      "CAT",
+      "Caterpillar Inc.",
+      "patent strategy",
+      "dependency",
+      "10-K"
+    ]
+  },
+  {
+    "question": "Compare the types of products and primary industries served by Gilead Sciences (GILD) in 2025 and Caterpillar Inc. (CAT) in 2026 as described in their business overviews.",
+    "category": "comparative",
+    "reference_answer": "Gilead Sciences (GILD) in 2025 is a biopharmaceutical company focusing on the discovery, development, and commercialization of innovative medicines in virology (such as HIV, hepatitis C and B, COVID-19), oncology (cell therapies and antibody-drug conjugates), and other areas like inflammation. Their products consist of pharmaceutical drugs and treatments for life-threatening diseases. In contrast, Caterpillar Inc. (CAT) in 2026 is an industrial company specializing in the design and manufacture of construction and mining equipment, engines, turbines, locomotives, and related financial and insurance products. CAT serves industries such as construction, mining, power generation, oil and gas, marine, rail, and industrial applications. Thus, Gilead operates in healthcare with pharmaceutical products, while Caterpillar serves heavy industry through capital equipment and support services.",
+    "keywords": [
+      "GILD",
+      "Gilead Sciences",
+      "CAT",
+      "Caterpillar Inc.",
+      "products",
+      "industry",
+      "business overview"
+    ]
+  },
+  {
+    "question": "How do Gilead Sciences (GILD) and Caterpillar Inc. (CAT) describe their approaches to supply chain risk management in their 2025 and 2026 10-Ks, respectively?",
+    "category": "comparative",
+    "reference_answer": "In its 2025 10-K, Gilead Sciences (GILD) describes managing supply chain risks for clinical trial and product manufacturing raw materials through inventory management, relationship management, and evaluation of alternative sources where feasible. They note raw materials are generally available from multiple sources. Caterpillar Inc. (CAT), in its 2026 10-K, sources raw materials and components both domestically and internationally, monitors risks like supplier financial viability and business continuity, and uses agreements to protect its intellectual property. They mention global strategic sourcing and active risk mitigation processes to handle delivery and quality risks, including supplier production capability. Both companies actively monitor and mitigate risks, but Caterpillar emphasizes quality and supplier continuity, while Gilead focuses more on multi-sourcing and alternative source evaluation.",
+    "keywords": [
+      "GILD",
+      "Gilead Sciences",
+      "CAT",
+      "Caterpillar Inc.",
+      "supply chain",
+      "risk management"
+    ]
+  },
+  {
+    "question": "Contrast the research and development (R&D) focus and activities of Gilead Sciences (GILD) in 2025 with those of Caterpillar Inc. (CAT) in 2026 based on their annual reports.",
+    "category": "comparative",
+    "reference_answer": "Gilead Sciences (GILD) in 2025 reports that its R&D is primarily focused on discovering and developing transformational therapies in viral diseases, cancer, and inflammation. Its activities include developing new molecular entities, advancing new investigational therapies, and collaborating with third parties. Gilead also outsources much of its clinical development to contract research organizations. In contrast, Caterpillar Inc. (CAT) in 2026 allocates R&D primarily to developing next-generation construction machines (in Construction Industries) and to innovations that improve productivity, quality, and total cost of ownership for its Resource Industries segment. Caterpillar also invests R&D in regulatory compliance and new product development in Power & Energy. Thus, Gilead's R&D focus is in pharmaceutical innovation and clinical development, while Caterpillar's R&D centers on equipment innovation, productivity improvements, and compliance.",
+    "keywords": [
+      "GILD",
+      "Gilead Sciences",
+      "CAT",
+      "Caterpillar Inc.",
+      "R&D",
+      "research and development"
+    ]
+  },
+  {
+    "question": "How are the products of Gilead Sciences (GILD) and Caterpillar Inc. (CAT) distributed globally as described in their 2025 and 2026 annual reports?",
+    "category": "comparative",
+    "reference_answer": "According to Gilead Sciences' (GILD) 2025 10-K, the company has commercial sales operations in more than 35 countries, selling most products in the U.S. through the wholesale channel and in other regions via a combination of commercial teams, third-party distributors, and corporate partners. In the U.S., a large majority of sales are through three major wholesalers. Caterpillar Inc. (CAT) in its 2026 10-K sells machinery primarily through an extensive global dealer network: 41 dealers in the U.S. and 109 outside the U.S., reaching 190 countries. They also distribute engines and generated products through worldwide distributor networks. Some products, such as turbines and locomotives, are sold directly to customers via company sales forces. Thus, while Gilead relies heavily on wholesalers and specialized distributors, Caterpillar leverages a large, mostly independent dealer network to reach customers worldwide.",
+    "keywords": [
+      "GILD",
+      "Gilead Sciences",
+      "CAT",
+      "Caterpillar Inc.",
+      "distribution",
+      "dealer network",
+      "global"
+    ]
+  },
+  {
+    "question": "Compare the size and geographic distribution of the global workforce for Meta Platforms Inc. and Thermo Fisher Scientific as of their most recent reported fiscal years.",
+    "category": "comparative",
+    "reference_answer": "As of December 31, 2021, Meta Platforms Inc. reported a global workforce of 71,970 employees, with offices in more than 80 cities worldwide. As of December 31, 2024, Thermo Fisher Scientific employed approximately 125,000 colleagues globally: 60,000 in the Americas, 22,000 in Asia-Pacific, and approximately 43,000 in Europe, the Middle East and Africa (EMEA).",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "TMO",
+      "Thermo Fisher Scientific",
+      "global workforce",
+      "employee headcount",
+      "geographic distribution"
+    ]
+  },
+  {
+    "question": "How do Meta Platforms Inc. and Thermo Fisher Scientific describe their approaches to talent development and internal training for employees?",
+    "category": "comparative",
+    "reference_answer": "Meta Platforms Inc. emphasizes building strong teams, supporting diversity and inclusion, and offers programs like Meta University, internships, and training such as Managing Unconscious Bias. They invest in professional development through resource groups and community events. Thermo Fisher Scientific takes a multi-faceted approach, offering formal and self-paced training through Thermo Fisher University, focused manager and leadership programs, rotational opportunities, mentoring, and tuition reimbursement. They frequently use workforce data and predictive analytics to anticipate future talent needs.",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "TMO",
+      "Thermo Fisher Scientific",
+      "talent development",
+      "training",
+      "employee development"
+    ]
+  },
+  {
+    "question": "Contrast the business segment structures of Meta Platforms Inc. and Thermo Fisher Scientific as described in their respective filings.",
+    "category": "comparative",
+    "reference_answer": "Meta Platforms Inc. reports financial results by two segments: Family of Apps (FoA), which generates revenue mainly from advertising across platforms like Facebook, Instagram, Messenger, and WhatsApp, and Reality Labs (RL), which focuses on consumer hardware, software, and content for augmented and virtual reality. Thermo Fisher Scientific reports its business in four segments: Life Sciences Solutions, Analytical Instruments, Specialty Diagnostics, and Laboratory Products and Biopharma Services, reflecting a broader diversity in products and markets served.",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "TMO",
+      "Thermo Fisher Scientific",
+      "business segments",
+      "Family of Apps",
+      "Reality Labs",
+      "Life Sciences Solutions"
+    ]
+  },
+  {
+    "question": "How do Meta Platforms Inc. and Thermo Fisher Scientific describe the industries they compete in and the main types of competitors they face?",
+    "category": "comparative",
+    "reference_answer": "Meta Platforms Inc. describes its business as being characterized by innovation, rapid change, and disruptive technologies, competing primarily with companies providing online connection, sharing, discovery and communication services (e.g., Alphabet, Amazon, ByteDance, Microsoft, Snap, Tencent, Twitter) and companies selling advertising or developing hardware and VR/AR products. Thermo Fisher Scientific faces aggressive and able competition in all market segments, competing against a broad range of manufacturers, third-party distributors, and service providers, with markets characterized by changing technologies and customer demands.",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "TMO",
+      "Thermo Fisher Scientific",
+      "competition",
+      "industries",
+      "competitors"
+    ]
+  },
+  {
+    "question": "Compare how Meta Platforms Inc. and Thermo Fisher Scientific report on and address diversity and inclusion within their organizations.",
+    "category": "comparative",
+    "reference_answer": "Meta Platforms Inc. details diversity, equity and inclusion as core to its work, publishes annual diversity statistics, sets specific targets (e.g., 50% underrepresented groups by 2024 and increasing U.S. leadership representation of people of color by 30% from 2020 to 2025), and describes initiatives such as Meta Resource Groups, community summits, and trainings. Thermo Fisher Scientific emphasizes a culture rooted in their 4i Values and inclusion, conducts an annual Employee Involvement Survey measuring inclusion, and describes global and regional talent programs, but does not provide specific diversity statistics or targets in the provided excerpt.",
+    "keywords": [
+      "META",
+      "Meta Platforms Inc.",
+      "TMO",
+      "Thermo Fisher Scientific",
+      "diversity",
+      "inclusion",
+      "workforce statistics"
+    ]
+  },
+  {
+    "question": "What percentage of Coca-Cola Company's worldwide unit case volume in 2021 was represented by its five largest independent bottling partners?",
+    "category": "numerical",
+    "reference_answer": "According to the 2022 10-K filing for The Coca-Cola Company, the five largest independent bottling partners combined represented 41 percent of the Company's total worldwide unit case volume in 2021 (see 'Distribution System' section).",
+    "keywords": [
+      "KO",
+      "Coca-Cola Company",
+      "five largest bottling partners",
+      "2021",
+      "unit case volume",
+      "41 percent"
+    ]
+  },
+  {
+    "question": "How many unit cases did the Coca-Cola system sell worldwide in 2021, and how did this compare to 2020?",
+    "category": "numerical",
+    "reference_answer": "The Coca-Cola system sold 31.3 billion unit cases of products worldwide in 2021, compared to 29.0 billion unit cases in 2020 (see 'Distribution System' section of the 2022 10-K).",
+    "keywords": [
+      "KO",
+      "Coca-Cola Company",
+      "unit case volume",
+      "2021",
+      "2020",
+      "31.3 billion",
+      "29.0 billion"
+    ]
+  },
+  {
+    "question": "What percentage of Coca-Cola Company\u2019s 2021 worldwide unit case volume was attributable to sparkling soft drinks?",
+    "category": "numerical",
+    "reference_answer": "Sparkling soft drinks represented 69 percent of The Coca-Cola Company's worldwide unit case volume in 2021, as stated in the 'Distribution System' section.",
+    "keywords": [
+      "KO",
+      "Coca-Cola Company",
+      "sparkling soft drinks",
+      "2021",
+      "unit case volume",
+      "69 percent"
+    ]
+  },
+  {
+    "question": "What was the percentage of Trademark Coca-Cola products in Coca-Cola Company\u2019s total worldwide unit case volume in 2021?",
+    "category": "numerical",
+    "reference_answer": "Trademark Coca-Cola accounted for 47 percent of The Coca-Cola Company's worldwide unit case volume in 2021 (see 'Distribution System').",
+    "keywords": [
+      "KO",
+      "Coca-Cola Company",
+      "Trademark Coca-Cola",
+      "2021",
+      "unit case volume",
+      "47 percent"
+    ]
+  },
+  {
+    "question": "How many servings of beverages bearing Coca-Cola Company trademarks are consumed worldwide each day, according to the 2022 10-K filing?",
+    "category": "numerical",
+    "reference_answer": "According to the 2022 10-K filing, beverages bearing Coca-Cola Company trademarks account for 2.1 billion of the approximately 63 billion servings of all beverages consumed worldwide every day ('General' section).",
+    "keywords": [
+      "KO",
+      "Coca-Cola Company",
+      "servings per day",
+      "2.1 billion",
+      "trademarks"
+    ]
+  },
+  {
+    "question": "What percentage of Ecolab Inc.'s workforce was employed in North America as of December 31, 2023?",
+    "category": "numerical",
+    "reference_answer": "As of December 31, 2023, approximately 42% of Ecolab Inc.'s employees were employed in North America (see 'Human Capital' in the 2024 10-K).",
+    "keywords": [
+      "ECL",
+      "Ecolab Inc.",
+      "North America",
+      "employee breakdown",
+      "2023"
+    ]
+  },
+  {
+    "question": "What was the approximate number of Ecolab Inc.'s research, development, and engineering employees as of December 31, 2023?",
+    "category": "numerical",
+    "reference_answer": "Ecolab Inc. employed approximately 1,100 research, development, and engineering employees as of December 31, 2023 (see 'Human Capital' in the 2024 10-K).",
+    "keywords": [
+      "ECL",
+      "Ecolab Inc.",
+      "research development engineering employees",
+      "2023"
+    ]
+  },
+  {
+    "question": "What proportion of Ecolab Inc.'s consolidated net sales in 2023 was attributable to warewashing products?",
+    "category": "numerical",
+    "reference_answer": "Warewashing products accounted for approximately 12% of Ecolab Inc.'s consolidated net sales in 2023 (see 'Customers and Classes of Products' in the 2024 10-K).",
+    "keywords": [
+      "ECL",
+      "Ecolab Inc.",
+      "warewashing products",
+      "net sales",
+      "2023"
+    ]
+  },
+  {
+    "question": "How many countries does Ecolab Inc. sell to, according to its business overview in the 2024 10-K?",
+    "category": "numerical",
+    "reference_answer": "Ecolab Inc. sells to customers in more than 170 countries, as stated in the 'Business' section of the 2024 10-K.",
+    "keywords": [
+      "ECL",
+      "Ecolab Inc.",
+      "170 countries",
+      "global sales",
+      "2024"
+    ]
+  },
+  {
+    "question": "Based on Ecolab Inc.'s reported annual sales and its number of employees, what was its approximate sales per employee as stated in the 2024 10-K?",
+    "category": "numerical",
+    "reference_answer": "Ecolab Inc. reported annual sales of $15 billion and employs more than 48,000 associates, which equates to approximately $312,500 in sales per employee ($15,000,000,000 / 48,000 employees). This is based on the 'Business' section of the 2024 10-K.",
+    "keywords": [
+      "ECL",
+      "Ecolab Inc.",
+      "annual sales",
+      "employees",
+      "sales per employee",
+      "2024"
+    ]
+  },
+  {
+    "question": "What was Honeywell International's total sales revenue for the fiscal year 2024?",
+    "category": "numerical",
+    "reference_answer": "Honeywell International reported total sales of $38.5 billion for the fiscal year 2024, as stated in the Executive Summary and the 'Year in Review' sections of the 2025 10-K filing.",
+    "keywords": [
+      "HON",
+      "Honeywell International",
+      "2024 sales",
+      "total revenue",
+      "$38.5 billion"
+    ]
+  },
+  {
+    "question": "How much operating cash flow did Honeywell International generate in 2024?",
+    "category": "numerical",
+    "reference_answer": "In 2024, Honeywell International generated operating cash flows of $6.1 billion, as reported in the Executive Summary and the 'Year in Review' section of the 2025 10-K filing.",
+    "keywords": [
+      "HON",
+      "Honeywell International",
+      "operating cash flow",
+      "2024",
+      "$6.1 billion"
+    ]
+  },
+  {
+    "question": "What percentage of Honeywell International's total 2024 sales were represented by non-U.S. manufactured products and services?",
+    "category": "numerical",
+    "reference_answer": "Non-U.S. manufactured products and services represented 43% of Honeywell International's total sales in 2024, as stated under 'INTERNATIONAL OPERATIONS'.",
+    "keywords": [
+      "HON",
+      "Honeywell International",
+      "2024",
+      "non-U.S. manufactured",
+      "43%"
+    ]
+  },
+  {
+    "question": "What was the dollar increase in backlog for Honeywell International from December 31, 2023 to December 31, 2024?",
+    "category": "numerical",
+    "reference_answer": "Honeywell International's backlog increased from $31,777 million as of December 31, 2023 to $35,277 million as of December 31, 2024, an increase of $3,500 million, as stated in the 'BACKLOG' section.",
+    "keywords": [
+      "HON",
+      "Honeywell International",
+      "backlog",
+      "2023",
+      "2024",
+      "increase",
+      "$3,500 million"
+    ]
+  },
+  {
+    "question": "How much revenue did Honeywell International's Aerospace Technologies segment generate in 2024, and what was the revenue reported by its Defense and Space business unit?",
+    "category": "numerical",
+    "reference_answer": "In 2024, Honeywell International's Aerospace Technologies segment generated $15,458 million in revenue, of which the Defense and Space business unit contributed $6,091 million, as per the 'AEROSPACE TECHNOLOGIES' section of the filing.",
+    "keywords": [
+      "HON",
+      "Honeywell International",
+      "Aerospace Technologies",
+      "2024 revenue",
+      "Defense and Space",
+      "$15,458 million",
+      "$6,091 million"
+    ]
+  },
+  {
+    "question": "Which industries does Air Products and Chemicals identify as having concentrations of customers in 2021, and what risk does this pose to the company?",
+    "category": "relationship",
+    "reference_answer": "According to the 2021 10-K filing for Air Products and Chemicals, the company identifies the refining, chemicals, and electronics industries as having concentrations of customers. While no single customer accounts for more than 10% of consolidated revenues, the company notes that within each of these industries it has several large-volume customers with long-term contracts. A negative trend affecting one of these industries, or the loss of one of these major customers, although not material to consolidated revenue, could have an adverse impact on Air Products and Chemicals' financial results (see 'Customers' section in Item 1. Business).",
+    "keywords": [
+      "APD",
+      "Air Products and Chemicals",
+      "2021",
+      "customer concentration",
+      "refining",
+      "chemicals",
+      "electronics"
+    ]
+  },
+  {
+    "question": "How does Air Products and Chemicals obtain and store helium for its Industrial Gases business in 2021?",
+    "category": "relationship",
+    "reference_answer": "In 2021, Air Products and Chemicals obtains helium from a number of global sources, including crude helium for purification from the U.S. Bureau of Land Management's helium reserve. They maintain an inventory of helium stored in their fleet of ISO containers as well as at the U.S. Bureau of Land Management's underground storage facility in Amarillo, Texas. (See 'Industrial Gases Business' section, Item 1. Business)",
+    "keywords": [
+      "APD",
+      "Air Products and Chemicals",
+      "2021",
+      "helium",
+      "U.S. Bureau of Land Management"
+    ]
+  },
+  {
+    "question": "Which joint ventures does Air Products and Chemicals report as most significant in 2021, and in which countries are they located?",
+    "category": "relationship",
+    "reference_answer": "Air Products and Chemicals reports, in its 2021 10-K, that the largest of its equity method joint ventures operate in China, India, Italy, Mexico, Saudi Arabia, South Africa, and Thailand. These are listed under the 'Industrial Gases Business' section of Item 1. Business.",
+    "keywords": [
+      "APD",
+      "Air Products and Chemicals",
+      "2021",
+      "joint ventures",
+      "China",
+      "India",
+      "Italy",
+      "Mexico",
+      "Saudi Arabia",
+      "South Africa",
+      "Thailand"
+    ]
+  },
+  {
+    "question": "What raw materials and suppliers are critical to Air Products and Chemicals\u2019 production of atmospheric and process gases, and how does the company mitigate supply risks in 2021?",
+    "category": "relationship",
+    "reference_answer": "According to the 2021 10-K, the largest cost component in the production of atmospheric gases for Air Products and Chemicals is electricity. For process gases, steam methane reformers utilize natural gas as the primary raw material, and gasifiers use liquid and solid hydrocarbons. The company mitigates electricity, natural gas, and hydrocarbon price fluctuations contractually through pricing formulas, surcharges, and cost pass-through and tolling arrangements. During fiscal year 2021, the company did not encounter significant difficulties in obtaining adequate supplies of power and natural gas. (See 'Industrial Gases Business' section, Item 1. Business)",
+    "keywords": [
+      "APD",
+      "Air Products and Chemicals",
+      "2021",
+      "electricity",
+      "natural gas",
+      "raw materials",
+      "supply risk"
+    ]
+  },
+  {
+    "question": "Describe the supply modes Air Products and Chemicals utilizes to deliver industrial gases to its customers in 2021. What determines the chosen distribution method?",
+    "category": "relationship",
+    "reference_answer": "In 2021, Air Products and Chemicals delivers industrial gases through three main supply modes: Liquid Bulk, Packaged Gases, and On-Site Gases. Liquid Bulk involves delivering product by tanker or tube trailer for storage and vaporization at the customer's site, typically under three- to five-year contracts. Packaged Gases are delivered in cylinders or dewars, mainly for smaller quantities and sold in Europe, Asia, and Latin America; in the U.S. this is principally for helium. On-Site Gases are supplied via large facilities constructed on or near the customer's facility, or via pipeline systems, mainly for customers with large, constant demand (such as in energy production, refining, chemical, and metals industries), with contracts typically ranging from 10 to 20 years. The choice of distribution method depends on factors such as customer volume requirements and location. (See 'Industrial Gases Business' section, Item 1. Business)",
+    "keywords": [
+      "APD",
+      "Air Products and Chemicals",
+      "2021",
+      "supply modes",
+      "Liquid Bulk",
+      "Packaged Gases",
+      "On-Site Gases"
+    ]
+  },
+  {
+    "question": "Which companies did Pfizer Inc. (PFE) enter into significant collaborations or acquisitions with in 2021, according to their 2022 10-K filing?",
+    "category": "relationship",
+    "reference_answer": "According to Pfizer Inc.'s 2022 10-K filing (Section 1_Business), in 2021 Pfizer entered into key collaborations and acquisitions with the following companies: Arvinas (July 2021, global collaboration to develop and commercialize ARV-471); Biohaven (November 2021, collaboration and license agreement to commercialize rimegepant and zavegepant outside the U.S.); Trillium (November 2021, acquisition of the clinical stage immuno-oncology company); Beam (December 2021, research collaboration on in vivo base editing programs); and Arena (December 2021, definitive agreement to acquire the company, with acquisition targeted to close in the first half of 2022).",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "collaboration",
+      "acquisition",
+      "Arvinas",
+      "Biohaven",
+      "Trillium",
+      "Beam",
+      "Arena"
+    ]
+  },
+  {
+    "question": "Describe the key profit-sharing and commercialization relationships Pfizer Inc. (PFE) has for its major products as disclosed in its 2022 10-K.",
+    "category": "relationship",
+    "reference_answer": "In Section 1_Business of its 2022 10-K, Pfizer Inc. (PFE) discloses several major collaboration and profit-sharing relationships: (1) With BioNTech, Comirnaty/BNT162b2 (COVID-19 vaccine) is jointly developed and commercialized, with profits and development costs shared equally (except China, Hong Kong, Macau, Taiwan). (2) With BMS, Eliquis development costs are split 50-60% by Pfizer, profits and losses shared equally (except in some countries); in smaller markets, Pfizer has commercialization rights and pays BMS a percentage of sales. (3) With Astellas, Xtandi profits and losses are shared equally in the U.S.; Pfizer receives royalties for international sales. (4) With Merck KGaA, Bavencio is co-developed and commercialized with costs and profits split equally. (5) With Myovant, Orgovyx and Myfembree profits and allowable expenses are shared equally in U.S. and Canada, with Myovant bearing Pfizer\u2019s share of expenses up to $50 million in 2022.",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "profit sharing",
+      "BioNTech",
+      "BMS",
+      "Astellas",
+      "Merck KGaA",
+      "Myovant"
+    ]
+  },
+  {
+    "question": "What was the impact of government and supranational organization contracts on Pfizer (PFE)\u2019s vaccine and COVID-19 treatment revenues according to the 2022 10-K?",
+    "category": "relationship",
+    "reference_answer": "According to Pfizer Inc.'s 2022 10-K (Section: Sales and Marketing), contracts with government and supranational organizations (especially for Comirnaty/BNT162b2 and Paxlovid COVID-19 treatments) were on a committed basis and represented a significant amount of revenues in 2021. Pfizer sold vaccines directly to the US federal government, CDC, and internationally mainly to government and non-government institutions, with government contracts sometimes being renegotiable or terminable at the discretion of the contracting entity.",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "government contracts",
+      "Comirnaty",
+      "Paxlovid",
+      "COVID-19 treatment",
+      "revenues"
+    ]
+  },
+  {
+    "question": "How does Pfizer Inc. (PFE) describe its dependency and risks related to major product patents in its 2022 10-K?",
+    "category": "relationship",
+    "reference_answer": "In its 2022 10-K (Section: Patents and Other Intellectual Property Rights), Pfizer Inc. (PFE) cites ongoing dependency on patent rights for major products such as Ibrance, Xeljanz, Eliquis, Xtandi, and others. It highlights the variation in patent expiration dates by region\u2014for example, U.S. basic product patent for Ibrance expires in 2027, Eliquis in 2026, and Xeljanz in 2025. Pfizer notes that loss of patent exclusivity can significantly affect revenues, and that lack of effective IP protection in some countries is a primary consideration limiting operations there. For a discussion of concentration risk, they reference the Item 1A. Risk Factors\u2014Concentration section.",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "product patents",
+      "dependency",
+      "Risk Factors",
+      "patent expiration"
+    ]
+  },
+  {
+    "question": "What is the nature of Pfizer Inc. (PFE)'s commercial relationship with BioNTech for Comirnaty/BNT162b2 as described in the 2022 10-K?",
+    "category": "relationship",
+    "reference_answer": "The 2022 10-K (Section: Collaboration and Co-Promotion) states that Pfizer Inc. (PFE) and BioNTech jointly develop and commercialize Comirnaty/BNT162b2 (COVID-19 vaccine). They equally share development costs and gross profits from worldwide commercialization (excluding China, Hong Kong, Macau, and Taiwan). Both companies jointly market and distribute the vaccine in their respective territories, subject to regulatory approval in each market.",
+    "keywords": [
+      "PFE",
+      "Pfizer Inc.",
+      "BioNTech",
+      "Comirnaty",
+      "BNT162b2",
+      "collaboration",
+      "profit sharing"
+    ]
+  },
+  {
+    "question": "How does Charles Schwab Corporation (SCHW) describe its overall business strategy and core competitive positioning in its 2026 10-K?",
+    "category": "holistic",
+    "reference_answer": "In its 2026 10-K, Charles Schwab Corporation (SCHW) states that its strategy, called 'Through Clients\u2019 Eyes,' focuses on viewing every decision from the client\u2019s perspective, aiming to provide superior service, disrupt industry practices for clients' benefit, and offer a broad range of investment products emphasizing transparency, value, and trust. Schwab leverages its scale to keep costs low and maximize affordability while ensuring responsiveness to client needs. Major competitive advantages cited include the company's scale and operational efficiency, integrated service offerings (banking, wealth, and asset management), established brand and reputation, service culture, and willingness to disrupt traditional practices. Management believes that building trusted relationships will drive asset and revenue growth, with disciplined capital and expense management generating long-term shareholder value (2026 10-K, Item 1. Business, 'Business Strategy and Competitive Environment').",
+    "keywords": [
+      "SCHW",
+      "Charles Schwab",
+      "Through Clients\u2019 Eyes",
+      "business strategy",
+      "competitive advantages"
+    ]
+  },
+  {
+    "question": "What strategic rationale does Charles Schwab Corporation (SCHW) provide for its acquisition of Forge Global Holdings, Inc., announced in 2025?",
+    "category": "holistic",
+    "reference_answer": "Charles Schwab Corporation (SCHW) announced on November 6, 2025, a definitive agreement to acquire Forge Global Holdings, Inc., a leading private market platform and trading marketplace. The company states that incorporating Forge\u2019s private company investment capabilities is expected to enhance Schwab\u2019s ability to meet the evolving needs of investors across its growing client base. The acquisition is positioned as a move to bolster Schwab's product offerings and support client demand for alternative and private investments (2026 10-K, Item 1. Business, 'Business Acquisition \u2013 Forge Global Holdings, Inc.').",
+    "keywords": [
+      "SCHW",
+      "Charles Schwab",
+      "Forge Global Holdings",
+      "acquisition",
+      "private market platform"
+    ]
+  },
+  {
+    "question": "How does Charles Schwab (SCHW) leverage its business segments\u2014Investor Services and Advisor Services\u2014to serve its broad client base, and what are its major sources of revenue according to the 2026 10-K?",
+    "category": "holistic",
+    "reference_answer": "According to the 2026 10-K, Charles Schwab (SCHW) leverages two main business segments: Investor Services and Advisor Services. Investor Services provides brokerage, investment advisory, and banking/trust services to individuals and businesses, with service models ranging from self-directed to high-touch relationship management for affluent and ultra-affluent clients (including Schwab Private Client Services and Schwab Private Wealth Services). Advisor Services provides custodial, banking, and trading support to independent RIAs, enabling them to serve end clients efficiently through robust technology and business consulting. Major sources of net revenues for Schwab are: net interest revenue (from investment of client cash balances and loans), asset management and administration fees (from proprietary/third-party mutual funds and advisory solutions), trading revenue (commissions, order flow, and principal transactions), and bank deposit account fees (from servicing agreements such as the 2023 IDA agreement with TD Bank) (2026 10-K, Item 1. Business, 'Products and Services', 'Sources of Net Revenues').",
+    "keywords": [
+      "SCHW",
+      "Charles Schwab",
+      "Investor Services",
+      "Advisor Services",
+      "revenue sources"
+    ]
+  },
+  {
+    "question": "What competitive advantages does Charles Schwab (SCHW) highlight as central to its market leadership in the 2026 10-K?",
+    "category": "holistic",
+    "reference_answer": "In its 2026 10-K, Charles Schwab (SCHW) highlights several core competitive advantages that it believes are central to its market leadership: 1) its large scale and size, allowing operating cost efficiencies and the ability to invest in evolving client services; 2) operating efficiency and shared infrastructure enabling competitive pricing; 3) an integrated operating structure (banking, wealth, and asset management for broker-dealer clients) supporting diversified revenue and deeper client relationships; 4) strong brand and corporate reputation in a trust-dependent industry; 5) a service culture focused on client trust and loyalty; and 6) a willingness to disrupt both industry and its own business practices in favor of client benefit, fostering ongoing innovation (2026 10-K, Item 1. Business, 'Business Strategy and Competitive Environment').",
+    "keywords": [
+      "SCHW",
+      "Charles Schwab",
+      "competitive advantages",
+      "market leadership",
+      "operating efficiency"
+    ]
+  },
+  {
+    "question": "How does Charles Schwab (SCHW) describe the opportunity for market growth relative to its current client asset base as of year-end 2025?",
+    "category": "holistic",
+    "reference_answer": "Charles Schwab (SCHW) describes significant market growth opportunity in its 2026 10-K by noting that, as of December 31, 2025, it had $11.90 trillion in client assets, while management estimates total investable wealth in the U.S. exceeds $80 trillion. This leaves what Schwab characterizes as substantial headroom for expanding client assets, supporting its strategy of focusing on trusted relationships to drive growth in assets, revenue, and long-term shareholder value (2026 10-K, Item 1. Business, 'Business Strategy and Competitive Environment').",
+    "keywords": [
+      "SCHW",
+      "Charles Schwab",
+      "market growth",
+      "client assets",
+      "investable wealth"
+    ]
+  },
+  {
+    "question": "How does Altria Group (MO) describe the purpose of its 2025 10-K/A amendment?",
+    "category": "holistic",
+    "reference_answer": "In its 2025 10-K/A, Altria Group (MO) states that this amendment is being filed to amend Item 15 of the original Form 10-K in order to include the consolidated financial statements of its foreign equity investee, Anheuser-Busch InBev SA/NV (ABI), as of December 31, 2024 and 2023 and for the years ended December 31, 2024, 2023, and 2022 in accordance with Rule 3-09 of SEC Regulation S-X. This is noted in the EXPLANATORY NOTE section.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "10-K/A amendment",
+      "Anheuser-Busch InBev",
+      "Rule 3-09"
+    ]
+  },
+  {
+    "question": "What key financial documentation from Anheuser-Busch InBev is incorporated into Altria Group\u2019s 2025 10-K/A, and why is this significant for investors?",
+    "category": "holistic",
+    "reference_answer": "Altria Group (MO) incorporates the consolidated financial statements of Anheuser-Busch InBev SA/NV (ABI) for the years ended December 31, 2024, 2023, and 2022 into its 2025 10-K/A as required by Rule 3-09 of Regulation S-X. This is significant for investors because ABI is a foreign equity investee of Altria, and including these audited financials (prepared by PwC Bedrijfsrevisoren BV / Reviseurs d\u2019Entreprises SRL and incorporated by reference in Item 15(a)) provides transparency about investment holdings that may be material to Altria\u2019s consolidated results.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "Anheuser-Busch InBev",
+      "financial statements",
+      "equity investee"
+    ]
+  },
+  {
+    "question": "In Altria Group\u2019s 2025 10-K/A, how does the company address its compliance with internal control and financial reporting standards?",
+    "category": "holistic",
+    "reference_answer": "Altria Group (MO) affirms in its 2025 10-K/A that it has filed a report on and attestation to management\u2019s assessment of the effectiveness of its internal control over financial reporting under Section 404(b) of the Sarbanes-Oxley Act by the registered public accounting firm that prepared or issued its audit report. This is confirmed by a checkmark in the relevant summary disclosure section of the filing.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "internal control",
+      "Sarbanes-Oxley",
+      "financial reporting"
+    ]
+  },
+  {
+    "question": "What is the scope of changes introduced by the 2025 10-K/A amendment relative to the original Form 10-K filing for Altria Group?",
+    "category": "holistic",
+    "reference_answer": "According to the EXPLANATORY NOTE in the 2025 10-K/A, the amendment only modifies Item 15 to include the ABI financial statements. It does not change or update (i) Altria's consolidated financial position, results of operations or cash flows, or (ii) any disclosures or exhibits in the original 10-K, nor does it reflect events after the original filing date. Readers are advised to reference the original Form 10-K and subsequent SEC filings for other information.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "10-K/A amendment",
+      "original Form 10-K",
+      "ABI financial statements"
+    ]
+  },
+  {
+    "question": "How does Altria Group (MO) comply with SEC reporting requirements for equity method investments in its 2025 10-K/A?",
+    "category": "holistic",
+    "reference_answer": "Altria Group (MO) complies with SEC Regulation S-X Rule 3-09 by including, in Item 15(a) of its 2025 10-K/A, the audited consolidated financial statements of Anheuser-Busch InBev SA/NV, its foreign equity investee, as of December 31, 2024 and 2023 and for the years ended 2024, 2023, and 2022. These financials are incorporated by reference from ABI\u2019s Annual Report on Form 20-F, ensuring regulatory requirements for significant equity method investments are met.",
+    "keywords": [
+      "MO",
+      "Altria Group",
+      "SEC Regulation S-X",
+      "Rule 3-09",
+      "equity investment",
+      "Anheuser-Busch InBev"
+    ]
+  }
+]

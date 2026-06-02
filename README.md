@@ -1,0 +1,114 @@
+# Alex — AI Portfolio Intelligence
+
+Alex is a full-stack financial portfolio assistant I built on AWS. Users sign in, track accounts and holdings, and run a coordinated multi-agent analysis that produces written reports, charts, retirement projections, and risk assessment.
+
+## Screenshots
+
+<p align="center">
+  <img src="assets/screenshots/advisory-team.png" alt="Multi-agent advisory team" width="720" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/portfolio-analysis.png" alt="Portfolio analysis report" width="720" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/charts.png" alt="Portfolio allocation charts" width="720" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/retirement-analysis.png" alt="Retirement projections" width="720" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/risk-analysis.png" alt="Risk assessment" width="720" />
+</p>
+
+> **Note:** AWS infrastructure is not required to browse the code. A full live demo needs Aurora, SQS, and the agent Lambdas (see `terraform/`). Screenshots above are from a completed analysis run.
+
+## What it does
+
+- **Portfolio dashboard** — accounts, positions, allocation views
+- **Multi-agent analysis** — one click triggers an orchestrated pipeline of specialized AI agents
+- **Structured outputs** — markdown report, chart data, retirement model, risk review (stored per job)
+- **Market research pipeline** — optional web research agent that ingests findings into a vector knowledge base for richer reports
+- **Instrument tagging** — automatic classification of tickers (asset class, region, sector) when data is missing
+
+## Agent team
+
+| Agent | Role |
+|-------|------|
+| **Financial Planner** | Orchestrates the analysis workflow via SQS |
+| **Instrument Tagger** | Classifies holdings with structured LLM output |
+| **Portfolio Analyst** | Narrative report; pulls market context from vector search when available |
+| **Chart Specialist** | JSON chart payloads for the UI |
+| **Risk Manager** | Concentration and diversification assessment |
+| **Retirement Planner** | Monte Carlo style readiness projections |
+| **Researcher** | Browses financial sites and stores research in S3 Vectors (separate from the main analysis flow) |
+
+## Architecture
+
+```text
+Browser (Next.js + Clerk)
+        │
+        ▼
+FastAPI API ──► Aurora Serverless (users, accounts, positions, jobs)
+        │
+        ▼
+SQS ──► Planner Lambda ──► Tagger / Reporter / Charter / Retirement / Risk
+
+Researcher ──► Ingest API ──► SageMaker embeddings ──► S3 Vectors
+Reporter (optional) ──► semantic search over S3 Vectors
+```
+
+**AWS services used:** Lambda, SQS, Aurora Serverless v2 (Data API), API Gateway, S3 / S3 Vectors, SageMaker Serverless, Bedrock, Secrets Manager, CloudFront (production frontend).
+
+**Stack:** Python 3.12 (`uv`), OpenAI Agents SDK, LiteLLM + Bedrock, Next.js, TypeScript, Terraform.
+
+## Project structure
+
+```text
+portfolio-advisor/
+├── backend/          # Agents, ingest, API, sec_rag, database library
+├── frontend/         # Next.js app
+├── terraform/        # IaC per layer (see terraform/README.md)
+├── scripts/          # Local dev and deploy helpers
+└── assets/           # README screenshots
+```
+
+## Local development
+
+**Prerequisites:** Node.js, Python 3.12, [uv](https://docs.astral.sh/uv/), AWS CLI configured, Clerk app, deployed AWS resources.
+
+1. Copy environment template and fill in your values:
+
+   ```bash
+   cp .env.example .env
+   cp frontend/.env.local.example frontend/.env.local   # if present
+   ```
+
+2. Run database migrations (after Aurora is up):
+
+   ```bash
+   cd backend/database
+   uv run run_migrations.py
+   ```
+
+3. Start the stack:
+
+   ```bash
+   # API + optional local orchestration
+   cd scripts && uv run run_local.py
+
+   # Frontend (separate terminal)
+   cd frontend && npm install && npm run dev
+   ```
+
+   - App: http://localhost:3000  
+   - API: http://localhost:8000  
+
+Do not commit `.env`, `terraform.tfvars`, or `*.tfstate` — they contain secrets and account-specific IDs.
+
+## Deployment
+
+Infrastructure is split into independent Terraform directories under `terraform/` (SageMaker → ingestion → database → agents → frontend). Deploy in that order; each folder has its own state. See `terraform/README.md`.
+
+## Disclaimer
+
+Alex is for educational and demonstration purposes. It is not financial, tax, or investment advice.

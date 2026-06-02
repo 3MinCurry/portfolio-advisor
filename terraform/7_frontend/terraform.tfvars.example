@@ -1,0 +1,6 @@
+# Frontend and API — copy to terraform.tfvars
+
+aws_region = "us-east-1"
+
+clerk_jwks_url = "https://your-instance.clerk.accounts.dev/.well-known/jwks.json"
+clerk_issuer   = "https://your-instance.clerk.accounts.dev"
