@@ -6,7 +6,7 @@ Independent Terraform stacks for Alex, deployed in order:
 |-----------|-----------|
 | `2_sagemaker/` | SageMaker serverless embedding endpoint |
 | `3_ingestion/` | S3 Vectors, ingest Lambda, API Gateway |
-| `4_researcher/` | Researcher agent (App Runner) — optional |
+| `4_researcher/` | Researcher agent (Lambda + Function URL) — optional |
 | `5_database/` | Aurora Serverless v2 + Data API |
 | `6_agents/` | Agent Lambdas + SQS |
 | `7_frontend/` | API Lambda, API Gateway, S3, CloudFront |
@@ -14,7 +14,7 @@ Independent Terraform stacks for Alex, deployed in order:
 ## Deploy
 
 ```bash
-cd terraform/2_sagemaker   # then 3, 4, 5, 6, 7
+cd terraform/2_sagemaker   # then 3, 4 (optional), 5, 6, 7
 terraform init
 terraform plan
 terraform apply

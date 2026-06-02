@@ -32,10 +32,12 @@ Alex is a full-stack financial portfolio assistant I built on AWS. Users sign in
 
 ## Agent team
 
+The advisory-team page shows the five analysis agents below; **Instrument Tagger** runs automatically in the pipeline when holdings need classification, and **Researcher** is an optional side path.
+
 | Agent | Role |
 |-------|------|
-| **Financial Planner** | Orchestrates the analysis workflow via SQS |
-| **Instrument Tagger** | Classifies holdings with structured LLM output |
+| **Financial Planner** | Triggered by SQS; orchestrates the workflow by invoking the other agent Lambdas |
+| **Instrument Tagger** | Classifies holdings with structured LLM output (pipeline step, not shown on the advisory-team UI) |
 | **Portfolio Analyst (Reporter)** | Writes the narrative portfolio report; enriches it with SEC 10-K context (`backend/sec_rag`) and web research from S3 Vectors |
 | **Chart Specialist (Charter)** | JSON chart payloads for the UI |
 | **Risk Manager** | Concentration and diversification assessment |
@@ -48,7 +50,10 @@ Alex is a full-stack financial portfolio assistant I built on AWS. Users sign in
 Browser (Next.js + Clerk)
         │
         ▼
-FastAPI API ──► Aurora Serverless (users, accounts, positions, jobs)
+API (FastAPI locally; same app as alex-api Lambda + API Gateway in production)
+        │
+        ▼
+Aurora Serverless (users, accounts, positions, jobs)
         │
         ▼
 SQS ──► Planner Lambda ──► Tagger / Reporter / Charter / Retirement / Risk
@@ -76,11 +81,19 @@ portfolio-advisor/
 
 **Prerequisites:** Node.js, Python 3.12, [uv](https://docs.astral.sh/uv/), AWS CLI configured, Clerk app, deployed AWS resources.
 
-1. Copy environment template and fill in your values:
+1. Copy the root environment template and create frontend Clerk config:
 
    ```bash
    cp .env.example .env
-   cp frontend/.env.local.example frontend/.env.local   # if present
+   ```
+
+   Create `frontend/.env.local` with your [Clerk](https://clerk.com) keys (from the Clerk dashboard):
+
+   ```env
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+   CLERK_SECRET_KEY=sk_test_...
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
    ```
 
 2. Run database migrations (after Aurora is up):
@@ -90,15 +103,13 @@ portfolio-advisor/
    uv run run_migrations.py
    ```
 
-3. Start the stack:
+3. Start both servers (recommended):
 
    ```bash
-   # API + optional local orchestration
    cd scripts && uv run run_local.py
-
-   # Frontend (separate terminal)
-   cd frontend && npm install && npm run dev
    ```
+
+   This starts the FastAPI backend and Next.js frontend together. To run them separately instead: `cd backend/api && uv run main.py` and `cd frontend && npm install && npm run dev`.
 
    - App: http://localhost:3000  
    - API: http://localhost:8000  
@@ -107,7 +118,7 @@ Do not commit `.env`, `terraform.tfvars`, or `*.tfstate` — they contain secret
 
 ## Deployment
 
-Infrastructure is split into independent Terraform directories under `terraform/` (SageMaker → ingestion → database → agents → frontend). Deploy in that order; each folder has its own state. See `terraform/README.md`.
+Infrastructure is split into independent Terraform directories under `terraform/` (SageMaker → ingestion → optional researcher → database → agents → frontend). Deploy in that order; each folder has its own state. See `terraform/README.md`.
 
 ## Disclaimer
 
