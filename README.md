@@ -7,9 +7,7 @@ Alex is a full-stack financial portfolio assistant on AWS. Users sign in, track 
 [Watch the full walkthrough on YouTube →](https://www.youtube.com/watch?v=F1Lxus40cdI)
 
 <p align="center">
-  <video src="assets/demo-agents.mp4" width="720" autoplay loop muted playsinline>
-    <a href="assets/demo-agents.mp4">Watch agents run in parallel</a>
-  </video>
+  <img src="assets/demo-agents.gif" width="720" alt="Multi-agent advisory team running in parallel" />
 </p>
 
 ## Screenshots
