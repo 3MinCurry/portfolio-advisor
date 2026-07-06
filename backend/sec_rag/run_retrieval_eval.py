@@ -20,7 +20,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent
-load_dotenv(ROOT.parents[2] / ".env", override=True)
+load_dotenv(ROOT.parents[1] / ".env", override=True)
 sys.path.insert(0, str(ROOT))
 
 from paths import chroma_db_path  # noqa: E402
@@ -36,7 +36,7 @@ def main() -> None:
         print("Error: Chroma DB not found. Run: uv run ingest_chroma_subset.py", file=sys.stderr)
         sys.exit(1)
     if not os.getenv("OPENAI_API_KEY"):
-        print("Error: set OPENAI_API_KEY in alex/.env", file=sys.stderr)
+        print("Error: set OPENAI_API_KEY in the project root .env", file=sys.stderr)
         sys.exit(1)
 
     parser = argparse.ArgumentParser()

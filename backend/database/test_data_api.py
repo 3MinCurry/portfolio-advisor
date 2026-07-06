@@ -55,7 +55,7 @@ def get_cluster_details(region):
     
     # Fallback to auto-discovery if not in .env
     print("  AURORA_CLUSTER_ARN or AURORA_SECRET_ARN not found in .env file")
-    print(" After running 'terraform apply', add these to your .env file:")
+    print(" After running 'terraform apply', add these to the project root .env:")
     print("   AURORA_CLUSTER_ARN=<your-cluster-arn>")
     print("   AURORA_SECRET_ARN=<your-secret-arn>")
     print("\nAttempting to auto-discover Aurora resources...")
@@ -99,7 +99,7 @@ def get_cluster_details(region):
         aurora_secrets.sort(key=lambda x: x.get('CreatedDate', ''), reverse=True)
         secret_arn = aurora_secrets[0]['ARN']
         
-        print(f"\n Found Aurora resources. Add these to your .env file:")
+        print(f"\n Found Aurora resources. Add these to the project root .env:")
         print(f"AURORA_CLUSTER_ARN={cluster_arn}")
         print(f"AURORA_SECRET_ARN={secret_arn}")
         
@@ -229,7 +229,7 @@ def main():
     
     if not cluster_arn or not secret_arn:
         print("\n Could not find Aurora cluster or credentials")
-        print("\n Make sure you have:")
+        print("\n Prerequisites:")
         print("   1. Created the Aurora cluster with 'terraform apply'")
         print("   2. Enabled Data API on the cluster")
         print("   3. Created credentials in Secrets Manager")

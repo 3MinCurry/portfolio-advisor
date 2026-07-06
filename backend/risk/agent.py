@@ -7,52 +7,42 @@ import logging
 from typing import Dict, Any, List, Tuple
 
 from agents.extensions.models.litellm_model import LitellmModel
+from src.portfolio import (
+    calculate_portfolio_value,
+    position_market_value,
+    position_values_by_symbol,
+)
 
 logger = logging.getLogger()
 
 
-def _position_value(position: Dict[str, Any]) -> float:
-    quantity = float(position.get("quantity", 0))
-    instrument = position.get("instrument", {}) or {}
-    price = instrument.get("current_price")
-    if price is None or price == "":
-        return quantity * 1.0
-    return quantity * float(price)
-
-
 def calculate_portfolio_metrics(portfolio_data: Dict[str, Any]) -> Dict[str, Any]:
     """Compute quantitative risk metrics from portfolio holdings."""
-    position_values: Dict[str, float] = {}
+    position_values = position_values_by_symbol(portfolio_data)
     sector_values: Dict[str, float] = {}
     region_values: Dict[str, float] = {}
     asset_values: Dict[str, float] = {}
-    total_value = 0.0
+    total_value = calculate_portfolio_value(portfolio_data)
 
     for account in portfolio_data.get("accounts", []):
         cash = float(account.get("cash_balance") or 0)
-        total_value += cash
-        asset_values["cash"] = asset_values.get("cash", 0) + cash
+        if cash > 0:
+            asset_values["cash"] = asset_values.get("cash", 0) + cash
 
         for position in account.get("positions", []):
-            value = _position_value(position)
+            value = position_market_value(position)
             if value <= 0:
                 continue
 
-            symbol = position.get("symbol", "UNKNOWN")
-            position_values[symbol] = position_values.get(symbol, 0) + value
-            total_value += value
-
-            instrument = position.get("instrument", {}) or {}
-            weight = value  # accumulate raw; normalize below
-
+            instrument = position.get("instrument") or {}
             for sector, pct in (instrument.get("allocation_sectors") or {}).items():
-                sector_values[sector] = sector_values.get(sector, 0) + weight * (float(pct) / 100.0)
+                sector_values[sector] = sector_values.get(sector, 0) + value * (float(pct) / 100.0)
 
             for region, pct in (instrument.get("allocation_regions") or {}).items():
-                region_values[region] = region_values.get(region, 0) + weight * (float(pct) / 100.0)
+                region_values[region] = region_values.get(region, 0) + value * (float(pct) / 100.0)
 
             for asset, pct in (instrument.get("allocation_asset_class") or {}).items():
-                asset_values[asset] = asset_values.get(asset, 0) + weight * (float(pct) / 100.0)
+                asset_values[asset] = asset_values.get(asset, 0) + value * (float(pct) / 100.0)
 
     if total_value <= 0:
         return {
@@ -92,7 +82,6 @@ def calculate_portfolio_metrics(portfolio_data: Dict[str, Any]) -> Dict[str, Any
     cash_pct = round(100 * asset_values.get("cash", 0) / total_value, 1)
     hhi = herfindahl(position_values)
 
-    # Simple rules-based risk level
     risk_level = "low"
     if top_pct >= 35 or hhi >= 0.25 or (equity_pct >= 90 and len(position_values) < 5):
         risk_level = "high"
@@ -101,9 +90,7 @@ def calculate_portfolio_metrics(portfolio_data: Dict[str, Any]) -> Dict[str, Any
     elif top_pct >= 18 or hhi >= 0.12:
         risk_level = "moderate"
 
-    sorted_holdings = sorted(
-        position_values.items(), key=lambda x: x[1], reverse=True
-    )[:5]
+    sorted_holdings = sorted(position_values.items(), key=lambda x: x[1], reverse=True)[:5]
 
     return {
         "total_value": round(total_value, 2),
@@ -136,8 +123,7 @@ def create_agent(job_id: str, portfolio_data: Dict[str, Any], db=None):
     metrics = calculate_portfolio_metrics(portfolio_data)
 
     holdings_lines = "\n".join(
-        f"  - {h['symbol']}: {h['pct']}%"
-        for h in metrics.get("top_holdings", [])
+        f"  - {h['symbol']}: {h['pct']}%" for h in metrics.get("top_holdings", [])
     )
 
     task = f"""

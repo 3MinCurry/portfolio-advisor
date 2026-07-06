@@ -109,7 +109,9 @@ def chunk_all_filings(limit_files: int | None = None) -> list[dict]:
 
     allowed = allowed_tickers()
     files = sorted(
-        fp for fp in KNOWLEDGE_BASE.rglob("*.md") if fp.parent.name in allowed
+        fp
+        for fp in KNOWLEDGE_BASE.rglob("*_10-K.md")
+        if fp.parent.name in allowed
     )
     if limit_files:
         files = files[:limit_files]

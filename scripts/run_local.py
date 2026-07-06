@@ -96,7 +96,7 @@ def check_env_files():
         for file in missing:
             print(f"  - {file}")
         print("\nPlease create these files with the required configuration.")
-        print("Copy .env.example to .env and frontend/.env.local with your values.")
+        print("Copy .env.example to .env and frontend/.env.local with the required values.")
         sys.exit(1)
 
     print(" Environment files found")
@@ -112,12 +112,15 @@ def start_backend():
         print("  Installing backend dependencies...")
         subprocess.run(["uv", "sync"], cwd=backend_dir, check=True)
 
-    # Start the backend
+    # Start the backend (log to file so 500 errors are visible)
+    log_path = backend_dir / "api.log"
+    log_file = open(log_path, "w", encoding="utf-8")
+    print(f"  Backend logs: {log_path}")
     proc = subprocess.Popen(
         ["uv", "run", "main.py"],
         cwd=backend_dir,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
+        stdout=log_file,
+        stderr=subprocess.STDOUT,
     )
     processes.append(proc)
 

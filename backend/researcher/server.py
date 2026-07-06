@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO)
 logging.getLogger("LiteLLM").setLevel(logging.CRITICAL)
 logger = logging.getLogger(__name__)
 
-# Import from our modules
+# Local module imports
 from context import get_agent_instructions, get_research_query
 from mcp_servers import create_playwright_mcp_server
 from tools import ingest_financial_document

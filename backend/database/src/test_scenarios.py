@@ -7,8 +7,10 @@ All ETF symbols must exist in seed_data.py unless listed in EXTRA_INSTRUMENTS.
 
 from __future__ import annotations
 
+import importlib.util
 from dataclasses import dataclass
 from decimal import Decimal
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 from .schemas import InstrumentCreate
@@ -57,6 +59,30 @@ EXTRA_INSTRUMENTS: Dict[str, Dict[str, Any]] = {
         "allocation_sectors": {"technology": 100},
         "allocation_asset_class": {"equity": 100},
     },
+    "GE": {
+        "name": "GE Aerospace",
+        "type": "stock",
+        "current_price": 178.20,
+        "allocation_regions": {"north_america": 100},
+        "allocation_sectors": {"industrials": 100},
+        "allocation_asset_class": {"equity": 100},
+    },
+    "HD": {
+        "name": "The Home Depot Inc.",
+        "type": "stock",
+        "current_price": 385.50,
+        "allocation_regions": {"north_america": 100},
+        "allocation_sectors": {"consumer_discretionary": 100},
+        "allocation_asset_class": {"equity": 100},
+    },
+    "SHW": {
+        "name": "Sherwin-Williams Company",
+        "type": "stock",
+        "current_price": 365.40,
+        "allocation_regions": {"north_america": 100},
+        "allocation_sectors": {"materials": 100},
+        "allocation_asset_class": {"equity": 100},
+    },
     "TSLA": {
         "name": "Tesla Inc.",
         "type": "stock",
@@ -102,7 +128,7 @@ SCENARIOS: Dict[str, TestScenario] = {
                 "name": "Taxable Brokerage",
                 "purpose": "Flexible investing outside retirement accounts",
                 "cash": 3_000.0,
-                "positions": [("IWM", 30), ("VNQ", 25), ("VIG", 35)],
+                "positions": [("GOOGL", 22), ("GE", 28), ("HD", 10), ("SHW", 8), ("VIG", 25)],
             },
         ),
     ),
@@ -165,7 +191,7 @@ SCENARIOS: Dict[str, TestScenario] = {
                 "name": "Roth IRA",
                 "purpose": "Supplemental retirement assets",
                 "cash": 6_000.0,
-                "positions": [("SPY", 50), ("VNQ", 40), ("GLD", 20)],
+                "positions": [("SPY", 50), ("VNQ", 40), ("GLD", 20), ("HD", 8), ("GE", 15)],
             },
         ),
     ),
@@ -202,12 +228,14 @@ SCENARIOS: Dict[str, TestScenario] = {
                 "purpose": "Individual technology holdings",
                 "cash": 8_000.0,
                 "positions": [
-                    ("AAPL", 40),
-                    ("MSFT", 25),
-                    ("NVDA", 15),
+                    ("AAPL", 35),
+                    ("MSFT", 22),
+                    ("NVDA", 12),
                     ("GOOGL", 20),
-                    ("AMZN", 12),
-                    ("TSLA", 10),
+                    ("AMZN", 10),
+                    ("GE", 25),
+                    ("HD", 8),
+                    ("SHW", 6),
                 ],
             },
         ),
@@ -235,7 +263,7 @@ SCENARIOS: Dict[str, TestScenario] = {
                 "name": "Taxable Brokerage",
                 "purpose": "General investment account",
                 "cash": 2_500.0,
-                "positions": [],
+                "positions": [("GOOGL", 30), ("GE", 40), ("HD", 15), ("SHW", 12)],
             },
         ),
     ),
@@ -267,6 +295,57 @@ def _symbols_in_scenario(scenario: TestScenario) -> set[str]:
         for symbol, _qty in account["positions"]:
             symbols.add(symbol)
     return symbols
+
+
+def _load_seed_instrument_prices() -> Dict[str, Decimal]:
+    """Load ETF prices from seed_data without crashing if its CLI guard runs."""
+    seed_path = Path(__file__).resolve().parent.parent / "seed_data.py"
+    if not seed_path.exists():
+        return {}
+    try:
+        spec = importlib.util.spec_from_file_location("alex_seed_data_prices", seed_path)
+        if not spec or not spec.loader:
+            return {}
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return {
+            instrument["symbol"]: Decimal(str(instrument["current_price"]))
+            for instrument in getattr(module, "INSTRUMENTS", [])
+            if instrument.get("current_price") is not None
+        }
+    except SystemExit:
+        return {}
+    except Exception:
+        return {}
+
+
+def _canonical_instrument_prices() -> Dict[str, Decimal]:
+    """Reference prices for demo scenarios (seed_data ETFs + EXTRA_INSTRUMENTS stocks)."""
+    prices: Dict[str, Decimal] = {
+        symbol: Decimal(str(info["current_price"]))
+        for symbol, info in EXTRA_INSTRUMENTS.items()
+    }
+    prices.update(_load_seed_instrument_prices())
+    return prices
+
+
+def sync_instrument_prices(db, symbols: set[str], logger=None) -> None:
+    """Restore canonical prices for scenario symbols (tagger may have overwritten them)."""
+    log = logger.info if logger else print
+    canonical = _canonical_instrument_prices()
+    for symbol in sorted(symbols):
+        price = canonical.get(symbol)
+        if price is None:
+            continue
+        if not db.instruments.find_by_symbol(symbol):
+            continue
+        db.client.update(
+            "instruments",
+            {"current_price": price},
+            "symbol = :symbol",
+            {"symbol": symbol},
+        )
+        log(f"Refreshed price for {symbol}: {price}")
 
 
 def ensure_extra_instruments(db, logger=None) -> None:
@@ -301,14 +380,17 @@ def apply_scenario(db, clerk_user_id: str, scenario_id: str = DEFAULT_SCENARIO) 
     """
     scenario = get_scenario(scenario_id)
     needed = _symbols_in_scenario(scenario)
-    if needed & set(EXTRA_INSTRUMENTS):
+    if needed & set(EXTRA_INSTRUMENTS.keys()):
         ensure_extra_instruments(db)
+    sync_instrument_prices(db, needed)
 
     db.users.db.update(
         "users",
         {
             "years_until_retirement": scenario.years_until_retirement,
             "target_retirement_income": scenario.target_retirement_income,
+            "current_age": max(18, 65 - scenario.years_until_retirement),
+            "annual_contribution": 10_000,
         },
         "clerk_user_id = :clerk_user_id",
         {"clerk_user_id": clerk_user_id},

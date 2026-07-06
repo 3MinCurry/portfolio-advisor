@@ -1,10 +1,8 @@
 from polygon import RESTClient
 from dotenv import load_dotenv
 import os
-from datetime import datetime
-import random
+from datetime import datetime, timezone
 from functools import lru_cache
-from datetime import timezone
 
 load_dotenv(override=True)
 
@@ -56,10 +54,15 @@ def get_share_price_polygon(symbol) -> float:
         return get_share_price_polygon_eod(symbol)
 
 
-def get_share_price(symbol) -> float:
+def get_share_price(symbol: str, fallback: float | None = None) -> float:
+    """Fetch share price from Polygon; keep fallback when lookup fails."""
     if polygon_api_key:
         try:
-            return get_share_price_polygon(symbol)
+            price = get_share_price_polygon(symbol)
+            if price and price > 0:
+                return price
         except Exception as e:
-            print(f"Was not able to use the polygon API due to {e}; using a random number")
-    return float(random.randint(1, 100))
+            print(f"Was not able to use the polygon API for {symbol} due to {e}")
+    if fallback is not None and fallback > 0:
+        return float(fallback)
+    return 0.0

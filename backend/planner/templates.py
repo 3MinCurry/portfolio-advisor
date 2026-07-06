@@ -10,11 +10,11 @@ Tools (use ONLY these four):
 - invoke_retirement: Calculates retirement projections
 - invoke_risk: Assesses portfolio risk and concentration
 
-Steps:
-1. Call invoke_reporter if positions > 0
-2. Call invoke_charter if positions >= 2
-3. Call invoke_risk if positions > 0
-4. Call invoke_retirement if retirement goals exist
+Steps (legacy LLM orchestrator — production uses deterministic pipeline in pipeline.py):
+1. Call invoke_charter if positions >= 2
+2. Call invoke_risk if positions > 0
+3. Call invoke_retirement if retirement goals exist
+4. Call invoke_reporter LAST (after risk and retirement complete)
 5. Respond with "Done"
 
 Use ONLY the four tools above.

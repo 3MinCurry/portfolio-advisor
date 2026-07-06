@@ -6,8 +6,8 @@ parses them into structured TenK objects, extracts the standard 10-K Items
 (Business, Risk Factors, MD&A, Financial Statements, etc.), and writes one
 Markdown file per filing to knowledge-base/<sector>/<TICKER>/<YEAR>.md.
 
-The file layout mirrors the old knowledge-base/<doc_type>/<entity>.md pattern
-so the rest of the pipeline (ingest.py, answer.py) sees the same shape of data.
+The file layout matches `knowledge-base/<sector>/<TICKER>/<YEAR>.md` so ingest.py
+and answer.py can consume a consistent directory structure.
 
 Usage:
     python -m implementation.fetch_filings
@@ -59,7 +59,7 @@ def setup_edgar_identity() -> None:
     identity = os.getenv("EDGAR_IDENTITY")
     if not identity:
         raise RuntimeError(
-            "EDGAR_IDENTITY is not set. Add to your .env:\n"
+            "EDGAR_IDENTITY is not set. Add to the project root .env:\n"
             '  EDGAR_IDENTITY="Your Name your.email@example.com"\n'
             "The SEC requires this for all programmatic access to EDGAR."
         )

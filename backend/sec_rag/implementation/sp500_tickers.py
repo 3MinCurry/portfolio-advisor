@@ -2,7 +2,7 @@
 Curated list of ~100 S&P 500 tickers spread across GICS sectors.
 Picked to give a good mix for the RAG demo without being huge.
 
-If you want to expand later, the official S&P 500 list lives at:
+The official S&P 500 list lives at:
 https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
 or you can pull it programmatically with pandas.read_html(...).
 """
@@ -135,6 +135,29 @@ def get_tickers() -> list[tuple[str, str, str]]:
 
 def allowed_tickers() -> set[str]:
     return {ticker for ticker, _, _ in SP500_SAMPLE}
+
+
+def allowed_sectors() -> set[str]:
+    return {sector for _, _, sector in SP500_SAMPLE}
+
+
+def ticker_alias_rules() -> str:
+    """Build ENTITY_PROMPT ticker mapping lines from the S&P 500 sample list."""
+    lines: list[str] = []
+    for ticker, name, _ in SP500_SAMPLE:
+        short = (
+            name.replace(" Inc.", "")
+            .replace(" Corporation", "")
+            .replace(" Company", "")
+            .replace(" & Co.", "")
+            .replace(" Group", "")
+            .strip()
+        )
+        if short != name:
+            lines.append(f'- "{name}", "{short}", or "{ticker}" -> {ticker}')
+        else:
+            lines.append(f'- "{name}" or "{ticker}" -> {ticker}')
+    return "\n".join(lines)
 
 
 def is_sp500_ticker(ticker: str) -> bool:

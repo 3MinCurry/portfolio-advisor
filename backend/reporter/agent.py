@@ -10,6 +10,7 @@ from dataclasses import dataclass
 
 from agents import function_tool, RunContextWrapper
 from agents.extensions.models.litellm_model import LitellmModel
+from src.portfolio import calculate_portfolio_value, collect_symbols_by_weight, position_market_value
 
 logger = logging.getLogger()
 
@@ -21,21 +22,22 @@ class ReporterContext:
     job_id: str
     portfolio_data: Dict[str, Any]
     user_data: Dict[str, Any]
-    db: Optional[Any] = None  # Database connection (optional for testing)
+    db: Optional[Any] = None
+    market_context: Optional[str] = None
 
 
 def calculate_portfolio_metrics(portfolio_data: Dict[str, Any]) -> Dict[str, Any]:
     """Calculate basic portfolio metrics."""
     metrics = {
-        "total_value": 0,
-        "cash_balance": 0,
+        "total_value": 0.0,
+        "cash_balance": 0.0,
         "num_accounts": len(portfolio_data.get("accounts", [])),
         "num_positions": 0,
         "unique_symbols": set(),
     }
 
     for account in portfolio_data.get("accounts", []):
-        metrics["cash_balance"] += float(account.get("cash_balance", 0))
+        metrics["cash_balance"] += float(account.get("cash_balance", 0) or 0)
         positions = account.get("positions", [])
         metrics["num_positions"] += len(positions)
 
@@ -44,11 +46,7 @@ def calculate_portfolio_metrics(portfolio_data: Dict[str, Any]) -> Dict[str, Any
             if symbol:
                 metrics["unique_symbols"].add(symbol)
 
-            # Calculate value if we have price
-            instrument = position.get("instrument", {})
-            if instrument.get("current_price"):
-                value = float(position.get("quantity", 0)) * float(instrument["current_price"])
-                metrics["total_value"] += value
+            metrics["total_value"] += position_market_value(position)
 
     metrics["total_value"] += metrics["cash_balance"]
     metrics["unique_symbols"] = len(metrics["unique_symbols"])
@@ -102,13 +100,61 @@ def format_portfolio_for_analysis(portfolio_data: Dict[str, Any], user_data: Dic
             "User Profile:",
             f"- Years to retirement: {user_data.get('years_until_retirement', 'Not specified')}",
             f"- Target retirement income: ${user_data.get('target_retirement_income', 0):,.0f}/year",
+            f"- Current age: {user_data.get('current_age', 'Not specified')}",
+            f"- Assumed annual contribution: ${float(user_data.get('annual_contribution', 10000)):,.0f}/year",
         ]
     )
 
     return "\n".join(lines)
 
 
-# update_report tool removed - report is now saved directly in lambda_handler
+def _collect_portfolio_symbols(portfolio_data: Dict[str, Any], limit: int = 8) -> List[str]:
+    """Largest holdings by market value (for SEC RAG)."""
+    return collect_symbols_by_weight(portfolio_data, limit=limit)
+
+
+def format_agent_findings(agent_findings: Optional[Dict[str, Any]]) -> str:
+    """Format structured retirement/risk metrics for the Reporter prompt."""
+    if not agent_findings:
+        return ""
+
+    lines = ["## Authoritative agent findings (must align your narrative with these)", ""]
+
+    retirement = agent_findings.get("retirement") or {}
+    monte_carlo = retirement.get("monte_carlo") or {}
+    if monte_carlo:
+        success_rate = monte_carlo.get("success_rate")
+        lines.append("### Retirement Specialist (Monte Carlo simulation)")
+        lines.append(f"- Success rate: {success_rate}% (probability of sustaining income for 30 years)")
+        lines.append(
+            f"- Expected portfolio value at retirement: "
+            f"${monte_carlo.get('expected_value_at_retirement', 0):,.0f}"
+        )
+        if retirement.get("annual_contribution") is not None:
+            lines.append(
+                f"- Assumed annual contribution: ${float(retirement['annual_contribution']):,.0f}"
+            )
+        lines.append(f"- Median final value: ${monte_carlo.get('median_final_value', 0):,.0f}")
+        lines.append(f"- Average years portfolio lasts: {monte_carlo.get('average_years_lasted', 'N/A')}")
+        if success_rate is not None and float(success_rate) < 50:
+            lines.append(
+                "- Interpretation: BELOW 50% success — describe retirement readiness as weak or at risk."
+            )
+        lines.append("")
+
+    risk = agent_findings.get("risk") or {}
+    if risk:
+        lines.append("### Risk Manager")
+        lines.append(f"- Overall risk level: {risk.get('risk_level', 'unknown')}")
+        if risk.get("top_holding_symbol"):
+            lines.append(
+                f"- Largest holding: {risk['top_holding_symbol']} ({risk.get('top_holding_pct', 0)}%)"
+            )
+        lines.append(f"- Equity allocation: {risk.get('equity_pct', 0)}%")
+        lines.append(f"- Position concentration (HHI): {risk.get('herfindahl_positions', 0)}")
+        lines.append("")
+
+    return "\n".join(lines)
 
 
 def _fetch_sec_insights(symbols: List[str]) -> Optional[str]:
@@ -200,6 +246,9 @@ async def get_market_insights(
         Relevant market context and insights
     """
     try:
+        if wrapper.context.market_context:
+            return wrapper.context.market_context
+
         parts: List[str] = []
 
         sec = _fetch_sec_insights(symbols)
@@ -219,7 +268,13 @@ async def get_market_insights(
         return "Market insights unavailable - proceeding with standard analysis."
 
 
-def create_agent(job_id: str, portfolio_data: Dict[str, Any], user_data: Dict[str, Any], db=None):
+def create_agent(
+    job_id: str,
+    portfolio_data: Dict[str, Any],
+    user_data: Dict[str, Any],
+    db=None,
+    agent_findings: Optional[Dict[str, Any]] = None,
+):
     """Create the reporter agent with tools and context."""
 
     # Get model configuration
@@ -232,35 +287,62 @@ def create_agent(job_id: str, portfolio_data: Dict[str, Any], user_data: Dict[st
 
     model = LitellmModel(model=f"bedrock/{model_id}")
 
-    # Create context
+    # Pre-fetch SEC / vector context (reporter does not rely on LLM tool calls)
+    symbols = _collect_portfolio_symbols(portfolio_data)
+    market_context_block = ""
+    market_context_text = ""
+    if symbols:
+        sec = _fetch_sec_insights(symbols)
+        general = _fetch_general_market_insights(symbols)
+        parts = [p for p in (sec, general) if p]
+        if parts:
+            market_context_text = "\n\n".join(parts)
+            market_context_block = "\n## SEC & Market Context (pre-retrieved)\n\n" + market_context_text + "\n"
+            logger.info(
+                "Reporter: pre-fetched market context (%d chars) for %s",
+                len(market_context_block),
+                symbols[:5],
+            )
+        else:
+            logger.warning("Reporter: no SEC/market context for symbols %s", symbols[:5])
+
     context = ReporterContext(
-        job_id=job_id, portfolio_data=portfolio_data, user_data=user_data, db=db
+        job_id=job_id,
+        portfolio_data=portfolio_data,
+        user_data=user_data,
+        db=db,
+        market_context=market_context_text or None,
     )
 
-    # Tools - only get_market_insights now, report saved in lambda_handler
-    tools = [get_market_insights]
-
-    # Format portfolio for analysis
+    # No tools — context is pre-fetched above
+    tools: List = []
     portfolio_summary = format_portfolio_for_analysis(portfolio_data, user_data)
+    findings_block = format_agent_findings(agent_findings)
 
     # Create task
     task = f"""Analyze this investment portfolio and write a comprehensive report.
 
 {portfolio_summary}
+"""
+    if findings_block:
+        task += f"\n{findings_block}\n"
+    if market_context_block:
+        task += f"\n{market_context_block}\n"
 
+    task += """
 Your task:
-1. First, get market insights for the top holdings using get_market_insights()
+1. Use the pre-retrieved SEC & market context above when discussing individual holdings
 2. Analyze the portfolio's current state, strengths, and weaknesses
 3. Generate a detailed, professional analysis report in markdown format
 
 The report should include:
 - Executive Summary
-- Portfolio Composition Analysis
-- Risk Assessment
+- Portfolio Composition Analysis (cite specific 10-K themes for named tickers when context is provided)
+- Risk Assessment (use Risk Manager findings above if provided)
 - Diversification Analysis
-- Retirement Readiness (based on user goals)
+- Retirement Readiness (use Monte Carlo success rate above if provided — cite the exact %)
 - Recommendations
-- Market Context (from insights)
+- Market Context (reference SEC filing excerpts and ticker-specific themes from the pre-retrieved block)
 
 Provide your complete analysis as the final output in clear markdown format.
 Make the report informative yet accessible to a retail investor."""

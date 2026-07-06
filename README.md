@@ -1,26 +1,39 @@
 # Alex — AI Portfolio Intelligence
 
-Alex is a full-stack financial portfolio assistant I built on AWS. Users sign in, track accounts and holdings, and run a coordinated multi-agent analysis that produces written reports, charts, retirement projections, and risk assessment.
+Alex is a full-stack financial portfolio assistant on AWS. Users sign in, track accounts and holdings, and run a coordinated multi-agent analysis that produces written reports, charts, retirement projections, and risk assessment.
+
+## Demo
+
+[Watch the full walkthrough on YouTube →](https://www.youtube.com/watch?v=F1Lxus40cdI)
+
+<p align="center">
+  <video src="assets/demo-agents.mp4" width="720" autoplay loop muted playsinline>
+    <a href="assets/demo-agents.mp4">Watch agents run in parallel</a>
+  </video>
+</p>
 
 ## Screenshots
 
 <p align="center">
+  <img src="assets/screenshots/dashboard.png" alt="Portfolio dashboard and preferences" width="720" />
+</p>
+<p align="center">
   <img src="assets/screenshots/advisory-team.png" alt="Multi-agent advisory team" width="720" />
 </p>
 <p align="center">
-  <img src="assets/screenshots/portfolio-analysis.png" alt="Portfolio analysis report" width="720" />
+  <img src="assets/screenshots/demo-accounts.png" alt="Demo portfolio loader on Accounts page" width="720" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/portfolio-analysis.png" alt="Portfolio analysis report with SEC 10-K context" width="720" />
 </p>
 <p align="center">
   <img src="assets/screenshots/charts.png" alt="Portfolio allocation charts" width="720" />
 </p>
 <p align="center">
-  <img src="assets/screenshots/retirement-analysis.png" alt="Retirement projections" width="720" />
-</p>
-<p align="center">
   <img src="assets/screenshots/risk-analysis.png" alt="Risk assessment" width="720" />
 </p>
 
-> **Note:** AWS infrastructure is not required to browse the code. A full live demo needs Aurora, SQS, and the agent Lambdas (see `terraform/`). Screenshots above are from a completed analysis run.
+Screenshots use the **Balanced retirement** demo portfolio (~$101k, three accounts, 11 holdings). Browsing the code does not require AWS; a live analysis run needs Aurora, SQS, and the agent Lambdas (see `terraform/`).
 
 ## What it does
 
@@ -74,10 +87,10 @@ portfolio-advisor/
 ├── frontend/         # Next.js app
 ├── terraform/        # IaC per layer (see terraform/README.md)
 ├── scripts/          # Local dev and deploy helpers
-└── assets/           # README screenshots
+└── assets/           # README screenshots and demo video
 ```
 
-## Local development
+## Getting started
 
 **Prerequisites:** Node.js, Python 3.12, [uv](https://docs.astral.sh/uv/), AWS CLI configured, Clerk app, deployed AWS resources.
 
@@ -87,7 +100,7 @@ portfolio-advisor/
    cp .env.example .env
    ```
 
-   Create `frontend/.env.local` with your [Clerk](https://clerk.com) keys (from the Clerk dashboard):
+   Create `frontend/.env.local` with Clerk keys from the [Clerk dashboard](https://clerk.com):
 
    ```env
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
@@ -103,16 +116,22 @@ portfolio-advisor/
    uv run run_migrations.py
    ```
 
-3. Start both servers (recommended):
+3. Start both servers:
 
    ```bash
    cd scripts && uv run run_local.py
    ```
 
-   This starts the FastAPI backend and Next.js frontend together. To run them separately instead: `cd backend/api && uv run main.py` and `cd frontend && npm install && npm run dev`.
+   This starts the FastAPI backend and Next.js frontend together. To run them separately: `cd backend/api && uv run main.py` and `cd frontend && npm install && npm run dev`.
 
    - App: http://localhost:3000  
    - API: http://localhost:8000  
+
+4. Try the demo flow:
+
+   - Sign in → **Accounts** → choose **Balanced retirement** → **Load demo**
+   - Open **Advisors** → **Start new analysis**
+   - View results under **Analysis** (Overview, Charts, Risk, Retirement)
 
 Do not commit `.env`, `terraform.tfvars`, or `*.tfstate` — they contain secrets and account-specific IDs.
 

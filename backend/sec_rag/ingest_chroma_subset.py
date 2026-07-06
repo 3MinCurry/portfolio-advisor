@@ -56,7 +56,7 @@ def main() -> None:
     import os
 
     if not os.getenv("OPENAI_API_KEY"):
-        print("Error: set OPENAI_API_KEY in alex/.env", file=sys.stderr)
+        print("Error: set OPENAI_API_KEY in the project root .env", file=sys.stderr)
         sys.exit(1)
 
     parser = argparse.ArgumentParser()

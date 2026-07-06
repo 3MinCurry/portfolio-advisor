@@ -246,7 +246,7 @@ resource "aws_apigatewayv2_api" "main" {
   }
 }
 
-# No JWT authorizer needed - authentication is handled in Lambda like in the saas reference
+# No JWT authorizer — Clerk JWT validation runs in the API Lambda
 
 resource "aws_apigatewayv2_stage" "default" {
   api_id      = aws_apigatewayv2_api.main.id

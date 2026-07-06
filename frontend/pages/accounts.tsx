@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
 import ConfirmModal from "../components/ConfirmModal";
+import AddPositionModal from "../components/AddPositionModal";
 import { API_URL } from "../lib/config";
 import { SkeletonTable } from "../components/Skeleton";
 import Head from "next/head";
@@ -53,6 +54,7 @@ export default function Accounts() {
   const [newAccount, setNewAccount] = useState({ name: '', purpose: '', cash_balance: '' });
   const [savingAccount, setSavingAccount] = useState(false);
   const [deletingAccountId, setDeletingAccountId] = useState<string | null>(null);
+  const [addPositionAccount, setAddPositionAccount] = useState<Account | null>(null);
   const [confirmModal, setConfirmModal] = useState<{
     isOpen: boolean;
     type: 'reset' | 'delete' | 'switch_demo';
@@ -500,6 +502,15 @@ export default function Accounts() {
                           <td className="py-4 px-4">
                             <div className="flex justify-center gap-2">
                               <button
+                                onClick={() => setAddPositionAccount(account)}
+                                className="text-gold hover:bg-gold-dim p-2 rounded-lg transition-colors"
+                                title="Add holding"
+                              >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                </svg>
+                              </button>
+                              <button
                                 onClick={() => router.push(`/accounts/${account.id}`)}
                                 className="text-gold hover:bg-gold-dim p-2 rounded-lg transition-colors"
                                 title="View/Edit"
@@ -604,6 +615,18 @@ export default function Accounts() {
             </div>
           </div>
         )}
+
+        <AddPositionModal
+          isOpen={addPositionAccount !== null}
+          accountId={addPositionAccount?.id || ''}
+          accountName={addPositionAccount?.account_name || ''}
+          getToken={getToken}
+          onClose={() => setAddPositionAccount(null)}
+          onSuccess={async () => {
+            setMessage({ type: 'success', text: 'Holding added successfully' });
+            await loadAccounts();
+          }}
+        />
 
         {/* Confirmation Modal */}
         <ConfirmModal

@@ -8,6 +8,18 @@ from prices import get_share_price
 
 logger = logging.getLogger()
 
+# Reject Polygon/tag noise that would slash portfolio value (e.g. SPY at $36).
+_MAX_PRICE_SWING_RATIO = 0.5
+
+
+def _price_update_is_sane(existing: float, new_price: float) -> bool:
+    if new_price <= 0:
+        return False
+    if existing <= 0:
+        return True
+    ratio = new_price / existing
+    return _MAX_PRICE_SWING_RATIO <= ratio <= (1 / _MAX_PRICE_SWING_RATIO)
+
 
 def update_instrument_prices(job_id: str, db) -> None:
     """
@@ -69,13 +81,20 @@ def update_prices_for_symbols(symbols: Set[str], db) -> None:
     symbols_list = list(symbols)
     price_map = {}
 
-    # Fetch price for each symbol using polygon.io
+    # Fetch price for each symbol using polygon.io (keep DB price if lookup fails)
     for symbol in symbols_list:
         try:
-            price = get_share_price(symbol)
-            if price > 0:
+            instrument = db.instruments.find_by_symbol(symbol)
+            existing = float(instrument.get("current_price") or 0) if instrument else 0.0
+            price = get_share_price(symbol, fallback=existing)
+            if price > 0 and _price_update_is_sane(existing, price):
                 price_map[symbol] = price
                 logger.info(f"Market: Retrieved {symbol} price: ${price:.2f}")
+            elif price > 0:
+                logger.warning(
+                    f"Market: Ignoring suspicious {symbol} price ${price:.2f} "
+                    f"(existing ${existing:.2f})"
+                )
             else:
                 logger.warning(f"Market: No price available for {symbol}")
         except Exception as e:
@@ -83,7 +102,7 @@ def update_prices_for_symbols(symbols: Set[str], db) -> None:
 
     logger.info(f"Market: Retrieved prices for {len(price_map)}/{len(symbols_list)} symbols")
 
-    # Update database with fetched prices
+    # Update database with fetched prices (global instruments table — shared across users)
     for symbol, price in price_map.items():
         try:
             instrument = db.instruments.find_by_symbol(symbol)
@@ -124,14 +143,12 @@ def get_all_portfolio_symbols(db) -> Set[str]:
     symbols = set()
 
     try:
-        # Get all positions (this might need pagination for large datasets)
-        all_positions = db.db.execute(
-            "SELECT DISTINCT symbol FROM positions"
-        )
+        rows = db.query_raw("SELECT DISTINCT symbol FROM positions WHERE symbol IS NOT NULL")
 
-        for position in all_positions:
-            if position['symbol']:
-                symbols.add(position['symbol'])
+        for row in rows:
+            symbol = row.get("symbol")
+            if symbol:
+                symbols.add(symbol)
 
     except Exception as e:
         logger.error(f"Market: Error fetching all symbols: {e}")

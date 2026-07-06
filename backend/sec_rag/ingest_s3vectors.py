@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT))
 load_dotenv(ROOT.parents[2] / ".env", override=True)
 
 from chunking import chunk_all_filings
+from paths import text_for_embedding
 
 INDEX_NAME = "financial-research"
 
@@ -76,7 +77,7 @@ def main() -> None:
             "timestamp": datetime.now(UTC).isoformat(),
             "source_type": "sec_10k",
         }
-        embedding = get_embedding(sm, endpoint, text)
+        embedding = get_embedding(sm, endpoint, text_for_embedding(text))
         s3v.put_vectors(
             vectorBucketName=bucket,
             indexName=INDEX_NAME,

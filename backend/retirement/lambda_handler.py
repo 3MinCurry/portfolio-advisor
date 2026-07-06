@@ -30,6 +30,7 @@ from src import Database
 from templates import RETIREMENT_INSTRUCTIONS
 from agent import create_agent
 from observability import observe
+from src.user_preferences import load_user_preferences
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -38,26 +39,15 @@ def get_user_preferences(job_id: str) -> Dict[str, Any]:
     """Load user preferences from database."""
     try:
         db = Database()
-        
-        # Get the job to find the user
         job = db.jobs.find_by_id(job_id)
-        if job and job.get('clerk_user_id'):
-            # Get user preferences
-            user = db.users.find_by_clerk_id(job['clerk_user_id'])
+        if job and job.get("clerk_user_id"):
+            user = db.users.find_by_clerk_id(job["clerk_user_id"])
             if user:
-                return {
-                    'years_until_retirement': user.get('years_until_retirement', 30),
-                    'target_retirement_income': float(user.get('target_retirement_income', 80000)),
-                    'current_age': 40  # Default for now
-                }
+                return load_user_preferences(user)
     except Exception as e:
         logger.warning(f"Could not load user data: {e}. Using defaults.")
-    
-    return {
-        'years_until_retirement': 30,
-        'target_retirement_income': 80000.0,
-        'current_age': 40
-    }
+
+    return load_user_preferences(None)
 
 @retry(
     retry=retry_if_exception_type((RateLimitError, AgentTemporaryError, TimeoutError, asyncio.TimeoutError)),
@@ -75,7 +65,7 @@ async def run_retirement_agent(job_id: str, portfolio_data: Dict[str, Any]) -> D
     db = Database()
     
     # Create agent (simplified - no tools or context)
-    model, tools, task = create_agent(job_id, portfolio_data, user_preferences, db)
+    model, tools, task, metrics = create_agent(job_id, portfolio_data, user_preferences, db)
     
     # Run agent (simplified - no context)
     with trace("Retirement Agent"):
@@ -105,6 +95,7 @@ async def run_retirement_agent(job_id: str, portfolio_data: Dict[str, Any]) -> D
         # Save the analysis to database
         retirement_payload = {
             'analysis': result.final_output,
+            'metrics': metrics,
             'generated_at': datetime.utcnow().isoformat(),
             'agent': 'retirement'
         }

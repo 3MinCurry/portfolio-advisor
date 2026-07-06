@@ -1,23 +1,19 @@
 """
 Ingest 10-K filings into Chroma.
 
-Key differences from the original Insurellm ingest.py:
+Design notes:
 
-1. NO LLM-based chunking. 10-Ks have predictable structure (Item 1, 1A, 7, ...).
-   We split deterministically by section header, then recursively split long
-   sections (Risk Factors and MD&A are routinely 30k+ words). Saves money and
-   gives more reliable chunk boundaries.
+1. No LLM-based chunking. 10-Ks have predictable structure (Item 1, 1A, 7, ...).
+   Sections are split deterministically by header, then recursively split when long
+   (Risk Factors and MD&A are routinely 30k+ words).
 
 2. Rich metadata on every chunk:
        ticker, company, sector, filing_year, item (e.g. "1A_RiskFactors"),
        source (path), chunk_index
-   This metadata powers metadata-filtered retrieval in answer.py — e.g. when
-   the user asks "Apple's 2024 risk factors", we filter ticker=AAPL & year=2024
-   *before* doing semantic search.
+   Metadata powers filtered retrieval in answer.py — e.g. a question about
+   "Apple's 2024 risk factors" can filter ticker=AAPL and year=2024 before search.
 
-3. Embeddings still go through OpenAI text-embedding-3-large.
-   Batched to stay under the 8191-token-per-input and 2048-inputs-per-request
-   limits.
+3. Embeddings use OpenAI text-embedding-3-large, batched under API limits.
 
 Usage:
     python -m implementation.ingest
@@ -168,7 +164,9 @@ def chunk_all_filings() -> list[dict]:
 
     allowed = allowed_tickers()
     files = sorted(
-        fp for fp in KNOWLEDGE_BASE_PATH.rglob("*.md") if fp.parent.name in allowed
+        fp
+        for fp in KNOWLEDGE_BASE_PATH.rglob("*_10-K.md")
+        if fp.parent.name in allowed
     )
     print(f"Found {len(files)} S&P 500 filings to chunk.")
 

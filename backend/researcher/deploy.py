@@ -119,7 +119,7 @@ def main():
     # Get AWS account ID
     region = os.environ.get("DEFAULT_AWS_REGION")
     if not region:
-        print("Error: DEFAULT_AWS_REGION not found in your .env file.")
+        print("Error: DEFAULT_AWS_REGION not found in the project root .env file.")
         sys.exit(1)
 
     print("\nGetting AWS account details...")
@@ -209,7 +209,7 @@ def main():
 
     wait_for_lambda_active(region, function_name)
 
-    print("\n Your service is available at:")
+    print("\n Service URL:")
     print(f"   {service_url}")
     print("\nTest it with:")
     print(f"   curl {service_url.rstrip('/')}/health")

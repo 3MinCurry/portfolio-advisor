@@ -10,6 +10,8 @@ from agents.extensions.models.litellm_model import LitellmModel
 
 from templates import CHARTER_INSTRUCTIONS, create_charter_task
 
+from src.portfolio import calculate_portfolio_value, position_market_value
+
 logger = logging.getLogger()
 
 
@@ -19,15 +21,13 @@ def analyze_portfolio(portfolio_data: Dict[str, Any]) -> str:
     Returns detailed breakdown of positions, accounts, and calculated allocations.
     """
     result = []
-    total_value = 0.0
+    total_value = calculate_portfolio_value(portfolio_data)
     position_values = {}
     account_totals = {}
 
-    # Calculate position values and totals
     for account in portfolio_data.get("accounts", []):
         account_name = account.get("name", "Unknown")
         account_type = account.get("type", "unknown")
-        # Handle None or missing cash_balance
         cash_balance = account.get("cash_balance")
         if cash_balance is None or cash_balance == "":
             cash = 0.0
@@ -38,27 +38,18 @@ def analyze_portfolio(portfolio_data: Dict[str, Any]) -> str:
             account_totals[account_name] = {"value": 0, "type": account_type, "positions": []}
 
         account_totals[account_name]["value"] += cash
-        total_value += cash
 
         for position in account.get("positions", []):
             symbol = position.get("symbol")
-            quantity = float(position.get("quantity", 0))
-            instrument = position.get("instrument", {})
-            # Handle None or missing current_price
-            current_price = instrument.get("current_price")
-            if current_price is None or current_price == "":
-                price = 1.0  # Default price if not available
-                logger.warning(f"Charter: No price for {symbol}, using default of 1.0")
-            else:
-                price = float(current_price)
-            value = quantity * price
+            value = position_market_value(position)
+            if value <= 0:
+                continue
 
             position_values[symbol] = position_values.get(symbol, 0) + value
             account_totals[account_name]["value"] += value
             account_totals[account_name]["positions"].append(
-                {"symbol": symbol, "value": value, "instrument": instrument}
+                {"symbol": symbol, "value": value, "instrument": position.get("instrument", {})}
             )
-            total_value += value
 
     # Build analysis summary
     result.append("Portfolio Analysis:")
@@ -88,18 +79,10 @@ def analyze_portfolio(portfolio_data: Dict[str, Any]) -> str:
     for account in portfolio_data.get("accounts", []):
         for position in account.get("positions", []):
             symbol = position.get("symbol")
-            quantity = float(position.get("quantity", 0))
+            value = position_market_value(position)
+            if value <= 0:
+                continue
             instrument = position.get("instrument", {})
-            # Handle None or missing current_price
-            current_price = instrument.get("current_price")
-            if current_price is None or current_price == "":
-                price = 1.0  # Default price if not available
-                logger.warning(f"Charter: No price for {symbol}, using default of 1.0")
-            else:
-                price = float(current_price)
-            value = quantity * price
-            
-            # Aggregate asset classes
             for asset_class, pct in instrument.get("allocation_asset_class", {}).items():
                 asset_value = value * (pct / 100)
                 asset_classes[asset_class] = asset_classes.get(asset_class, 0) + asset_value

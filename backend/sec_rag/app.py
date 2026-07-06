@@ -51,7 +51,7 @@ def main():
                 )
                 message = gr.Textbox(
                     label="Your Question",
-                    placeholder="Ask anything about Insurellm...",
+                    placeholder="e.g. What are Apple's main risk factors in the latest 10-K?",
                     show_label=False,
                 )
 

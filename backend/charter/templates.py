@@ -44,7 +44,7 @@ CHART IDEAS TO IMPLEMENT:
 - Top holdings concentration (largest 5-10 positions)
 - Tax efficiency (tax-advantaged vs taxable accounts)
 
-EXAMPLE OUTPUT (this is what you should generate):
+EXAMPLE OUTPUT:
 {
   "charts": [
     {

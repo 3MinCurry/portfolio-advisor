@@ -100,7 +100,7 @@ def test_research(topic=None):
         print(result)
         print("=" * 60)
 
-        print("\n The research has been automatically stored in your knowledge base.")
+        print("\n Research has been stored in the S3 Vectors knowledge base.")
         print("   To verify, run:")
         print("     cd ../ingest")
         print("     uv run test_search_s3vectors.py")

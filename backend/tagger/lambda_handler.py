@@ -48,10 +48,10 @@ async def process_instruments(instruments: List[Dict[str, str]]) -> Dict[str, An
             existing = db.instruments.find_by_symbol(classification.symbol)
             
             if existing:
-                # Update existing instrument
                 update_data = db_instrument.model_dump()
-                # Remove symbol as it's the key
-                del update_data['symbol']
+                del update_data["symbol"]
+                # Never overwrite market prices — tagger LLM estimates are unreliable
+                update_data.pop("current_price", None)
                 
                 rows = db.client.update(
                     'instruments',

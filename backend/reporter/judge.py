@@ -58,4 +58,4 @@ Evaluate this output and respond with your comments and score.
         return result.final_output_as(Evaluation)
     except Exception as e:
         logger.error(f"Error evaluating financial report: {e}")
-        return Evaluation(feedback=f"Error evaluating financial report: {e}", score=80)
+        return Evaluation(feedback=f"Judge evaluation failed: {e}", score=0)

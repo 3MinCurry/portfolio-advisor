@@ -113,7 +113,7 @@ export default function AdvisorTeam() {
             // Emit completion event so other components can refresh
             emitAnalysisCompleted(jobId);
 
-            // Also refresh our own jobs list
+            // Refresh the jobs list
             fetchJobs();
 
             setTimeout(() => {

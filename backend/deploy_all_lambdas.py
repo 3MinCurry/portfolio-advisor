@@ -140,7 +140,7 @@ def main():
         print(f"AWS Region: {region}")
     except Exception as e:
         print(f" Failed to get AWS account info: {e}")
-        print("   Make sure your AWS credentials are configured")
+        print("   Ensure AWS credentials are configured")
         sys.exit(1)
     
     print()

@@ -30,6 +30,7 @@ load_dotenv(ROOT.parents[2] / ".env", override=True)
 sys.path.insert(0, str(ROOT))
 
 from ingest_chroma_subset import DEFAULT_TICKERS, chunk_tickers  # noqa: E402
+from paths import text_for_embedding  # noqa: E402
 
 INDEX_NAME = "financial-research"
 
@@ -50,9 +51,24 @@ def get_embedding(client, endpoint: str, text: str) -> list[float]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--tickers", nargs="+", default=sorted(DEFAULT_TICKERS))
+    parser.add_argument("--tickers", nargs="+", default=None, help="Ticker symbols to ingest")
+    parser.add_argument(
+        "--eval-full",
+        action="store_true",
+        help="Ingest all 27 tickers needed for evaluation/tests_full.json (150 Q)",
+    )
     parser.add_argument("--max-chunks", type=int, default=None)
     args = parser.parse_args()
+
+    if args.eval_full:
+        from evaluation.test import eval_tickers_from_full
+
+        tickers = eval_tickers_from_full()
+        print(f"Eval-full mode: ingesting {len(tickers)} tickers for 150-question eval")
+    elif args.tickers:
+        tickers = {t.upper() for t in args.tickers}
+    else:
+        tickers = DEFAULT_TICKERS
 
     bucket = os.getenv("VECTOR_BUCKET")
     endpoint = os.getenv("SAGEMAKER_ENDPOINT", "alex-embedding-endpoint")
@@ -62,7 +78,6 @@ def main() -> None:
         print("Error: set VECTOR_BUCKET in .env", file=sys.stderr)
         sys.exit(1)
 
-    tickers = {t.upper() for t in args.tickers}
     chunks = chunk_tickers(tickers)
     if args.max_chunks:
         chunks = chunks[: args.max_chunks]
@@ -80,7 +95,7 @@ def main() -> None:
             "timestamp": datetime.now(UTC).isoformat(),
             "source_type": "sec_10k",
         }
-        embedding = get_embedding(sm, endpoint, text)
+        embedding = get_embedding(sm, endpoint, text_for_embedding(text))
         s3v.put_vectors(
             vectorBucketName=bucket,
             indexName=INDEX_NAME,

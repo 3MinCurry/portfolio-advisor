@@ -14,6 +14,8 @@ interface UserData {
   display_name: string;
   years_until_retirement: number;
   target_retirement_income: number;
+  current_age?: number;
+  annual_contribution?: number;
   asset_class_targets: Record<string, number>;
   region_targets: Record<string, number>;
 }
@@ -64,6 +66,8 @@ export default function Dashboard() {
   const [displayName, setDisplayName] = useState("");
   const [yearsUntilRetirement, setYearsUntilRetirement] = useState(0);
   const [targetRetirementIncome, setTargetRetirementIncome] = useState(0);
+  const [currentAge, setCurrentAge] = useState(40);
+  const [annualContribution, setAnnualContribution] = useState(10000);
   const [equityTarget, setEquityTarget] = useState(0);
   const [fixedIncomeTarget, setFixedIncomeTarget] = useState(0);
   const [northAmericaTarget, setNorthAmericaTarget] = useState(0);
@@ -143,6 +147,14 @@ export default function Dashboard() {
             : userData.target_retirement_income)
           : 0;
         setTargetRetirementIncome(income);
+        setCurrentAge(userData.current_age ?? Math.max(18, 65 - (userData.years_until_retirement || 30)));
+        setAnnualContribution(
+          userData.annual_contribution
+            ? (typeof userData.annual_contribution === 'string'
+              ? parseFloat(userData.annual_contribution)
+              : userData.annual_contribution)
+            : 10000
+        );
         setEquityTarget(userData.asset_class_targets?.equity || 0);
         setFixedIncomeTarget(userData.asset_class_targets?.fixed_income || 0);
         setNorthAmericaTarget(userData.region_targets?.north_america || 0);
@@ -309,6 +321,16 @@ export default function Dashboard() {
       return;
     }
 
+    if (currentAge < 18 || currentAge > 100) {
+      showToast('error', 'Current age must be between 18 and 100');
+      return;
+    }
+
+    if (annualContribution < 0) {
+      showToast('error', 'Annual contribution must be zero or positive');
+      return;
+    }
+
     // Validate allocation percentages
     const equityFixed = equityTarget + fixedIncomeTarget;
     if (Math.abs(equityFixed - 100) > 0.01) {
@@ -333,6 +355,8 @@ export default function Dashboard() {
         display_name: displayName.trim(),
         years_until_retirement: yearsUntilRetirement,
         target_retirement_income: targetRetirementIncome,
+        current_age: currentAge,
+        annual_contribution: annualContribution,
         asset_class_targets: {
           equity: equityTarget,
           fixed_income: fixedIncomeTarget
@@ -497,6 +521,34 @@ export default function Dashboard() {
                   const num = parseInt(value) || 0;
                   if (!isNaN(num)) {
                     setTargetRetirementIncome(num);
+                  }
+                }}
+                className="field"
+              />
+            </div>
+
+            <div>
+              <label className="label">Current age</label>
+              <input
+                type="number"
+                min={18}
+                max={100}
+                value={currentAge}
+                onChange={(e) => setCurrentAge(Number(e.target.value))}
+                className="field"
+              />
+            </div>
+
+            <div>
+              <label className="label">Annual contribution (projections)</label>
+              <input
+                type="text"
+                value={annualContribution ? annualContribution.toLocaleString('en-US') : ''}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/,/g, '');
+                  const num = parseInt(value) || 0;
+                  if (!isNaN(num)) {
+                    setAnnualContribution(num);
                   }
                 }}
                 className="field"

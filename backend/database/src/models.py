@@ -99,6 +99,7 @@ class Instruments(BaseModel):
             'symbol': validated['symbol'],
             'name': validated['name'],
             'instrument_type': validated['instrument_type'],
+            'current_price': validated.get('current_price'),
             'allocation_regions': validated['allocation_regions'],
             'allocation_sectors': validated['allocation_sectors'],
             'allocation_asset_class': validated['allocation_asset_class']
@@ -192,15 +193,19 @@ class Positions(BaseModel):
             }
         return {'num_positions': 0, 'total_value': 0, 'total_shares': 0}
     
-    def add_position(self, account_id: str, symbol: str, quantity: Decimal) -> str:
-        """Add or update a position"""
-        # Use UPSERT to handle existing positions
-        sql = """
+    def add_position(self, account_id: str, symbol: str, quantity: Decimal, merge: bool = False) -> str:
+        """Add or update a position. When merge=True, add quantity to an existing holding."""
+        quantity_update = (
+            "quantity = positions.quantity + EXCLUDED.quantity"
+            if merge
+            else "quantity = EXCLUDED.quantity"
+        )
+        sql = f"""
             INSERT INTO positions (account_id, symbol, quantity, as_of_date)
             VALUES (:account_id::uuid, :symbol, :quantity::numeric, :as_of_date::date)
             ON CONFLICT (account_id, symbol) 
             DO UPDATE SET 
-                quantity = EXCLUDED.quantity,
+                {quantity_update},
                 as_of_date = EXCLUDED.as_of_date,
                 updated_at = NOW()
             RETURNING id

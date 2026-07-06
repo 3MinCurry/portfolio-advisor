@@ -124,12 +124,12 @@ def main():
         print()
     
     print("Testing complete!")
-    print("\nYour S3 Vectors knowledge base now contains information about:")
+    print("\nS3 Vectors knowledge base now contains information about:")
     for doc in test_docs:
         print(f"  - {doc['metadata']['company_name']} ({doc['metadata']['ticker']})")
     
     print("\n  Note: S3 Vectors updates are available immediately.")
-    print("   You can run test_search_s3vectors.py right away to search!")
+    print("   Run test_search_s3vectors.py to search the index.")
 
 if __name__ == "__main__":
     main()

@@ -110,10 +110,10 @@ if SQS_QUEUE_URL:
 else:
     logger.warning(
         "SQS_QUEUE_URL is not set — analyses will stay pending forever. "
-        "Add it to alex/.env and restart the API."
+        "Add it to the project root .env and restart the API."
     )
 
-# Clerk authentication setup (exactly like saas reference)
+# Clerk JWT authentication
 clerk_config = ClerkConfig(jwks_url=os.getenv("CLERK_JWKS_URL"))
 clerk_guard = ClerkHTTPBearer(clerk_config)
 
@@ -135,6 +135,8 @@ class UserUpdate(BaseModel):
     display_name: Optional[str] = None
     years_until_retirement: Optional[int] = None
     target_retirement_income: Optional[float] = None
+    current_age: Optional[int] = None
+    annual_contribution: Optional[float] = None
     asset_class_targets: Optional[Dict[str, float]] = None
     region_targets: Optional[Dict[str, float]] = None
 
@@ -198,6 +200,8 @@ async def get_or_create_user(
             'display_name': display_name,
             'years_until_retirement': 20,
             'target_retirement_income': 60000,
+            'current_age': 45,
+            'annual_contribution': 10000,
             'asset_class_targets': {"equity": 70, "fixed_income": 30},
             'region_targets': {"north_america": 50, "international": 50}
         }
@@ -423,7 +427,8 @@ async def create_position(position: PositionCreate, clerk_user_id: str = Depends
         position_id = db.positions.add_position(
             account_id=position.account_id,
             symbol=position.symbol.upper(),
-            quantity=position.quantity
+            quantity=position.quantity,
+            merge=True,
         )
 
         # Return created position

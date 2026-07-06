@@ -3,14 +3,8 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import ConfirmModal from "../../components/ConfirmModal";
+import AddPositionModal from "../../components/AddPositionModal";
 import { API_URL } from "../../lib/config";
-
-interface Instrument {
-  symbol: string;
-  name: string;
-  instrument_type: string;
-  current_price: number;
-}
 
 interface Position {
   id: string;
@@ -33,7 +27,6 @@ export default function AccountDetail() {
   const { id } = router.query;
   const [account, setAccount] = useState<Account | null>(null);
   const [positions, setPositions] = useState<Position[]>([]);
-  const [instruments, setInstruments] = useState<Instrument[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
@@ -42,9 +35,6 @@ export default function AccountDetail() {
   const [editingPosition, setEditingPosition] = useState<string | null>(null);
   const [editedQuantity, setEditedQuantity] = useState('');
   const [showAddPosition, setShowAddPosition] = useState(false);
-  const [newPosition, setNewPosition] = useState({ symbol: '', quantity: '' });
-  const [searchTerm, setSearchTerm] = useState('');
-  const [showSymbolSuggestions, setShowSymbolSuggestions] = useState(false);
   const [confirmModal, setConfirmModal] = useState<{
     isOpen: boolean;
     positionId: string;
@@ -95,21 +85,6 @@ export default function AccountDetail() {
       if (positionsResponse.ok) {
         const data = await positionsResponse.json();
         setPositions(data.positions || []);
-      }
-
-      // Load instruments for autocomplete
-      const instrumentsResponse = await fetch(
-        `${API_URL}/api/instruments`,
-        {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (instrumentsResponse.ok) {
-        const instrumentsData = await instrumentsResponse.json();
-        setInstruments(instrumentsData);
       }
 
     } catch (error) {
@@ -224,54 +199,6 @@ export default function AccountDetail() {
     }
   };
 
-  const handleAddPosition = async () => {
-    if (!newPosition.symbol.trim() || !newPosition.quantity.trim()) {
-      setMessage({ type: 'error', text: 'Please enter symbol and quantity' });
-      return;
-    }
-
-    const quantity = parseFloat(newPosition.quantity);
-    if (isNaN(quantity) || quantity <= 0) {
-      setMessage({ type: 'error', text: 'Please enter a valid quantity' });
-      return;
-    }
-
-    setSaving(true);
-    setMessage(null);
-
-    try {
-      const token = await getToken();
-      const response = await fetch(`${API_URL}/api/positions`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          account_id: id,
-          symbol: newPosition.symbol.toUpperCase(),
-          quantity: quantity,
-        }),
-      });
-
-      if (response.ok) {
-        setMessage({ type: 'success', text: 'Position added successfully' });
-        setShowAddPosition(false);
-        setNewPosition({ symbol: '', quantity: '' });
-        setSearchTerm('');
-        await loadAccount();
-      } else {
-        const error = await response.json();
-        setMessage({ type: 'error', text: error.detail || 'Failed to add position' });
-      }
-    } catch (error) {
-      console.error('Error adding position:', error);
-      setMessage({ type: 'error', text: 'Error adding position' });
-    } finally {
-      setSaving(false);
-    }
-  };
-
   const formatCurrencyInput = (value: string) => {
     const cleaned = value.replace(/[^0-9.]/g, '');
     const parts = cleaned.split('.');
@@ -288,11 +215,6 @@ export default function AccountDetail() {
   const calculateTotalValue = () => {
     return (account ? Number(account.cash_balance) : 0) + calculatePositionsValue();
   };
-
-  const filteredInstruments = instruments.filter(inst =>
-    inst.symbol.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    inst.name.toLowerCase().includes(searchTerm.toLowerCase())
-  ).slice(0, 5);
 
   if (loading) {
     return (
@@ -581,102 +503,17 @@ export default function AccountDetail() {
           )}
         </div>
 
-        {/* Add Position Modal */}
-        {showAddPosition && (
-          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg max-w-md w-full p-6">
-              <h3 className="text-xl font-bold text-ink mb-4">Add New Position</h3>
-
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-muted mb-1">
-                    Symbol *
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      value={searchTerm || newPosition.symbol}
-                      onChange={(e) => {
-                        const value = e.target.value.toUpperCase();
-                        setSearchTerm(value);
-                        setNewPosition({ ...newPosition, symbol: value });
-                        setShowSymbolSuggestions(value.length > 0);
-                      }}
-                      onFocus={() => setShowSymbolSuggestions(searchTerm.length > 0)}
-                      className="w-full field uppercase"
-                      placeholder="Enter ticker symbol (e.g., SPY, AAPL)"
-                    />
-
-                    {showSymbolSuggestions && filteredInstruments.length > 0 && (
-                      <div className="absolute z-10 w-full mt-1 bg-white border border-border rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                        {filteredInstruments.map((inst) => (
-                          <button
-                            key={inst.symbol}
-                            onClick={() => {
-                              setNewPosition({ ...newPosition, symbol: inst.symbol });
-                              setSearchTerm('');
-                              setShowSymbolSuggestions(false);
-                            }}
-                            className="w-full text-left px-3 py-2 hover:panel-raised border-b border-gray-100 last:border-b-0"
-                          >
-                            <div className="font-medium">{inst.symbol}</div>
-                            <div className="text-xs text-muted">{inst.name}</div>
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <p className="text-xs text-muted mt-1">
-                    If the symbol is not in our database, it will be added automatically
-                  </p>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-muted mb-1">
-                    Quantity *
-                  </label>
-                  <input
-                    type="number"
-                    value={newPosition.quantity}
-                    onChange={(e) => setNewPosition({ ...newPosition, quantity: e.target.value })}
-                    className="w-full field"
-                    placeholder="0"
-                    step="0.01"
-                    min="0"
-                  />
-                </div>
-              </div>
-
-              {message && message.type === 'error' && (
-                <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-                  {message.text}
-                </div>
-              )}
-
-              <div className="flex gap-3 mt-6">
-                <button
-                  onClick={handleAddPosition}
-                  disabled={saving}
-                  className="flex-1 btn btn-primary px-4 py-2 rounded-lg transition-colors disabled:opacity-50"
-                >
-                  {saving ? 'Adding...' : 'Add Position'}
-                </button>
-                <button
-                  onClick={() => {
-                    setShowAddPosition(false);
-                    setNewPosition({ symbol: '', quantity: '' });
-                    setSearchTerm('');
-                    setShowSymbolSuggestions(false);
-                    setMessage(null);
-                  }}
-                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-muted px-4 py-2 rounded-lg transition-colors"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        <AddPositionModal
+          isOpen={showAddPosition}
+          accountId={typeof id === 'string' ? id : ''}
+          accountName={account.account_name}
+          getToken={getToken}
+          onClose={() => setShowAddPosition(false)}
+          onSuccess={async () => {
+            setMessage({ type: 'success', text: 'Position added successfully' });
+            await loadAccount();
+          }}
+        />
 
         {/* Delete Position Confirmation Modal */}
         <ConfirmModal

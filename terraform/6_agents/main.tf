@@ -334,6 +334,8 @@ resource "aws_lambda_function" "reporter" {
       BEDROCK_REGION     = var.bedrock_region
       DEFAULT_AWS_REGION = var.aws_region
       SAGEMAKER_ENDPOINT = var.sagemaker_endpoint
+      VECTOR_BUCKET      = var.vector_bucket
+      SEC_RAG_MODE       = "s3"
       # LangFuse observability (optional)
       LANGFUSE_PUBLIC_KEY = var.langfuse_public_key
       LANGFUSE_SECRET_KEY = var.langfuse_secret_key

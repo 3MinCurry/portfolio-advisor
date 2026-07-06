@@ -8,7 +8,6 @@ import asyncio
 import logging
 from typing import Dict, Any
 
-from agents import Agent, Runner, trace
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 from litellm.exceptions import RateLimitError
 
@@ -21,10 +20,10 @@ except ImportError:
 # Import database package
 from src import Database
 
-from templates import ORCHESTRATOR_INSTRUCTIONS
-from agent import create_agent, handle_missing_instruments, load_portfolio_summary
+from agent import handle_missing_instruments, load_portfolio_summary
 from market import update_instrument_prices
 from observability import observe
+from pipeline import run_analysis_pipeline
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -53,30 +52,14 @@ async def run_orchestrator(job_id: str) -> None:
 
         # Load portfolio summary (just statistics, not full data)
         portfolio_summary = await asyncio.to_thread(load_portfolio_summary, job_id, db)
-        
-        # Create agent with tools and context
-        model, tools, task, context = create_agent(job_id, portfolio_summary, db)
-        
-        # Run the orchestrator
-        with trace("Planner Orchestrator"):
-            from agent import PlannerContext
-            agent = Agent[PlannerContext](
-                name="Financial Planner",
-                instructions=ORCHESTRATOR_INSTRUCTIONS,
-                model=model,
-                tools=tools
-            )
-            
-            result = await Runner.run(
-                agent,
-                input=task,
-                context=context,
-                max_turns=20
-            )
-            
-            # Mark job as completed after all agents finish
-            db.jobs.update_status(job_id, "completed")
-            logger.info(f"Planner: Job {job_id} completed successfully")
+
+        # Run specialist agents in fixed order (Reporter last)
+        warnings = await run_analysis_pipeline(job_id, portfolio_summary, db)
+        if warnings:
+            logger.warning("Planner: Job %s validation warnings: %s", job_id, warnings)
+
+        db.jobs.update_status(job_id, "completed")
+        logger.info(f"Planner: Job {job_id} completed successfully")
             
     except Exception as e:
         logger.error(f"Planner: Error in orchestration: {e}", exc_info=True)

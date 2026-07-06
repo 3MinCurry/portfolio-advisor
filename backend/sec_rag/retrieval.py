@@ -16,9 +16,15 @@ logger = logging.getLogger(__name__)
 
 
 def _chroma_available() -> bool:
-    from paths import IMPLEMENTATION, chroma_db_path
+    try:
+        try:
+            from sec_rag.paths import IMPLEMENTATION, chroma_db_path
+        except ImportError:
+            from .paths import IMPLEMENTATION, chroma_db_path
 
-    return chroma_db_path().exists() and (IMPLEMENTATION / "answer.py").exists()
+        return chroma_db_path().exists() and (IMPLEMENTATION / "answer.py").exists()
+    except Exception:
+        return False
 
 
 def _fetch_from_chroma(symbols: list[str]) -> str | None:
@@ -31,7 +37,10 @@ def _fetch_from_chroma(symbols: list[str]) -> str | None:
         if str(root) not in sys.path:
             sys.path.insert(0, str(root))
 
-        from implementation.answer import fetch_context  # type: ignore
+        try:
+            from .implementation.answer import fetch_context
+        except ImportError:
+            from implementation.answer import fetch_context  # type: ignore
 
         tickers = " ".join(symbols[:5])
         question = (
@@ -61,13 +70,18 @@ def _fetch_from_chroma(symbols: list[str]) -> str | None:
 def _embed_query(text: str) -> list[float]:
     import boto3
 
+    try:
+        from sec_rag.paths import text_for_embedding
+    except ImportError:
+        from .paths import text_for_embedding
+
     region = os.getenv("DEFAULT_AWS_REGION", "us-east-1")
     endpoint = os.getenv("SAGEMAKER_ENDPOINT", "alex-embedding-endpoint")
     client = boto3.client("sagemaker-runtime", region_name=region)
     response = client.invoke_endpoint(
         EndpointName=endpoint,
         ContentType="application/json",
-        Body=json.dumps({"inputs": text}),
+        Body=json.dumps({"inputs": text_for_embedding(text)}),
     )
     result = json.loads(response["Body"].read().decode())
     if isinstance(result, list) and result:

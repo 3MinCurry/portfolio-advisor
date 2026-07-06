@@ -75,6 +75,8 @@ def package_lambda():
         # Copy Lambda handler and Python modules
         shutil.copy(planner_dir / "lambda_handler.py", package_dir)
         shutil.copy(planner_dir / "agent.py", package_dir)
+        shutil.copy(planner_dir / "pipeline.py", package_dir)
+        shutil.copy(planner_dir / "validation.py", package_dir)
         shutil.copy(planner_dir / "templates.py", package_dir)
         shutil.copy(planner_dir / "market.py", package_dir)
         shutil.copy(planner_dir / "prices.py", package_dir)

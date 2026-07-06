@@ -1,9 +1,6 @@
 """
 RAG answer pipeline for SEC 10-K filings.
 
-This is the consolidated version that combines everything we validated
-in the v3 smoke test (37.5% accuracy on FinanceBench, vs. ~19% baseline).
-
 Pipeline (per question):
     1. EXTRACT ENTITIES — pull tickers/years from the question via LLM.
     2. BUILD METADATA FILTER — Chroma `where` clause from extracted entities.
@@ -20,17 +17,11 @@ Pipeline (per question):
     5. RERANK — LLM re-orders the merged top-N for relevance.
     6. ANSWER — LLM answers using the top-K reranked chunks as context.
 
-Public interface (unchanged from your earlier projects):
+Public interface:
     answer_question(question: str, history: list[dict] = []) -> (answer, chunks)
 
-That's what app.py and evaluator.py both call.
-
-Debug logging:
-    Set DEBUG_RETRIEVAL=1 in your environment (or in .env) to see what's
-    happening at each stage:
-        DEBUG_RETRIEVAL=1 python app.py
-    Useful when retrieval is misbehaving — shows entities extracted, the
-    rewritten query, and the number of chunks returned at each stage.
+Set DEBUG_RETRIEVAL=1 in the environment to log entities, rewritten queries,
+and chunk counts at each stage.
 """
 
 from __future__ import annotations
@@ -51,8 +42,7 @@ load_dotenv(Path(__file__).resolve().parents[3] / ".env", override=True)
 # Config
 # ----------------------------------------------------------------------
 
-# All LLM calls go through OpenAI for now. If you later add Groq access,
-# swap the four pipeline models to "groq/openai/gpt-oss-120b" or similar.
+# LLM provider for the retrieval pipeline (OpenAI by default).
 ANSWER_MODEL = "openai/gpt-4.1"     
 RERANK_MODEL = "openai/gpt-4.1"      
 REWRITE_MODEL = "openai/gpt-4.1-mini" 
@@ -144,25 +134,17 @@ ENTITY_PROMPT = """Extract structured filters from this question about SEC 10-K 
 Return ONLY the JSON object.
 
 Rules for tickers:
-- Extract a ticker only when the company is unambiguously named.
-- "Apple" or "AAPL" -> AAPL
-- "Microsoft" or "MSFT" -> MSFT
-- "Amazon" or "AMZN" -> AMZN
-- "JPMorgan", "JPMorgan Chase", "JPM" -> JPM
-- "Johnson & Johnson", "JnJ", "J&J", "JNJ" -> JNJ
-- "Google", "Alphabet" -> GOOGL
-- "Meta", "Facebook" -> META
-- "Tesla" -> TSLA
-- "NVIDIA", "Nvidia" -> NVDA
-- "General Electric", "GE" -> GE
-- "Home Depot" -> HD
-- "Sherwin-Williams", "Sherwin Williams" -> SHW
-- Generic questions ("Which companies report the most...") -> []
+- Extract EVERY ticker symbol when multiple companies are named or implied.
+- Comparative questions ("MO vs PG", "Compare X and Y") -> include ALL tickers.
+- Use these company-to-ticker mappings:
+{ticker_rules}
+- Generic questions across the market with no specific company -> []
 
 Rules for fiscal_years:
 - Only years explicitly mentioned.
 - "FY2022", "fiscal 2022", "in 2022", "2022 annual report" -> [2022]
 - "between 2021 and 2023" -> [2021, 2022, 2023]
+- "2023 and 2021 filings" -> [2021, 2023]
 - "last year", "recently" -> []
 
 Question: {question}"""
@@ -216,9 +198,15 @@ def extract_entities(question: str) -> ExtractedEntities:
     we never want this step to break the whole pipeline.
     """
     try:
+        from implementation.sp500_tickers import ticker_alias_rules
+
+        prompt = ENTITY_PROMPT.format(
+            ticker_rules=ticker_alias_rules(),
+            question=question,
+        )
         response = completion(
             model=ENTITY_MODEL,
-            messages=[{"role": "user", "content": ENTITY_PROMPT.format(question=question)}],
+            messages=[{"role": "user", "content": prompt}],
             response_format=ExtractedEntities,
         )
         return ExtractedEntities.model_validate_json(response.choices[0].message.content)
@@ -304,7 +292,61 @@ def merge_chunks(*chunk_lists: list[Result]) -> list[Result]:
     return merged
 
 
-def fetch_context_unranked(original_question: str, history: list[dict] | None = None) -> list[Result]:
+def apply_ticker_quota(
+    chunks: list[Result], tickers: list[str], final_k: int = FINAL_K
+) -> list[Result]:
+    """
+    Ensure multi-ticker questions keep representation from each company in top-K.
+    Used after reranking for comparative queries.
+    """
+    if len(tickers) < 2 or not chunks:
+        return chunks[:final_k]
+
+    min_per_ticker = max(2, final_k // len(tickers))
+    ticker_set = set(tickers)
+    selected: list[Result] = []
+    seen: set[str] = set()
+    counts = {t: 0 for t in tickers}
+
+    for chunk in chunks:
+        ticker = chunk.metadata.get("ticker")
+        if ticker in counts and counts[ticker] < min_per_ticker:
+            if chunk.page_content not in seen:
+                selected.append(chunk)
+                seen.add(chunk.page_content)
+                counts[ticker] += 1
+
+    for chunk in chunks:
+        if len(selected) >= final_k:
+            break
+        if chunk.page_content not in seen:
+            selected.append(chunk)
+            seen.add(chunk.page_content)
+
+    _dbg(f"ticker quota: {counts} -> {len(selected[:final_k])} chunks")
+    return selected[:final_k]
+
+
+def _retrieve_single_ticker(
+    ticker: str,
+    entities: ExtractedEntities,
+    qvec: list[float],
+    rvec: list[float],
+    k_each: int,
+) -> list[Result]:
+    """Retrieve chunks for one ticker with optional fiscal-year filter."""
+    single = ExtractedEntities(tickers=[ticker], fiscal_years=entities.fiscal_years)
+    where = build_where_clause(single)
+    filtered_a = _query_chroma(qvec, where, k_each) if where else []
+    filtered_b = _query_chroma(rvec, where, k_each) if where else []
+    return merge_chunks(filtered_a, filtered_b)
+
+
+def fetch_context_unranked(
+    original_question: str,
+    history: list[dict] | None = None,
+    entities: ExtractedEntities | None = None,
+) -> list[Result]:
     """
     Retrieve candidate chunks using:
       - the original question
@@ -312,7 +354,7 @@ def fetch_context_unranked(original_question: str, history: list[dict] | None = 
       - optional metadata filter from extracted entities
     Returns a deduped union (typically 20-80 candidates).
     """
-    entities = extract_entities(original_question)
+    entities = entities or extract_entities(original_question)
     where = build_where_clause(entities)
     _dbg(f"entities: tickers={entities.tickers} fiscal_years={entities.fiscal_years}")
     _dbg(f"where:    {where}")
@@ -322,6 +364,19 @@ def fetch_context_unranked(original_question: str, history: list[dict] | None = 
 
     qvec = _embed(original_question)
     rvec = _embed(rewritten)
+
+    if len(entities.tickers) >= 2:
+        k_each = max(RETRIEVAL_K // len(entities.tickers), 8)
+        parts: list[list[Result]] = []
+        for ticker in entities.tickers:
+            parts.append(_retrieve_single_ticker(ticker, entities, qvec, rvec, k_each))
+        # Safety net: one broader filtered pass across all tickers
+        if where:
+            parts.append(_query_chroma(qvec, where, RETRIEVAL_K))
+            parts.append(_query_chroma(rvec, where, RETRIEVAL_K))
+        merged = merge_chunks(*parts)
+        _dbg(f"multi-ticker retrieval: {len(entities.tickers)} tickers, {len(merged)} chunks")
+        return merged
 
     filtered_a = _query_chroma(qvec, where, RETRIEVAL_K) if where else []
     filtered_b = _query_chroma(rvec, where, RETRIEVAL_K) if where else []
@@ -387,10 +442,15 @@ def rerank(question: str, chunks: list[Result]) -> list[Result]:
 
 def fetch_context(question: str, history: list[dict] | None = None) -> list[Result]:
     """The full retrieve+rerank loop. Returns the top FINAL_K chunks."""
-    candidates = fetch_context_unranked(question, history)
+    entities = extract_entities(question)
+    candidates = fetch_context_unranked(question, history, entities=entities)
     ranked = rerank(question, candidates)
-    _dbg(f"final top-{FINAL_K}: {len(ranked[:FINAL_K])} chunks")
-    return ranked[:FINAL_K]
+    if len(entities.tickers) >= 2:
+        ranked = apply_ticker_quota(ranked, entities.tickers, FINAL_K)
+    else:
+        ranked = ranked[:FINAL_K]
+    _dbg(f"final top-{FINAL_K}: {len(ranked)} chunks")
+    return ranked
 
 
 # ----------------------------------------------------------------------
@@ -428,8 +488,7 @@ def answer_question(question: str, history: list[dict] | None = None) -> tuple[s
     Returns:
         (answer_text, retrieved_chunks)
 
-    Signature is unchanged from your earlier project, so app.py and
-    evaluator.py both work without modification.
+    Used by app.py and evaluation/evaluator.py.
     """
     history = history or []
     chunks = fetch_context(question, history)

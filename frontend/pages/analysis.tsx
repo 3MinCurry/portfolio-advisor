@@ -28,6 +28,19 @@ interface Job {
     agent: string;
     analysis: string;
     generated_at: string;
+    metrics?: {
+      monte_carlo?: {
+        success_rate?: number;
+        expected_value_at_retirement?: number;
+        median_final_value?: number;
+        average_years_lasted?: number;
+      };
+      portfolio_value?: number;
+      years_until_retirement?: number;
+      target_retirement_income?: number;
+      current_age?: number;
+      annual_contribution?: number;
+    };
   };
   risk_payload?: {
     agent: string;
@@ -431,18 +444,41 @@ export default function Analysis() {
       );
     }
 
-    // Backend provides 'analysis' as markdown text
     const retirementAnalysis = retirement.analysis;
+    const metrics = retirement.metrics;
+    const successRate = metrics?.monte_carlo?.success_rate;
+
+    const successBadgeClass = () => {
+      if (successRate == null) return 'panel-raised px-4 py-2 text-muted';
+      if (successRate >= 70) return 'badge-low';
+      if (successRate >= 50) return 'badge-moderate';
+      if (successRate >= 25) return 'badge-elevated';
+      return 'badge-high';
+    };
 
     return (
       <div className="space-y-8">
-        {/* Analysis Section */}
+        {successRate != null && (
+          <div className={`inline-flex flex-wrap items-center gap-3 px-4 py-2 rounded-lg border font-semibold ${successBadgeClass()}`}>
+            <span>Monte Carlo success rate: {successRate}%</span>
+            {metrics?.monte_carlo?.expected_value_at_retirement != null && (
+              <span className="font-normal text-sm">
+                Projected at retirement: ${metrics.monte_carlo.expected_value_at_retirement.toLocaleString()}
+              </span>
+            )}
+            {metrics?.annual_contribution != null && (
+              <span className="font-normal text-sm">
+                Assumes ${Number(metrics.annual_contribution).toLocaleString()}/yr contributions
+              </span>
+            )}
+          </div>
+        )}
+
         {retirementAnalysis && (
           <div className="panel-raised p-6 border-sage/20">
             <MarkdownContent>{retirementAnalysis}</MarkdownContent>
           </div>
         )}
-
       </div>
     );
   };

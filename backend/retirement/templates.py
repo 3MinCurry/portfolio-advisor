@@ -41,6 +41,12 @@ Key Analysis Areas:
 Provide clear, actionable insights with specific numbers and timelines.
 Use conservative assumptions to ensure realistic projections.
 Consider multiple scenarios to show range of outcomes.
+
+CRITICAL: The Monte Carlo success rate and other numbers in your task context are authoritative.
+Your written analysis MUST align with them:
+- If success rate is under 50%, state clearly that retirement readiness is weak or at risk.
+- Do NOT use optimistic language (e.g. "on track", "well positioned", "excellent") when success rate is below 50%.
+- Always cite the exact success rate percentage from the simulation.
 """
 
 RETIREMENT_ANALYSIS_TEMPLATE = """Analyze retirement readiness for this portfolio:

@@ -322,7 +322,7 @@ def display_deployment_info(outputs):
     print(f"\n   Deployment successful!")
     print(f"\n  CloudFront URL: {cloudfront_url}")
     print(f"  API Gateway URL: {api_url}")
-    print(f"\n  Note: Your local .env.local file remains unchanged.")
+    print(f"\n  Note: Local frontend .env.local is unchanged.")
     print(f"  The production build uses .env.production with the AWS API URL.")
 
 
@@ -375,14 +375,14 @@ def main():
             "--delete"
         ])
 
-    # Display deployment info (no longer modifies .env.local)
+    # Display deployment summary
     display_deployment_info(outputs)
 
     print("\n" + "=" * 50)
     print(" Deployment complete!")
-    print(f"\n Your application is available at:")
+    print(f"\n Application URL:")
     print(f"   {outputs['cloudfront_url']['value']}")
-    print(f"\n Monitor your Lambda function at:")
+    print(f"\n Monitor the Lambda function at:")
     print(f"   AWS Console > Lambda > {outputs['lambda_function_name']['value']}")
     print("\n Note: CloudFront distribution may take 5-10 minutes to fully propagate")
 

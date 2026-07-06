@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Remove knowledge-base folders for tickers not in the S&P 500 sample list."""
+"""Remove non-SEC demo folders and tickers outside the S&P 500 sample list."""
 
 from __future__ import annotations
 
@@ -11,39 +11,48 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from implementation.sp500_tickers import allowed_tickers, get_tickers  # noqa: E402
+from implementation.sp500_tickers import allowed_sectors, allowed_tickers  # noqa: E402
 
 KNOWLEDGE_BASE = ROOT / "knowledge-base"
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Prune non-S&P 500 tickers from knowledge-base")
+    parser = argparse.ArgumentParser(
+        description="Prune demo folders and non-S&P 500 tickers from knowledge-base"
+    )
     parser.add_argument("--dry-run", action="store_true", help="List removals without deleting")
     args = parser.parse_args()
 
     allowed = allowed_tickers()
+    sectors = allowed_sectors()
     removed: list[str] = []
 
-    for sector_dir in sorted(KNOWLEDGE_BASE.iterdir()):
-        if not sector_dir.is_dir():
+    for top_dir in sorted(KNOWLEDGE_BASE.iterdir()):
+        if not top_dir.is_dir():
             continue
-        for ticker_dir in sorted(sector_dir.iterdir()):
+
+        if top_dir.name not in sectors:
+            removed.append(str(top_dir.relative_to(KNOWLEDGE_BASE)))
+            if not args.dry_run:
+                shutil.rmtree(top_dir)
+            continue
+
+        for ticker_dir in sorted(top_dir.iterdir()):
             if not ticker_dir.is_dir():
                 continue
-            ticker = ticker_dir.name
-            if ticker not in allowed:
+            if ticker_dir.name not in allowed:
                 removed.append(str(ticker_dir.relative_to(KNOWLEDGE_BASE)))
                 if not args.dry_run:
                     shutil.rmtree(ticker_dir)
 
-    kept = sum(1 for _ in KNOWLEDGE_BASE.rglob("*.md"))
-    print(f"S&P 500 universe: {len(allowed)} tickers")
-    print(f"Removed folders: {len(removed)}")
+    ten_k_count = sum(1 for _ in KNOWLEDGE_BASE.rglob("*_10-K.md"))
+    print(f"S&P 500 universe: {len(allowed)} tickers across {len(sectors)} sectors")
+    print(f"Removed paths: {len(removed)}")
     for path in removed:
         print(f"  - {path}")
     if not removed:
-        print("Knowledge base already S&P 500 only.")
-    print(f"Remaining filings: {kept} markdown files")
+        print("Knowledge base already clean (SEC 10-K only, S&P 500 tickers).")
+    print(f"Remaining 10-K filings: {ten_k_count}")
 
 
 if __name__ == "__main__":

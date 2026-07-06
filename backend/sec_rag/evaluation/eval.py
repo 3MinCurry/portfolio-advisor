@@ -10,9 +10,7 @@ from implementation.answer import answer_question, fetch_context
 
 load_dotenv(override=True)
 
-# Upgraded from gpt-4.1-nano -> gpt-4.1. The judge model directly affects
-# eval quality; a weak judge gives noisy scores. gpt-4.1 is ~13x more
-# expensive but eval quality matters for CV-grade numbers.
+# gpt-4.1 judge: stronger scores than nano; eval quality depends on judge calibration.
 MODEL = "openai/gpt-4.1"
 db_name = "preprocessed_db"
 
@@ -129,7 +127,7 @@ def evaluate_answer(test: TestQuestion) -> tuple[AnswerEval, str, list]:
     # Get RAG response using shared answer module
     generated_answer, retrieved_docs = answer_question(test.question)
 
-    # Updated judge prompt — now framed for SEC 10-K Q&A rather than Insurellm.
+    # Judge prompt for SEC 10-K Q&A evaluation.
     judge_messages = [
         {
             "role": "system",

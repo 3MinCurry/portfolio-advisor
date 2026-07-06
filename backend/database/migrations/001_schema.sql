@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS users (
     display_name VARCHAR(255),
     years_until_retirement INTEGER,
     target_retirement_income DECIMAL(12,2),  -- Annual income goal
+    current_age INTEGER,
+    annual_contribution DECIMAL(12,2) DEFAULT 10000,
     
     -- Allocation targets for rebalancing (stored as JSON)
     asset_class_targets JSONB DEFAULT '{"equity": 70, "fixed_income": 30}',

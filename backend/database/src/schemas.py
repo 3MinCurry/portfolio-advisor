@@ -183,6 +183,15 @@ class UserCreate(BaseModel):
     target_retirement_income: Optional[Decimal] = Field(
         None, description="Annual income goal in retirement (in dollars)", ge=0, decimal_places=2
     )
+    current_age: Optional[int] = Field(
+        None, description="User's current age in years", ge=18, le=100
+    )
+    annual_contribution: Optional[Decimal] = Field(
+        None,
+        description="Assumed annual portfolio contribution for retirement projections (USD)",
+        ge=0,
+        decimal_places=2,
+    )
     asset_class_targets: Optional[Dict[AssetClassType, float]] = Field(
         default={"equity": 70, "fixed_income": 30},
         description="Target allocation percentages for rebalancing. Must sum to 100.",

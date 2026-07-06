@@ -116,6 +116,8 @@ statements = [
     """CREATE TRIGGER update_jobs_updated_at BEFORE UPDATE ON jobs
         FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()""",
     "ALTER TABLE jobs ADD COLUMN IF NOT EXISTS risk_payload JSONB",
+    "ALTER TABLE users ADD COLUMN IF NOT EXISTS current_age INTEGER",
+    "ALTER TABLE users ADD COLUMN IF NOT EXISTS annual_contribution DECIMAL(12,2) DEFAULT 10000",
 ]
 
 print("Running database migrations...")

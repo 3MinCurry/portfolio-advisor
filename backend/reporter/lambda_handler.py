@@ -29,6 +29,7 @@ from src import Database
 from templates import REPORTER_INSTRUCTIONS
 from agent import create_agent, ReporterContext
 from observability import observe
+from src.user_preferences import load_user_preferences
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -48,11 +49,14 @@ async def run_reporter_agent(
     user_data: Dict[str, Any],
     db=None,
     observability=None,
+    agent_findings: Dict[str, Any] | None = None,
 ) -> Dict[str, Any]:
     """Run the reporter agent to generate analysis."""
 
     # Create agent with tools and context
-    model, tools, task, context = create_agent(job_id, portfolio_data, user_data, db)
+    model, tools, task, context = create_agent(
+        job_id, portfolio_data, user_data, db, agent_findings=agent_findings
+    )
 
     # Run agent with context
     with trace("Reporter Agent"):
@@ -193,24 +197,33 @@ def lambda_handler(event, context):
                             )
                         user = db.users.find_by_clerk_id(job["clerk_user_id"])
                         if user:
-                            user_data = {
-                                "years_until_retirement": user.get("years_until_retirement", 30),
-                                "target_retirement_income": float(
-                                    user.get("target_retirement_income", 80000)
-                                ),
-                            }
+                            user_data = load_user_preferences(user)
+                            user_data["display_name"] = user.get("display_name")
                         else:
-                            user_data = {
-                                "years_until_retirement": 30,
-                                "target_retirement_income": 80000,
-                            }
+                            user_data = load_user_preferences(None)
                 except Exception as e:
                     logger.warning(f"Could not load user data: {e}. Using defaults.")
-                    user_data = {"years_until_retirement": 30, "target_retirement_income": 80000}
+                    user_data = load_user_preferences(None)
+
+            # Load structured findings from specialist agents (saved before Reporter runs)
+            agent_findings = {}
+            try:
+                job_record = db.jobs.find_by_id(job_id)
+                if job_record:
+                    retirement_payload = job_record.get("retirement_payload") or {}
+                    risk_payload = job_record.get("risk_payload") or {}
+                    if retirement_payload.get("metrics"):
+                        agent_findings["retirement"] = retirement_payload["metrics"]
+                    if risk_payload.get("metrics"):
+                        agent_findings["risk"] = risk_payload["metrics"]
+            except Exception as e:
+                logger.warning(f"Could not load agent findings for reporter: {e}")
 
             # Run the agent
             result = asyncio.run(
-                run_reporter_agent(job_id, portfolio_data, user_data, db, observability)
+                run_reporter_agent(
+                    job_id, portfolio_data, user_data, db, observability, agent_findings
+                )
             )
 
             logger.info(f"Reporter completed for job {job_id}")

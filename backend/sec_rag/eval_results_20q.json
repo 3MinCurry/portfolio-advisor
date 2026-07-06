@@ -1,0 +1,238 @@
+{
+  "backend": "chroma",
+  "questions": 20,
+  "top_k": 10,
+  "average_mrr": 0.9243,
+  "average_ndcg": 0.9183,
+  "average_keyword_coverage": 95.7,
+  "by_category": {
+    "direct_fact": {
+      "count": 20,
+      "average_mrr": 0.9243,
+      "average_ndcg": 0.9183,
+      "average_keyword_coverage": 95.7
+    }
+  },
+  "per_question": [
+    {
+      "index": 1,
+      "category": "direct_fact",
+      "question": "According to the 2025 10-K filing, what sector does General Electric (GE) operate in?",
+      "chunks": 10,
+      "mrr": 0.6667,
+      "ndcg": 0.7406,
+      "keyword_coverage": 80.0,
+      "keywords_found": 4,
+      "total_keywords": 5
+    },
+    {
+      "index": 2,
+      "category": "direct_fact",
+      "question": "In the 2025 10-K, what recent major corporate separations did General Electric complete, and what risks do they mention as associated with these spin-offs?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.9984,
+      "keyword_coverage": 100.0,
+      "keywords_found": 7,
+      "total_keywords": 7
+    },
+    {
+      "index": 3,
+      "category": "direct_fact",
+      "question": "Describe two geopolitical or global macro risks mentioned in GE's 2025 10-K filing that could negatively impact its business.",
+      "chunks": 10,
+      "mrr": 0.8333,
+      "ndcg": 0.8962,
+      "keyword_coverage": 100.0,
+      "keywords_found": 9,
+      "total_keywords": 9
+    },
+    {
+      "index": 4,
+      "category": "direct_fact",
+      "question": "According to the 2025 10-K filing, what are two technological advances or trends that GE highlights as risk factors in its business environment?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.953,
+      "keyword_coverage": 100.0,
+      "keywords_found": 6,
+      "total_keywords": 6
+    },
+    {
+      "index": 5,
+      "category": "direct_fact",
+      "question": "What climate change related risks does GE identify in its 2025 10-K filing that could affect its financial performance? Provide at least two specific examples.",
+      "chunks": 10,
+      "mrr": 0.8333,
+      "ndcg": 0.8061,
+      "keyword_coverage": 83.3,
+      "keywords_found": 5,
+      "total_keywords": 6
+    },
+    {
+      "index": 6,
+      "category": "direct_fact",
+      "question": "How many Home Depot stores did Home Depot Inc. operate at the end of fiscal 2025 and in which geographical regions?",
+      "chunks": 10,
+      "mrr": 0.9286,
+      "ndcg": 0.9273,
+      "keyword_coverage": 100.0,
+      "keywords_found": 7,
+      "total_keywords": 7
+    },
+    {
+      "index": 7,
+      "category": "direct_fact",
+      "question": "What was the total capital expenditure by Home Depot Inc. in fiscal 2025 and what strategic areas did these investments support?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "keyword_coverage": 100.0,
+      "keywords_found": 5,
+      "total_keywords": 5
+    },
+    {
+      "index": 8,
+      "category": "direct_fact",
+      "question": "Which two major acquisitions by SRS are mentioned in the 2026 Home Depot 10-K, and what business areas do they expand for Home Depot?",
+      "chunks": 10,
+      "mrr": 0.825,
+      "ndcg": 0.8208,
+      "keyword_coverage": 100.0,
+      "keywords_found": 5,
+      "total_keywords": 5
+    },
+    {
+      "index": 9,
+      "category": "direct_fact",
+      "question": "How did Home Depot Inc. return value to shareholders in fiscal 2025, and what change was made to the quarterly cash dividend?",
+      "chunks": 10,
+      "mrr": 0.6667,
+      "ndcg": 0.656,
+      "keyword_coverage": 66.7,
+      "keywords_found": 4,
+      "total_keywords": 6
+    },
+    {
+      "index": 10,
+      "category": "direct_fact",
+      "question": "What AI-powered digital tools did Home Depot implement to enhance the shopping experience as described in the 2026 10-K filing?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "keyword_coverage": 100.0,
+      "keywords_found": 6,
+      "total_keywords": 6
+    },
+    {
+      "index": 11,
+      "category": "direct_fact",
+      "question": "According to Alphabet Inc.'s 2026 10-K, who is the CEO of both Alphabet and Google as of the report's filing?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "keyword_coverage": 100.0,
+      "keywords_found": 4,
+      "total_keywords": 4
+    },
+    {
+      "index": 12,
+      "category": "direct_fact",
+      "question": "What is the name of Alphabet Inc.'s seventh-generation custom-built Tensor Processing Unit (TPU) mentioned in the 2026 10-K?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.9951,
+      "keyword_coverage": 100.0,
+      "keywords_found": 4,
+      "total_keywords": 4
+    },
+    {
+      "index": 13,
+      "category": "direct_fact",
+      "question": "As of December 31, 2025, how many employees did Alphabet Inc. report having, according to the 2026 10-K?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "keyword_coverage": 100.0,
+      "keywords_found": 4,
+      "total_keywords": 4
+    },
+    {
+      "index": 14,
+      "category": "direct_fact",
+      "question": "What is the name of Alphabet Inc.'s most intelligent AI model as described in the 2026 10-K, and what key capability does it provide?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.9504,
+      "keyword_coverage": 100.0,
+      "keywords_found": 4,
+      "total_keywords": 4
+    },
+    {
+      "index": 15,
+      "category": "direct_fact",
+      "question": "In 2025, what percentage of Alphabet Inc.'s total revenues came from online advertising, according to Risk Factors in the 2026 10-K?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.9989,
+      "keyword_coverage": 100.0,
+      "keywords_found": 6,
+      "total_keywords": 6
+    },
+    {
+      "index": 16,
+      "category": "direct_fact",
+      "question": "How many total employees did Sherwin-Williams have worldwide as of December 31, 2021, according to the 2022 10-K?",
+      "chunks": 10,
+      "mrr": 0.9,
+      "ndcg": 0.9387,
+      "keyword_coverage": 100.0,
+      "keywords_found": 5,
+      "total_keywords": 5
+    },
+    {
+      "index": 17,
+      "category": "direct_fact",
+      "question": "What are the three reportable operating segments of Sherwin-Williams as stated in the 2022 10-K filing?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.9635,
+      "keyword_coverage": 100.0,
+      "keywords_found": 7,
+      "total_keywords": 7
+    },
+    {
+      "index": 18,
+      "category": "direct_fact",
+      "question": "Which segment of Sherwin-Williams incurred the majority of capital expenditures for ongoing environmental compliance measures in 2021, as discussed in the 2022 10-K?",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.9613,
+      "keyword_coverage": 100.0,
+      "keywords_found": 6,
+      "total_keywords": 6
+    },
+    {
+      "index": 19,
+      "category": "direct_fact",
+      "question": "List three major trademarks or trade names used by the Performance Coatings Group segment of Sherwin-Williams, as identified in the 2022 10-K.",
+      "chunks": 10,
+      "mrr": 1.0,
+      "ndcg": 0.9542,
+      "keyword_coverage": 100.0,
+      "keywords_found": 7,
+      "total_keywords": 7
+    },
+    {
+      "index": 20,
+      "category": "direct_fact",
+      "question": "In the 2022 10-K, how did Sherwin-Williams describe the seasonality of its Reportable Segments' sales, and how does this affect inventory management?",
+      "chunks": 10,
+      "mrr": 0.8333,
+      "ndcg": 0.8056,
+      "keyword_coverage": 83.3,
+      "keywords_found": 5,
+      "total_keywords": 6
+    }
+  ]
+}

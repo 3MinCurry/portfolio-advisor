@@ -184,7 +184,7 @@ def run_answer_evaluation(progress=gr.Progress()):
 
 def main():
     """Launch the Gradio evaluation app."""
-    # Gradio 6 moved `theme` from Blocks() to launch(); we handle both below.
+    # Gradio 6+: theme is passed to launch() when supported.
     theme = gr.themes.Soft(font=["Inter", "system-ui", "sans-serif"])
 
     with gr.Blocks(title="SEC 10-K RAG Evaluation Dashboard") as app:
